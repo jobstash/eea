@@ -1,0 +1,92 @@
+version: '2'
+services:
+  composer:
+    restart: 'no'
+    image: composer:2
+    command: composer update
+    user: "${UID}:${GID}"
+    volumes:
+      - .:/app
+  node:
+    env_file:
+      - ./.env
+    # build:
+    #   context: ./build/docker/node-dev
+    #   dockerfile: Dockerfile
+    # image: node:16
+    # working_dir: /usr/src/app
+    #env_file: *app-env
+    image: node:18
+    working_dir: /usr/src/app
+    volumes:
+      - ./wp-content/themes/wp-starter:/usr/src/app
+    tty: true
+    # user: "${UID}:${GID}"
+    ports:
+      - 3000:3000
+    command: sh -c "npm install; npm run build; npm run dev" 
+  mysql:
+    env_file:
+      - ./.env
+    platform: linux/x86_64
+    image: mysql:8.1.0
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "mysql", "-p${DB_PASSWORD}}"]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+    ports:
+      - 50046:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: ${DB_DATABASE}
+    volumes:
+      - ./config/db/:/root/
+      - db-data:/var/lib/mysql
+  wordpress:
+    depends_on:
+      mysql:
+        condition: service_healthy
+    #image: docker.io/bitnami/wordpress-nginx:5
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_UID: "${UID}"
+        APP_GID: "${GID}"
+    ports:
+      - '80:8080'
+      - '443:8443'
+    env_file:
+      - ./.env
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      ALLOW_EMPTY_PASSWORD: yes
+      WORDPRESS_DATABASE_HOST: ${DB_HOST}
+      WORDPRESS_DATABASE_PORT_NUMBER: ${DB_PORT}
+      WORDPRESS_DATABASE_USER: ${DB_USER}
+      WORDPRESS_DATABASE_NAME: ${DB_DATABASE}
+      WORDPRESS_DATABASE_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./wp-content:/opt/bitnami/wordpress/wp-content
+      - ./.env:/opt/bitnami/wordpress/.env
+      - ./config/wp-config.php:/opt/bitnami/wordpress/wp-config.php
+      - ./vendor:/opt/bitnami/wordpress/vendor
+      - ./.htaccess:/opt/bitnami/wordpress/.htaccess
+      - ./build/docker/wordpress/wordpress-php.ini:/opt/bitnami/php/etc/conf.d/wordpress-php.ini
+  phpmyadmin:
+    env_file:
+      - ./.env
+    platform: linux/x86_64
+    image: phpmyadmin/phpmyadmin:5.2.1
+    links:
+      - mysql:mysql
+    ports:
+      - 8000:80
+    environment:
+      PMA_HOST: ${PMA_HOST}
+      PMA_USER: ${PMA_USER}
+      PMA_PASSWORD: ${PMA_PASSWORD}
+      UPLOAD_LIMIT: 75M
+volumes:
+  db-data:

@@ -1,0 +1,151 @@
+@import 'tailwindcss/base';
+
+/*
+ * uncomment if adding custom base styles
+*/
+/* @import './custom-base-styles.css'; */
+
+@import 'tailwindcss/components';
+/*
+ * uncomment if adding custom commponents
+
+*/
+@import './custom-components.css';
+
+@import 'tailwindcss/utilities';
+/*
+ * uncomment if adding custom utilities
+*/
+@import './custom-utilities.css';
+
+@import 'blocks/button';
+@import 'blocks/navigation';
+@import 'blocks/swiper';
+@import 'blocks/pagination';
+
+@import './typography.css';
+
+html {
+  @apply scroll-smooth;
+}
+
+.editor-styles-wrapper {
+  @apply text-[22px];
+  font-family: 'Archivo', sans-serif !important;
+  font-optical-sizing: none;
+}
+
+h1.editor-post-title {
+  @apply text-3xl font-bold mb-4;
+}
+
+/* admin bar fix */
+body.admin-bar {
+  max-height: calc(100vh - 32px);
+}
+
+/* :is(.article-body, #content) > *:not([class*='section-block']) {
+	@apply container;
+	@apply my-6;
+}
+
+:is(.article-body, #content) :is(p, li, blockquote) {
+	@apply max-w-4xl;
+} */
+
+.js-accordion-faq .faq-answer {
+  @apply transition-all max-h-0;
+}
+
+.js-accordion-faq .faq-answer.active {
+  @apply transition-all max-h-[9999px] opacity-100;
+}
+
+.icon-vertical {
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+h3.active .icon-vertical {
+  transform: rotate(90deg);
+}
+
+h3.active .icon-vertical {
+  transform: rotate(90deg);
+}
+
+h3.active .icon-horizontal {
+  transform: scaleX(1);
+}
+
+@media (min-width: 1024px) {
+  .js-accordion-horz-item:not(.active):hover .bg-blue-04 {
+    @apply bg-blue-03 cursor-pointer;
+  }
+
+  .js-accordion-horz-item.active p {
+    @apply opacity-100;
+  }
+
+  .js-accordion-horz-item > div > div::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    width: 30px;
+    background: rgb(132, 175, 245);
+    background: linear-gradient(
+      90deg,
+      rgba(132, 175, 245, 0) 0%,
+      rgba(132, 175, 245, 1) 70%
+    );
+  }
+  .js-accordion-horz-item:not(.active):hover > div > div::after {
+    background: rgb(132, 175, 245);
+    background: linear-gradient(
+      90deg,
+      rgba(132, 175, 245, 0) 0%,
+      rgba(65, 117, 225, 1) 70%
+    );
+  }
+}
+
+.js-partners-carousel > .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+}
+
+.js-nav.nav-open {
+  min-height: 100dvh;
+  /* fix bug navigation appearing when swiping Swiper on iOS */
+  opacity: 100;
+}
+
+.container {
+  @apply max-w-[1504px] mx-auto w-full;
+}
+
+.privacy-policy .core-block > *:not(div) {
+  @apply max-w-[1504px] mx-auto w-full px-4 md:px-8;
+}
+
+.header-scrolled {
+  @apply py-2.5;
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    @apply pt-[134px];
+  }
+}
+
+.wp-block-gallery {
+  @apply flex-nowrap;
+}
+.wp-block-gallery .core-block {
+  @apply inline-flex w-1/2;
+}

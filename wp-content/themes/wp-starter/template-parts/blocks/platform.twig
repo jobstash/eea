@@ -1,0 +1,28 @@
+<section class="container px-4 md:px-8">
+	<div class="flex flex-col p-5 bg-green-05 lg:px-6 gap-y-4 rounded-xl">
+		{% set title = fields.title ?? 'Platform' %}
+		{% set text = fields.text ?? '' %}
+		{% set cta = fields.cta %}
+		{% set anim_mobile = fields.anim_mobile %}
+		{% set anim_desktop = fields.anim_desktop %}
+
+		<div class="flex flex-col justify-between lg:flex-row lg:flex-wrap lg:justify-between lg:-mx-2 gap-y-4 lg:gap-y-0 lg:items-center">
+			<div class="flex flex-col lg:w-4/12 lg:px-2">
+				<h2 class="pb-4 h2 lg:pb-16">{{ title }}</h2>
+				<div class="body-2 wysiwyg">
+					{{ text | raw }}
+				</div>
+				{% if cta %}
+					<a href="{{ cta.url }}" target="{{ cta.target }}" class="self-end hidden w-full mt-4 text-center btn-primary lg:inline-block lg:w-auto lg:self-start">{{ cta.title }}</a>
+				{% endif %}
+			</div>
+			<div class="mt-4 md:hidden lottie" style="width: 100%; height: 100%" data-lottie-animation='{{ anim_mobile | raw }}' data-lottie-loop="false" data-preserve-aspect-ratio="false" data-lottie-autoplay="true" data-lottie-speed="1"></div>
+			<div class="hidden md:block lg:px-2 lg:w-7/12">
+				<div class="lg:py-8 lg:pl-12 lg:pr-8" data-lottie-animation='{{ anim_desktop | raw }}' data-lottie-loop="false" data-preserve-aspect-ratio="false" data-lottie-autoplay="true" data-lottie-speed="1"></div>
+			</div>
+		</div>
+		{% if cta %}
+			<a href="{{ cta.url }}" target="{{ cta.target }}" class="self-end w-full mt-4 text-center btn-primary lg:hidden">{{ cta.title }}</a>
+		{% endif %}
+	</div>
+</section>

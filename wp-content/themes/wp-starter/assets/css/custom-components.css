@@ -1,0 +1,21 @@
+@layer components {
+	.btn-primary {
+		@apply bg-coral-01 whitespace-nowrap text-white rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all;
+	}
+	
+	.btn-secondary {
+		@apply text-blue-01 uppercase text-base leading-4 font-semibold underline inline-block
+	}
+	.btn-white {
+		@apply bg-white whitespace-nowrap text-black rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all;
+
+	}
+	.btn-primary:hover,
+	.btn-white:hover  {
+		@apply rounded-tr-none
+	}
+
+	.btn-primary:disabled {
+		@apply opacity-30 cursor-default rounded-tr-[10px]
+	}
+}

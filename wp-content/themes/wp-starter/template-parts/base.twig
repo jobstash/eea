@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html {{ function('language_attributes') }}>
+	{# Head #}
+	{% include 'head.twig' %}
+	<body {{ function('body_class', '') }} id="body">
+		{{ function('wp_body_open') }}
+		{# header #}
+		<div class="flex flex-col min-h-screen page-wrapper text-blue-01">
+			{% include 'partials/header.twig' %}
+
+			<main id="main" class="main-content grow">
+				<div id="page-content">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</main>
+
+			{% include 'partials/footer.twig' %}
+		</div>
+
+	</body>
+</html>

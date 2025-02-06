@@ -1,0 +1,101 @@
+<footer class="py-10 mt-10 text-white lg:pt-20 flex-0 bg-blue-03 lg:mt-20">
+	{# <div class="container px-4 space-y-10 md:px-8">
+		<div class="flex flex-col space-y-10 lg:-mx-3 lg:flex-wrap lg:flex-row lg:space-y-0">
+			<div class="w-full lg:w-1/3 lg:px-3">
+				<a class="text-white text-large" href="{{ function('home_url') }}">
+					{% include 'partials/logo.twig' %}
+				</a>
+				<div class="hidden lg:block lg:pt-10">
+					<span class="inline-block pb-4">{{ __('Follow us', 'follow-us') }}</span>
+					<a href="{{in_url}}" target="_blank">
+						<svg width="36" height="37" viewbox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M18 0.548828C8.05887 0.548828 0 8.6077 0 18.5488C0 28.49 8.05887 36.5488 18 36.5488C27.9411 36.5488 36 28.49 36 18.5488C36 8.6077 27.9411 0.548828 18 0.548828ZM18.7565 25.2985H16.0835C16.0835 25.2985 16.124 17.0702 16.0835 16.267H18.7835V17.698C19.0153 17.1849 19.3978 16.7545 19.88 16.4639C20.3623 16.1733 20.9216 16.0364 21.4835 16.0712C23.954 16.0712 24.7573 17.4955 24.7573 20.1212V25.2985H22.0033V20.4857C22.0033 19.3315 21.5713 18.5485 20.3428 18.5485C20.018 18.542 19.6995 18.6375 19.4318 18.8215C19.1642 19.0056 18.9611 19.2689 18.851 19.5745C18.7806 19.7923 18.7486 20.0207 18.7565 20.2495V25.2985ZM12.8767 15.0523C13.7752 15.0523 14.5035 14.324 14.5035 13.4256C14.5035 12.5271 13.7752 11.7988 12.8767 11.7988C11.9783 11.7988 11.25 12.5271 11.25 13.4256C11.25 14.324 11.9783 15.0523 12.8767 15.0523ZM11.4587 16.2681H14.26V25.2996H11.4587V16.2681Z" fill="white"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="w-full lg:w-1/3 lg:px-3">
+				<div class="space-y-3 lg:w-3/4 lg:space-y-5">
+					<div class="text-xl font-semibold leading-5">
+						Newsletter
+					</div>
+					<p class="text-base font-normal">Want to keep up with our latest news?</br>Sign up now to stay in the loop.</p>
+					<div class="md:w-2/3">
+						<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script> 
+						<script> hbspt.forms.create({ portalId: "144113445", formId: "0a5e9fc5-6c1f-4d40-932b-399995c83826" }); </script>
+					</div>
+				</div>
+			</div>
+			<div class="flex flex-wrap text-xl font-semibold lg:w-1/3 lg:px-3">
+				<nav class="w-1/2">
+					<ul class="lg:space-y-4">
+						{% if footer_menu_1 and footer_menu_1.items %}
+							{% for item in footer_menu_1.items %}
+								<li class="">
+									<a class="flex items-center [&_svg]:ml-3" target="{{item.target}}" href="{{ item.link }}" title="Go to {{ item.title }} page.">
+										{{ item.title }}
+										{% if item.target == '_blank' %}
+											<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 1H8.69538C8.86382 1 9 1.13654 9 1.30462V9" stroke="#F0F0F0" stroke-width="1.34305" stroke-miterlimit="10" stroke-linecap="round"/>
+												<path d="M8.63574 1.36328L1.36301 8.63601" stroke="#F0F0F0" stroke-width="1.34305" stroke-linecap="round"/>
+											</svg>
+										{% endif %}
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</nav>
+				<nav class="w-1/2">
+					<ul class="lg:space-y-4">
+						{% if footer_menu_2 and footer_menu_2.items %}
+							{% for item in footer_menu_2.items %}
+								<li class="">
+									<a class="flex items-center [&_svg]:ml-3" target="{{item.target}}" href="{{ item.link }}" title="Go to {{ item.title }} page.">
+										{{ item.title }}
+										{% if item.target == '_blank' %}
+											<svg width="10" height="10" viewbox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M1 1H8.69538C8.86382 1 9 1.13654 9 1.30462V9" stroke="#F0F0F0" stroke-width="1.34305" stroke-miterlimit="10" stroke-linecap="round"/>
+												<path d="M8.63574 1.36328L1.36301 8.63601" stroke="#F0F0F0" stroke-width="1.34305" stroke-linecap="round"/>
+											</svg>
+										{% endif %}
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</nav>
+			</div>
+		</div>
+		
+		<div class="lg:hidden">
+			<span class="inline-block pb-4">{{ __('Follow us', 'follow-us') }}</span>
+			<a href="{{in_url}}" target="_blank">
+				<svg width="36" height="37" viewbox="0 0 36 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M18 0.548828C8.05887 0.548828 0 8.6077 0 18.5488C0 28.49 8.05887 36.5488 18 36.5488C27.9411 36.5488 36 28.49 36 18.5488C36 8.6077 27.9411 0.548828 18 0.548828ZM18.7565 25.2985H16.0835C16.0835 25.2985 16.124 17.0702 16.0835 16.267H18.7835V17.698C19.0153 17.1849 19.3978 16.7545 19.88 16.4639C20.3623 16.1733 20.9216 16.0364 21.4835 16.0712C23.954 16.0712 24.7573 17.4955 24.7573 20.1212V25.2985H22.0033V20.4857C22.0033 19.3315 21.5713 18.5485 20.3428 18.5485C20.018 18.542 19.6995 18.6375 19.4318 18.8215C19.1642 19.0056 18.9611 19.2689 18.851 19.5745C18.7806 19.7923 18.7486 20.0207 18.7565 20.2495V25.2985ZM12.8767 15.0523C13.7752 15.0523 14.5035 14.324 14.5035 13.4256C14.5035 12.5271 13.7752 11.7988 12.8767 11.7988C11.9783 11.7988 11.25 12.5271 11.25 13.4256C11.25 14.324 11.9783 15.0523 12.8767 15.0523ZM11.4587 16.2681H14.26V25.2996H11.4587V16.2681Z" fill="white"/>
+				</svg>
+			</a>
+		</div>
+
+		<div class="flex flex-col lg:flex-row justify-between text-[14px] lg:pt-24">
+			<p>{{copyright}}</p>
+			<a href="{{privacy_policy_page}}" class="inline-block mt-10 underline lg:mt-0">{{ __('Website disclaimer & Privacy Policy', 'website-disclaimer') }}</a>
+		</div>
+		{% if IS_VITE_DEVELOPMENT %}
+			<div class="container mx-auto text-center">
+				<p class="text-xs">Currently in
+					<strong>
+						development
+					</strong>
+					mode.
+				</p>
+			</div>
+		{% endif %}
+	</div> #}
+</footer>
+
+{{ function('wp_footer') }}
+
+</body>
+
+</html>

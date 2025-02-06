@@ -1,0 +1,15 @@
+.swiper-slide { 
+  @apply !h-auto
+}
+
+.hs-pagination  {
+  @apply relative top-0 text-center pt-6
+}
+
+.hs-pagination  .swiper-pagination-bullet {
+  @apply transition-all origin-center	 ease-out	bg-blue-05 opacity-100
+}
+
+.hs-pagination .swiper-pagination-bullet-active {
+  @apply bg-blue-01 w-6 rounded-md
+}

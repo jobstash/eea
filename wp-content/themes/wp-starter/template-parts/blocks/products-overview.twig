@@ -1,0 +1,63 @@
+<section class="overflow-hidden">
+	<div class="container px-4 md:px-8">
+		<div class="flex flex-col px-4 md:px-0">
+			{% set title = fields.title ?? 'Products' %}
+			{% set text = fields.text ?? '' %}
+			{% set products = fields.products %}
+			{% set smalltext = fields.smaller_text ?? '' %}
+			{% set sub_title = fields.sub_title ?? '' %}
+			<div class="flex flex-col justify-between gap-y-4 lg:flex-row lg:flex-wrap">
+
+				{% if sub_title %}
+					<h3 class="highlight lg:w-8/12 lg:mx-auto lg:text-center">{{ sub_title }}</h3>
+					<p class="body-2 lg:w-8/12 lg:mx-auto lg:text-center">
+						{{ text | raw }}
+					</p>
+				{% else %}
+					<h2 class="lg:w-5/12 h2">{{ title }}</h2>
+					<p class="self-end body-2 lg:w-1/2 lg:pb-2">
+						{{ text | raw }}
+					</p>
+				{% endif %}
+			</div>
+			{% if products %}
+				<div class="mt-8 -mx-8 lg:mt-11 lg:w-auto lg:ml-0 lg:mx-0">
+					<div class="!px-8 !overflow-visible swiper js-products-carousel lg:!px-0">
+						<div class="swiper-wrapper">
+							{% for product in products %}
+								{% set anim = product.anim ?? '' %}
+								<div class="w-full swiper-slide ">
+									<div class="flex flex-col h-full group">
+										<div class="relative z-20 mx-4 -mb-32 shrink lg:mx-9">
+											<div class="lottie" data-lottie-animation='{{ anim | raw }}' data-lottie-hover data-lottie-loop="false" data-preserve-aspect-ratio="true" data-lottie-autoplay="false" data-lottie-speed="1"></div>
+										</div>
+										<div class="relative z-10 flex h-full p-5 lg:transition-all grow rounded-3xl bg-gray-03 lg:group-hover:rounded-bl-none">
+											<div class="lg:h-full lg:overflow-hidden lg:rounded-3xl lg:group-hover:rounded-bl-none">
+												<div class="flex flex-col h-[calc(100%-8rem)] p-4 mt-32 bg-white rounded-3xl lg:duration-1000 lg:rounded-bl-none lg:translate-y-[calc(100%-90px)] lg:transition-all lg:group-hover:translate-y-0 ">
+													<div class="lg:flex">
+														<h3 class="!leading-none h4 lg:min-h-[64px] xl:pr-4">{{ product.title }}</h3>
+														{% if product.cta %}
+															<a href="{{ product.cta.url }}" target="{{ product.cta.target }}" class="hidden btn-primary xl:block lg:self-end lg:mr-0 lg:ml-auto lg:shrink">{{ product.cta.title }}</a>
+														{% endif %}
+													</div>
+													<div class="lg:overflow-hidden transition-al flex flex-col duration-[1000ms] ">
+														<hr class="mt-5 mb-5 border-t-0 border-b border-blue-01">
+														<p class="text-base leading-5 grow min-h-fit">{{ product.text }}</p>
+													</div>
+													{% if product.cta %}
+														<a href="{{ product.cta.url }}" target="{{ product.cta.target }}" class="self-end w-full mt-4 text-center btn-primary xl:hidden lg:overflow-hidden">{{ product.cta.title }}</a>
+													{% endif %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="js-products-carousel-pagination hs-pagination"></div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

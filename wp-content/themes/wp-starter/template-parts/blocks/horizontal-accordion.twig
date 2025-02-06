@@ -1,0 +1,63 @@
+<section class="overflow-hidden">
+	<div class="container px-4 md:px-8">
+		<div class="flex flex-col p-4 bg-blue-05 hero-home gap-y-4 rounded-xl lg:p-6">
+			{% set title = fields.title ?? 'Horizontal Accordion' %}
+			{% set text = fields.text ?? '' %}
+			{% set qas = fields.qas %}
+
+			<div class="flex flex-col justify-between gap-y-4 lg:flex-row">
+				<h2 class="{% if text %}lg:w-5/12{% else %}lg:w-7/12{% endif %}  h2">{{ title }}</h2>
+				{% if text|length %}
+					<p class="self-end lg:w-5/12 body-2 lg:pb-2">
+						{{ text | raw }}
+					</p>
+				{% endif %}
+			</div>
+
+			{% if qas %}
+				<div class="flex flex-wrap mt-5 lg:mt-14">
+					<div class="!overflow-visible swiper js-accordion-carousel w-full lg:!hidden">
+						<div class="w-full swiper-wrapper">
+							{% for qa in qas %}
+								<div class="w-full swiper-slide">
+									{% set icon = qa.icon ? get_image(qa.icon) : false %}
+									<div class="w-full h-full qa lg:w-1/4">
+										<div class="h-full p-5 rounded-xl bg-blue-04">
+											<div class="flex flex-col h-full gap-y-4">
+												<h3 class="h4">{{ qa.title }}</h3>
+												<p class="grow body-2">{{ qa.text }}</p>
+												{% if icon %}
+													<img loading="lazy" width="50" height="50" src="{{ icon.src }}" alt="{{ icon.alt | default('Icon') }}">
+												{% endif %}
+											</div>
+
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="hidden -mx-2 lg:flex lg:flex-wrap js-accordion-horz">
+						{% for qa in qas %}
+							<div style="width:{{ 100 / (qas|length + 1) }}%" class="relative px-2 overflow-hidden transition-all duration-1000 origin-top-left js-accordion-horz-item">
+								{% set icon = qa.icon ? get_image(qa.icon) : false %}
+								<div class="w-full h-full qa">
+									<div class="relative h-full p-5 cursor-default rounded-3xl bg-blue-04 lg:overflow-hidden">
+										<div class="relative z-10 flex flex-col h-full gap-y-4">
+											<h3 class="w-full transition-all body-3">{{ qa.title }}</h3>
+											<p class="transition-all duration-500 grow body-2 lg:opacity-0">{{ qa.text }}</p>
+											{% if icon %}
+												<img loading="lazy" width="50" height="50" src="{{ icon.src }}" alt="{{ icon.alt | default('Icon') }}">
+											{% endif %}
+										</div>
+
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

@@ -1,0 +1,49 @@
+{
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "ffraenz/private-composer-installer": true,
+      "gotoandplay/gravityforms-composer-installer": true
+    }
+  },
+  "repositories": {
+    "wpmudev": {
+      "type": "composer",
+      "url": "https://wpmudev.com/"
+    },
+    "0": {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    "1": {
+      "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "GetUnik\\Theme\\": "wp-content/themes/wastefree/src"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "composer/installers": "^1.4",
+    "ffraenz/private-composer-installer": "^5.0",
+    "vlucas/phpdotenv": "5.5.0",
+    "timber/timber": "^2.0",
+    "wpengine/advanced-custom-fields-pro": "^6.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  }
+}

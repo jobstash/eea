@@ -1,0 +1,19 @@
+<section class="container px-4 md:px-8">
+	<div class="relative flex flex-col gap-y-4 p-4 xl:p-0 xl:min-h-[790px]">
+		{% set title = fields.title ?? 'Hero Home' %}
+		{% set text = fields.text ?? '' %}
+		{% set bg_anim = fields.bg_anim ?? '' %}
+
+		<h1 class="mt-[60%] xl:w-8/12 xl:ml-[25%] xl:mt-20 h1">{{ title }}</h1>
+
+		<div class="body-3 xl:w-4/12 xl:ml-[41.666667%] xl:mt-10">
+			{{ text | raw }}
+		</div>
+
+		{% if bg_anim %}
+			<div class="absolute inset-0 overflow-hidden -z-10 rounded-3xl bg-gray-03">
+				<div class="object-cover object-center lottie"  data-lottie-animation='{{ bg_anim | raw }}' data-lottie-loop="true" data-preserve-aspect-ratio="false" data-lottie-autoplay="true" data-lottie-speed="1"></div>
+			</div>
+		{% endif %}
+	</div>
+</section>

@@ -1,0 +1,107 @@
+/* MAIN NAVIGATION HEADER */
+
+.main-header::before {
+  @apply content-[''] block absolute -z-10 w-full h-full top-0 backdrop-blur-sm;
+}
+
+.menu-main-navigation-container {
+  @apply grow;
+}
+
+@media (min-width: 1024px) {
+  .menu-main-navigation-container {
+    @apply pl-10 flex justify-between items-center;
+  }
+}
+
+.main-menu {
+  @apply space-y-5 relative;
+}
+
+@media (min-width: 1024px) {
+  .main-menu {
+    @apply flex gap-x-6 shadow-md px-6 py-3 rounded-xl space-y-0;
+  }
+  .main-menu::before {
+    @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
+  }
+}
+
+.menu-item {
+  @apply relative;
+}
+
+.menu-item a {
+  @apply transition-all text-4xl leading-none font-normal;
+}
+
+@media (min-width: 1024px) {
+  .menu-item a {
+    @apply text-base;
+  }
+}
+
+.menu-item.current-menu-item a {
+  @apply text-blue-02;
+}
+
+@media (min-width: 1024px) {
+  .menu-item a:hover {
+    @apply text-blue-02;
+  }
+}
+
+.sub-menu {
+  @apply max-h-0 overflow-hidden	transition-all duration-300 relative;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu {
+    @apply overflow-hidden max-h-0 absolute left-0 top-full mt-6 ml-6  transition-all duration-300  whitespace-nowrap shadow-md rounded-b-xl;
+  }
+  .sub-menu::before {
+    @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  .sub-menu::before {
+    @apply bg-white/80;
+  }
+}
+
+.sub-menu-open {
+  @apply max-h-[500px] py-1.5;
+}
+
+.sub-menu .menu-item a {
+  @apply text-2xl mt-5 inline-block;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu .menu-item a {
+    @apply text-base px-6 mt-2.5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sub-menu .menu-item:last-child a {
+    @apply mb-1.5;
+  }
+}
+
+.menu-item-has-children a {
+  @apply relative;
+}
+
+.menu-item-has-children > a.is-active svg {
+  @apply rotate-180;
+}
+
+/* LANG SWITCHER */
+.nav-open {
+  @apply max-h-[500px];
+}
+.lang-toggle-active svg {
+  @apply rotate-180;
+}

@@ -1,0 +1,13 @@
+.pagination {
+    @apply flex mx-auto py-14 justify-center space-x-4 text-2xl
+}
+
+.pagination li > * {
+    @apply w-[37px] h-[37px] justify-center items-center flex  p-0
+}
+
+.pagination li > a.page-numbers:hover,
+.pagination .current {
+    @apply bg-blue-05 rounded-xl
+}
+

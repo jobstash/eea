@@ -1,48 +1,71 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# wordpress specific
+wp-content/uploads/
+wp-content/blogs.dir/
+wp-content/upgrade/*
+wp-content/backup-db/*
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+wp-content/cache/*
+wp-content/cache/supercache/*
 
-# Configuration
-wp-config.php
+#project custom ignores
+#exclude all
+/*
 
-# Example themes
-/wp-content/themes/twenty*/
+#include folders
+!/helm-chart
+!/infrastructure_code
+!/wp-content
+/wp-content/*
+!/wp-content/languages
+/wp-content/languages/*
+!/wp-content/plugins
+!/wp-content/mu-plugins
+!/wp-content/themes
+!/config
+!/build/docker
+!/_dumps
+!/.gitlab
+!/.gitlab-ci.yml
+!/.htaccess
 
-# Example plugin
-/wp-content/plugins/hello.php
+#include files
+!/composer.json
+!/Dockerfile
+!/docker-compose.yml
+!/docker-compose-cleanup.yml
+!/.gitignore
+!/README.md
+!/CHANGELOG.md
+!/.env.*
+!.editorconfig
+!.nvmrc
+!Makefile
+!auth.json.sample
 
-# Uploads
-/wp-content/uploads/
+#include plugins
+/wp-content/plugins/*
 
-# Log files
-*.log
+#include mu-plugins
+/wp-content/mu-plugins/*
+!/wp-content/mu-plugins/autoload.php
 
-# htaccess
-/.htaccess
+#include theme
+/wp-content/themes/*
+!/wp-content/themes/wp-starter
+!/wp-content/themes/wp-starter/*
 
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
 
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+
+#ci
+!_ci
+!build
+!seed

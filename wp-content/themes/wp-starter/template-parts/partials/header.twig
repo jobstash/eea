@@ -1,0 +1,90 @@
+<header
+	class="main-header relative left-0 py-10 transition-all z-50 sticky lg:fixed lg:w-full lg:top-0 {% if user %}top-12 {% else %}top-0 {% endif %}">
+	{# <pre class="max-w-full overflow-auto">{{ lang_switcher|json_encode }}</pre> #}
+	<nav class="container flex flex-wrap justify-between px-4 main-nav md:px-8 lg:flex-nowrap">
+		<div class="flex items-center">
+			<a class="text-large text-blue-02" href="{{ function('home_url') }}">
+				{% include 'partials/logo.twig' %}
+			</a>
+		</div>
+		<button class="lg:hidden js-nav-toggle">
+			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 5L31 5" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
+				<path d="M1 16L31 16" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
+				<path d="M1 27L31 27" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
+			</svg>
+		</button>
+		{# bg-white js-nav lg:relative lg:p-0 lg:items-center lg:inset-auto lg:flex lg:grow #}
+		<div class="{% if user %}pt-[30px] {% endif %} js-nav bg-white lg:bg-transparent flex-col flex fixed top-0 left-0 overflow-hidden opacity-0 lg:opacity-100 lg:overflow-visible transition-all min-h-0 h-0 w-screen lg:transition-none px-4 md:px-8 lg:h-auto lg:flex-none lg:flex-row lg:relative lg:p-0 lg:items-center lg:inset-auto lg:flex lg:grow lg:w-auto">
+			<div class="flex items-center justify-between py-10 text-blue-02 lg:hidden">
+				<a class="text-large text-blue-02" href="{{ function('home_url') }}">
+					{% include 'partials/logo.twig' %}
+				</a>
+				<button class="block ml-auto mr-0 js-nav-toggle">
+					<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M5.97436 27.0531C5.68146 27.346 5.20659 27.346 4.91369 27.0531C4.6208 26.7602 4.6208 26.2853 4.91369 25.9924L14.99 15.9162L4.91369 5.8399C4.6208 5.54701 4.6208 5.07214 4.91369 4.77924C5.20659 4.48635 5.68146 4.48635 5.97435 4.77924L16.0506 14.8555L26.1269 4.77924C26.4198 4.48635 26.8947 4.48635 27.1876 4.77924C27.4805 5.07213 27.4804 5.54701 27.1876 5.8399L17.1113 15.9162L27.1876 25.9924C27.4805 26.2853 27.4805 26.7602 27.1876 27.0531C26.8947 27.346 26.4198 27.346 26.1269 27.0531L16.0506 16.9768L5.97436 27.0531Z" fill="#001E41"/>
+					</svg>
+				</button>
+			</div>
+
+			<nav class="main-navigation grow lg:grow-0 lg:ml-10">
+				<ul class="main-menu">
+					{% if menu and menu.items %}
+						{% for item in menu.items %}
+							<li class="{{ item.classes | join(' ') }}">
+								<a class="inline-flex items-center transition-all" href="{{ item.link }}" title="Go to {{ item.title }} page.">
+									{{ item.title }}
+									{% if item.children %}
+										<svg class="ml-2 lg:hidden" width="24" height="15" viewbox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M22.7617 1.73828L12.1805 13.0762C11.9492 13.3241 11.5736 13.3241 11.3422 13.0762L0.76172 1.73828" stroke="#001E41" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+										</svg>
+										<svg class="hidden ml-2 lg:block" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="#001E41" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
+										</svg>
+									{% endif %}
+								</a>
+								{% if item.children %}
+									<ul class="sub-menu">
+										{% for child in item.children %}
+											<li class="{{ child.classes | join(' ') }}">
+												<a target="{{child.target}}" href="{{ child.link }}" title="Go to {{ child.title }} page.">{{ child.title }}</a>
+											</li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							</li>
+						{% endfor %}
+					{% endif %}
+				</ul>
+			</nav>
+			<div class="relative flex items-start w-full pb-4 md:pb-8 lg:pb-0 lg:items-center">
+				{% if header_button_link %}
+					<a class="self-start uppercase btn-primary lg:mr-0 lg:ml-auto" href="{{header_button_link.url}}" class="btn">{{ header_button_link.title }}</a>
+				{% endif %}
+
+				{% if show_lang_switcher is defined and show_lang_switcher %}
+					{% if languages is defined %}
+						<div class="relative ml-10 text-base">
+							<button class="flex items-center mt-1.5 uppercase js-lang-switcher-toggle lg:mt-0 hover:text-blue-02">
+								{{ current_language }}
+								<svg class="ml-2 transition-all" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
+								</svg>
+							</button>
+							<ul class="sub-menu js-lang-switcher lg:!ml-0 lg:!mt-3 lg:-right-[5px] lg:!left-auto lg:min-w-[70px] text-center">
+								{% for language in languages %}
+									{% if language.code != current_language %}
+										<li class="py-2 -ml-4 lg:ml-0 lg:px-4">
+											<a class="uppercase hover:text-blue-02" href="{{ language.url }}">{{ language.code }}</a>
+										</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+				{% endif %}
+			</div>
+
+		</div>
+	</nav>
+</header>
