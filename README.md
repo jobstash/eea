@@ -17,7 +17,7 @@ After cloning its repository:
 3. Edit `.env` file accordingly
 4. Edit auth.json file, add your personal gitlab token with at least the scope `api` (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token)
 5. Run `make composer-update` OR simply `composer update`, if you have composer installed
-6. Run `make build` if it's the first time, or `make start` to start the project.
+6. Run `make start` to start the project.
 7. Wait a bit, until WP installation done and open [localhost](http://localhost) or [localhost/wp-admin](http://localhost/wp-admin) (please check for the correct http port. -- _default is 80_)
 
 ### Step by step

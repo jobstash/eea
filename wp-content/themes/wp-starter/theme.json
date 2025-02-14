@@ -8,6 +8,11 @@
     "color": {
       "palette": [
         {
+          "name": "bg-primary",
+          "slug": "bg-primary", 
+          "color": "#1A1A1E"
+        },
+        {
           "name": "Blue 01",
           "slug": "blue-01",
           "color": "#001E41"

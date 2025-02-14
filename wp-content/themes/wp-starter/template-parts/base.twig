@@ -2,10 +2,10 @@
 <html {{ function('language_attributes') }}>
 	{# Head #}
 	{% include 'head.twig' %}
-	<body {{ function('body_class', '') }} id="body">
+	<body {{ function('body_class', 'bg-black') }} id="body">
 		{{ function('wp_body_open') }}
 		{# header #}
-		<div class="flex flex-col min-h-screen page-wrapper text-blue-01">
+		<div class="flex flex-col min-h-screen text-white page-wrapper">
 			{% include 'partials/header.twig' %}
 
 			<main id="main" class="main-content grow">

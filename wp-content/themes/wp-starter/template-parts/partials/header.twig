@@ -1,31 +1,32 @@
 <header
-	class="main-header relative left-0 py-10 transition-all z-50 sticky lg:fixed lg:w-full lg:top-0 {% if user %}top-12 {% else %}top-0 {% endif %}">
+	class="main-header  left-0 py-5 transition-all z-50 sticky lg:fixed lg:w-full lg:top-0 {% if user %}top-12 {% else %}top-0 {% endif %}">
 	{# <pre class="max-w-full overflow-auto">{{ lang_switcher|json_encode }}</pre> #}
-	<nav class="container flex flex-wrap justify-between px-4 main-nav md:px-8 lg:flex-nowrap">
-		<div class="flex items-center">
-			<a class="text-large text-blue-02" href="{{ function('home_url') }}">
+	<nav class="container flex flex-wrap px-4 main-nav md:px-8 lg:flex-nowrap">
+		<div class="flex items-center shrink">
+			<a class="text-white text-large" href="{{ function('home_url') }}">
 				{% include 'partials/logo.twig' %}
 			</a>
 		</div>
-		<button class="lg:hidden js-nav-toggle">
-			<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1 5L31 5" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
-				<path d="M1 16L31 16" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
-				<path d="M1 27L31 27" stroke="#001E41" stroke-width="1.5" stroke-linecap="round"/>
+		{# <button class="lg:hidden js-nav-toggle">
+			<svg width="34" height="34" viewbox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 9.5625C4.25 8.9757 4.7257 8.5 5.3125 8.5H28.6875C29.2743 8.5 29.75 8.9757 29.75 9.5625C29.75 10.1493 29.2743 10.625 28.6875 10.625H5.3125C4.7257 10.625 4.25 10.1493 4.25 9.5625ZM4.25 17C4.25 16.4132 4.7257 15.9375 5.3125 15.9375H28.6875C29.2743 15.9375 29.75 16.4132 29.75 17C29.75 17.5868 29.2743 18.0625 28.6875 18.0625H5.3125C4.7257 18.0625 4.25 17.5868 4.25 17ZM15.9375 24.4375C15.9375 23.8507 16.4132 23.375 17 23.375H28.6875C29.2743 23.375 29.75 23.8507 29.75 24.4375C29.75 25.0243 29.2743 25.5 28.6875 25.5H17C16.4132 25.5 15.9375 25.0243 15.9375 24.4375Z" fill="white"/>
 			</svg>
-		</button>
-		{# bg-white js-nav lg:relative lg:p-0 lg:items-center lg:inset-auto lg:flex lg:grow #}
-		<div class="{% if user %}pt-[30px] {% endif %} js-nav bg-white lg:bg-transparent flex-col flex fixed top-0 left-0 overflow-hidden opacity-0 lg:opacity-100 lg:overflow-visible transition-all min-h-0 h-0 w-screen lg:transition-none px-4 md:px-8 lg:h-auto lg:flex-none lg:flex-row lg:relative lg:p-0 lg:items-center lg:inset-auto lg:flex lg:grow lg:w-auto">
-			<div class="flex items-center justify-between py-10 text-blue-02 lg:hidden">
-				<a class="text-large text-blue-02" href="{{ function('home_url') }}">
+		</button> #}
+		<div class="fixed top-0 right-0 flex flex-col px-4 overflow-hidden transition-all translate-x-full js-nav lg:translate-x-0 lg:w-fit lg:bg-transparent lg:opacity-100 lg:overflow-visible lg:transition-none md:px-8 lg:h-auto lg:flex-none lg:flex-row lg:relative lg:p-0 lg:items-center lg:inset-auto lg:flex">
+		
+			{# <div class="flex items-center justify-between w-4/5 py-5 ml-auto mr-0 text-white bg-black lg:hidden">
+				<a class="text-white text-large" href="{{ function('home_url') }}">
 					{% include 'partials/logo.twig' %}
 				</a>
-				<button class="block ml-auto mr-0 js-nav-toggle">
+				<button
+					class="block ml-auto mr-0 js-nav-toggle">
 					<svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M5.97436 27.0531C5.68146 27.346 5.20659 27.346 4.91369 27.0531C4.6208 26.7602 4.6208 26.2853 4.91369 25.9924L14.99 15.9162L4.91369 5.8399C4.6208 5.54701 4.6208 5.07214 4.91369 4.77924C5.20659 4.48635 5.68146 4.48635 5.97435 4.77924L16.0506 14.8555L26.1269 4.77924C26.4198 4.48635 26.8947 4.48635 27.1876 4.77924C27.4805 5.07213 27.4804 5.54701 27.1876 5.8399L17.1113 15.9162L27.1876 25.9924C27.4805 26.2853 27.4805 26.7602 27.1876 27.0531C26.8947 27.346 26.4198 27.346 26.1269 27.0531L16.0506 16.9768L5.97436 27.0531Z" fill="#001E41"/>
+						<path opacity="0.4" d="M15.9998 29.3333C23.3636 29.3333 29.3332 23.3638 29.3332 16C29.3332 8.6362 23.3636 2.66667 15.9998 2.66667C8.63604 2.66667 2.6665 8.6362 2.6665 16C2.6665 23.3638 8.63604 29.3333 15.9998 29.3333Z" fill="white" fill-opacity="0.35"/>
+						<path d="M17.4133 16L20.48 12.9333C20.8666 12.5467 20.8666 11.9067 20.48 11.52C20.0933 11.1333 19.4533 11.1333 19.0666 11.52L16 14.5867L12.9333 11.52C12.5466 11.1333 11.9066 11.1333 11.52 11.52C11.1333 11.9067 11.1333 12.5467 11.52 12.9333L14.5866 16L11.52 19.0667C11.1333 19.4533 11.1333 20.0933 11.52 20.48C11.72 20.68 11.9733 20.7733 12.2266 20.7733C12.48 20.7733 12.7333 20.68 12.9333 20.48L16 17.4133L19.0666 20.48C19.2666 20.68 19.52 20.7733 19.7733 20.7733C20.0266 20.7733 20.28 20.68 20.48 20.48C20.8666 20.0933 20.8666 19.4533 20.48 19.0667L17.4133 16Z" fill="white"/>
 					</svg>
+
 				</button>
-			</div>
+			</div> #}
 
 			<nav class="main-navigation grow lg:grow-0 lg:ml-10">
 				<ul class="main-menu">
@@ -36,10 +37,10 @@
 									{{ item.title }}
 									{% if item.children %}
 										<svg class="ml-2 lg:hidden" width="24" height="15" viewbox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M22.7617 1.73828L12.1805 13.0762C11.9492 13.3241 11.5736 13.3241 11.3422 13.0762L0.76172 1.73828" stroke="#001E41" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+											<path d="M22.7617 1.73828L12.1805 13.0762C11.9492 13.3241 11.5736 13.3241 11.3422 13.0762L0.76172 1.73828" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
 										</svg>
 										<svg class="hidden ml-2 lg:block" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="#001E41" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
+											<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
 										</svg>
 									{% endif %}
 								</a>
@@ -57,11 +58,10 @@
 					{% endif %}
 				</ul>
 			</nav>
-			<div class="relative flex items-start w-full pb-4 md:pb-8 lg:pb-0 lg:items-center">
+			{# <div class="relative flex items-start w-full pb-4 md:pb-8 lg:pb-0 lg:items-center">
 				{% if header_button_link %}
 					<a class="self-start uppercase btn-primary lg:mr-0 lg:ml-auto" href="{{header_button_link.url}}" class="btn">{{ header_button_link.title }}</a>
 				{% endif %}
-
 				{% if show_lang_switcher is defined and show_lang_switcher %}
 					{% if languages is defined %}
 						<div class="relative ml-10 text-base">
@@ -83,7 +83,7 @@
 						</div>
 					{% endif %}
 				{% endif %}
-			</div>
+			</div> #}
 
 		</div>
 	</nav>

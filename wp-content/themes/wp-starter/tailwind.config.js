@@ -12,8 +12,6 @@ module.exports = {
     //'./**/*.php', // recursive search for *.php (be aware on every file change it will go even through /node_modules which can be slow, read doc)
   ],
   safelist: [
-    'text-center',
-    'text-4xl'
     //{
     //  pattern: /text-(white|black)-(200|500|800)/
     //}
@@ -25,7 +23,7 @@ module.exports = {
       },
       colors: colorMapper(theme('settings.color.palette', themeConfig)),
       fontFamily: {
-        sans: ['"Archivo"', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
       fontSize: fontSizeMapper(
         theme('settings.typography.fontSizes', themeConfig)

@@ -9,131 +9,131 @@ $acf_blocks = array(
     'keywords'      => array('hero', 'heading')
   ),
   array(
-    'name'   => 'hero-secondary',
-    'title'  => __('Hero secondary'),
-    'description'    => __('A block for the Secondary Hero.'),
+    'name'   => 'hero-default',
+    'title'  => __('Hero default'),
+    'description'    => __('A block for the Default Hero.'),
     'keywords'      => array('hero', 'heading')
   ),
-  array(
-    'name'   => 'platform-hero',
-    'title'  => __('Hero Platform'),
-    'description'    => __('A block for the Platform Hero.'),
-    'keywords'      => array('hero', 'heading')
-  ),
-  array(
-    'name'   => 'banner',
-    'title'  => __('Banners'),
-    'description'    => __('A Banner to display informations in tiles'),
-    'keywords'      => array('Banner')
-  ),
-  array(
-    'name'   => 'cta-banner',
-    'title'  => __('CTA Banner'),
-    'description'    => __('CTA Banner'),
-    'keywords'      => array('CTA Banner')
-  ),
-  array(
-    'name'   => 'simple-banner',
-    'title'  => __('Simple Banner'),
-    'description'    => __('Simple Banner'),
-    'keywords'      => array('Simple Banner')
-  ),
-  array(
-    'name'   => 'slider-investors',
-    'title'  => __('Slider Investors'),
-    'description'    => __('A Carousel to display Investors'),
-    'keywords'      => array('Slider', 'Investors')
-  ),
-  array(
-    'name'   => 'partners-carousel',
-    'title'  => __('Slider Partner'),
-    'description'    => __('A Carousel to display partners'),
-    'keywords'      => array('Carousel', 'Partners')
-  ),
-  array(
-    'name'   => 'horizontal-accordion',
-    'title'  => __('Horizontal Accordion'),
-    'description'    => __('An horizontal accordions made with tiles'),
-    'keywords'      => array('accordion', 'horizontal')
-  ),
-  array(
-    'name'   => 'faq',
-    'title'  => __('FAQ'),
-    'description'    => __('FAQ Accordion'),
-    'keywords'      => array('Accordion', 'FAQ', 'QA')
-  ),
-  array(
-    'name'   => 'products-overview',
-    'title'  => __('Products Overview'),
-    'description'    => __('A block for the 3 Products.'),
-    'keywords'      => array('products', 'overview', 'teaser')
-  ),
-  array(
-    'name'   => 'advisory-board',
-    'title'  => __('Advisory Board'),
-    'description'    => __('Advisory Board'),
-    'keywords'      => array('Advisory Board')
-  ),
-  array(
-    'name'   => 'apps',
-    'title'  => __('Apps Module'),
-    'description'    => __('Apps'),
-    'keywords'      => array('Apps')
-  ),
-  array(
-    'name'   => 'text-image',
-    'title'  => __('Text and Media'),
-    'description'    => __('2 columns layout with text and image'),
-    'keywords'      => array('2 columns', 'text', 'image')
-  ),
-  array(
-    'name'   => 'platform',
-    'title'  => __('Text and Lottie'),
-    'description'    => __('Text and Lottie'),
-    'keywords'      => array('Text and Lottie')
-  ),
-  array(
-    'name'   => 'text-graphics',
-    'title'  => __('Text and Graphics'),
-    'description'    => __('Text and Graphics'),
-    'keywords'      => array('Text and Graphics')
-  ),
-  array(
-    'name'   => 'img-graphics-text',
-    'title'  => __('Img, graphics and Text'),
-    'description'    => __('Img, graphics and Text'),
-    'keywords'      => array('Img, graphics and Text')
-  ),
-  array(
-    'name'   => 'map',
-    'title'  => __('Map'),
-    'description'    => __('Map'),
-    'keywords'      => array('Map', 'location')
-  ),
-  array(
-    'name'   => 'security',
-    'title'  => __('Grid / Security'),
-    'description'    => __('An multi column component'),
-    'keywords'      => array('Multi', 'Columns')
-  ),
-  array(
-    'name'   => 'slider-news',
-    'title'  => __('Slider News'),
-    'description'    => __('Slider News'),
-    'keywords'      => array('Slider', 'News')
-  ),
-  array(
-    'name'   => 'quote',
-    'title'  => __('Quote'),
-    'description'    => __('Quote'),
-    'keywords'      => array('Quote')
-  ),
-  array(
-    'name'   => 'contact',
-    'title'  => __('Contact'),
-    'description'    => __('Contact'),
-    'keywords'      => array('Contact', 'Forms')
-  ),
+  // array(
+  //   'name'   => 'platform-hero',
+  //   'title'  => __('Hero Platform'),
+  //   'description'    => __('A block for the Platform Hero.'),
+  //   'keywords'      => array('hero', 'heading')
+  // ),
+  // array(
+  //   'name'   => 'banner',
+  //   'title'  => __('Banners'),
+  //   'description'    => __('A Banner to display informations in tiles'),
+  //   'keywords'      => array('Banner')
+  // ),
+  // array(
+  //   'name'   => 'cta-banner',
+  //   'title'  => __('CTA Banner'),
+  //   'description'    => __('CTA Banner'),
+  //   'keywords'      => array('CTA Banner')
+  // ),
+  // array(
+  //   'name'   => 'simple-banner',
+  //   'title'  => __('Simple Banner'),
+  //   'description'    => __('Simple Banner'),
+  //   'keywords'      => array('Simple Banner')
+  // ),
+  // array(
+  //   'name'   => 'slider-investors',
+  //   'title'  => __('Slider Investors'),
+  //   'description'    => __('A Carousel to display Investors'),
+  //   'keywords'      => array('Slider', 'Investors')
+  // ),
+  // array(
+  //   'name'   => 'partners-carousel',
+  //   'title'  => __('Slider Partner'),
+  //   'description'    => __('A Carousel to display partners'),
+  //   'keywords'      => array('Carousel', 'Partners')
+  // ),
+  // array(
+  //   'name'   => 'horizontal-accordion',
+  //   'title'  => __('Horizontal Accordion'),
+  //   'description'    => __('An horizontal accordions made with tiles'),
+  //   'keywords'      => array('accordion', 'horizontal')
+  // ),
+  // array(
+  //   'name'   => 'faq',
+  //   'title'  => __('FAQ'),
+  //   'description'    => __('FAQ Accordion'),
+  //   'keywords'      => array('Accordion', 'FAQ', 'QA')
+  // ),
+  // array(
+  //   'name'   => 'products-overview',
+  //   'title'  => __('Products Overview'),
+  //   'description'    => __('A block for the 3 Products.'),
+  //   'keywords'      => array('products', 'overview', 'teaser')
+  // ),
+  // array(
+  //   'name'   => 'advisory-board',
+  //   'title'  => __('Advisory Board'),
+  //   'description'    => __('Advisory Board'),
+  //   'keywords'      => array('Advisory Board')
+  // ),
+  // array(
+  //   'name'   => 'apps',
+  //   'title'  => __('Apps Module'),
+  //   'description'    => __('Apps'),
+  //   'keywords'      => array('Apps')
+  // ),
+  // array(
+  //   'name'   => 'text-image',
+  //   'title'  => __('Text and Media'),
+  //   'description'    => __('2 columns layout with text and image'),
+  //   'keywords'      => array('2 columns', 'text', 'image')
+  // ),
+  // array(
+  //   'name'   => 'platform',
+  //   'title'  => __('Text and Lottie'),
+  //   'description'    => __('Text and Lottie'),
+  //   'keywords'      => array('Text and Lottie')
+  // ),
+  // array(
+  //   'name'   => 'text-graphics',
+  //   'title'  => __('Text and Graphics'),
+  //   'description'    => __('Text and Graphics'),
+  //   'keywords'      => array('Text and Graphics')
+  // ),
+  // array(
+  //   'name'   => 'img-graphics-text',
+  //   'title'  => __('Img, graphics and Text'),
+  //   'description'    => __('Img, graphics and Text'),
+  //   'keywords'      => array('Img, graphics and Text')
+  // ),
+  // array(
+  //   'name'   => 'map',
+  //   'title'  => __('Map'),
+  //   'description'    => __('Map'),
+  //   'keywords'      => array('Map', 'location')
+  // ),
+  // array(
+  //   'name'   => 'security',
+  //   'title'  => __('Grid / Security'),
+  //   'description'    => __('An multi column component'),
+  //   'keywords'      => array('Multi', 'Columns')
+  // ),
+  // array(
+  //   'name'   => 'slider-news',
+  //   'title'  => __('Slider News'),
+  //   'description'    => __('Slider News'),
+  //   'keywords'      => array('Slider', 'News')
+  // ),
+  // array(
+  //   'name'   => 'quote',
+  //   'title'  => __('Quote'),
+  //   'description'    => __('Quote'),
+  //   'keywords'      => array('Quote')
+  // ),
+  // array(
+  //   'name'   => 'contact',
+  //   'title'  => __('Contact'),
+  //   'description'    => __('Contact'),
+  //   'keywords'      => array('Contact', 'Forms')
+  // ),
 );
 
 // Gutenberg Blocks allowed

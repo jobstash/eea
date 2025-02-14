@@ -29,9 +29,10 @@ html {
   @apply scroll-smooth;
 }
 
+
 .editor-styles-wrapper {
   @apply text-[22px];
-  font-family: 'Archivo', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   font-optical-sizing: none;
 }
 
