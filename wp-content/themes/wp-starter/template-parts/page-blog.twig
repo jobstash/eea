@@ -1,8 +1,12 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-    <div class="container px-6 category-archive md:px-12">
-        <h2 class="h1">{{ title }}</h2>
+    
+    <div class="container px-6 space-y-10 category-archive md:px-12">
+        {% include 'breadcrumbs.twig' with { 'page': page } %}
+        <div class="lg:max-w-[66%] space-y-10">
+            <div class="content">{{ post.content }}</div>
+        </div>
         {% if posts %}
             <div class="md:grid md:grid-cols-2 md: lg:grid-cols-3 lg:gap-10">
                 {% for post in posts %}
