@@ -9,16 +9,16 @@ $acf_blocks = array(
     'keywords'      => array('hero', 'home')
   ),
   array(
-    'name'   => 'hero-default',
-    'title'  => __('Hero default'),
-    'description'    => __('A block for the Default Hero.'),
-    'keywords'      => array('hero', 'heading')
-  ),
-  array(
     'name'   => 'divider',
     'title'  => __('Divider'),
     'description'    => __('Divider'),
     'keywords'      => array('Divider')
+  ),
+  array(
+    'name'   => 'members-team',
+    'title'  => __('Members/Team'),
+    'description'    => __('Members/Team'),
+    'keywords'      => array('Members/Team')
   ),
   // array(
   //   'name'   => 'platform-hero',
