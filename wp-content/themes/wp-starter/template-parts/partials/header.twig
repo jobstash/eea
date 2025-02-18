@@ -1,5 +1,5 @@
-<header class="main-header border-b border-[#262626]  left-0 py-5 transition-all z-50 sticky lg:fixed lg:w-full lg:top-0 {% if user %}top-12 {% else %}top-0 {% endif %}">
-	<nav class="container flex flex-wrap justify-between px-4 main-nav md:px-12 lg:flex-nowrap">
+<header class="main-header border-b border-[#262626]  left-0 py-5 transition-all z-50 sticky lg:fixed h-[74px] lg:h-[128px] lg:py-0 lg:w-full lg:top-0 {% if user %}top-12 {% else %}top-0 {% endif %}">
+	<nav class="container flex flex-wrap justify-between px-4 main-nav md:px-12 lg:flex-nowrap lg:h-full">
 		<div class="flex items-center shrink">
 			<a class="text-white text-large" href="{{ function('home_url') }}">
 				{% include 'partials/logo.twig' %}
@@ -30,17 +30,18 @@
 						{% if menu and menu.items %}
 							{% for item in menu.items %}
 								<li class="{{ item.classes | join(' ') }}">
-									<a class="flex items-center justify-between transition-all" href="{{ item.link }}" title="Go to {{ item.title }} page.">
-										{{ item.title }}
+									<div class="flex items-center justify-between pt-8 lg:pt-0">
+										<a class="flex pl-4 transition-all lg:text-[14px]" href="{{ item.link }}" title="Go to {{ item.title }} page.">
+											{{ item.title }}
+										</a>
 										{% if item.children %}
-											<svg class="w-6 h-6 ml-2 shrink-0 lg:hidden" fill="none" viewbox="0 0 24 24">
-												<path fill="#fff" d="m9 8.125 3.88 3.88L9 15.885a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41l-4.59-4.59a.996.996 0 0 0-1.41 0c-.38.39-.39 1.03 0 1.42Z"/>
-											</svg>
-											<svg class="hidden ml-2 lg:block" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="white" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
-											</svg>
+											<div class="flex items-center justify-between cursor-pointer h-9 w-9 js-subnav-trigger">
+												<svg class="w-6 h-6 ml-2 shrink-0 " fill="none" viewbox="0 0 24 24">
+													<path fill="#fff" d="m9 8.125 3.88 3.88L9 15.885a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41l-4.59-4.59a.996.996 0 0 0-1.41 0c-.38.39-.39 1.03 0 1.42Z"/>
+												</svg>
+											</div>
 										{% endif %}
-									</a>
+									</div>
 									{% if item.children %}
 										<ul class="sub-menu">
 											{% for child in item.children %}
@@ -57,31 +58,31 @@
 				</nav>
 			</div>
 			{# <div class="relative flex items-start w-full pb-4 md:pb-8 lg:pb-0 lg:items-center">
-							{% if header_button_link %}
-								<a class="self-start uppercase btn-primary lg:mr-0 lg:ml-auto" href="{{header_button_link.url}}" class="btn">{{ header_button_link.title }}</a>
-							{% endif %}
-							{% if show_lang_switcher is defined and show_lang_switcher %}
-								{% if languages is defined %}
-									<div class="relative ml-10 text-base">
-										<button class="flex items-center mt-1.5 uppercase js-lang-switcher-toggle lg:mt-0 hover:text-blue-02">
-											{{ current_language }}
-											<svg class="ml-2 transition-all" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
-											</svg>
-										</button>
-										<ul class="sub-menu js-lang-switcher lg:!ml-0 lg:!mt-3 lg:-right-[5px] lg:!left-auto lg:min-w-[70px] text-center">
-											{% for language in languages %}
-												{% if language.code != current_language %}
-													<li class="py-2 -ml-4 lg:ml-0 lg:px-4">
-														<a class="uppercase hover:text-blue-02" href="{{ language.url }}">{{ language.code }}</a>
-													</li>
-												{% endif %}
-											{% endfor %}
-										</ul>
-									</div>
-								{% endif %}
-							{% endif %}
-						</div> #}
+										{% if header_button_link %}
+											<a class="self-start uppercase btn-primary lg:mr-0 lg:ml-auto" href="{{header_button_link.url}}" class="btn">{{ header_button_link.title }}</a>
+										{% endif %}
+										{% if show_lang_switcher is defined and show_lang_switcher %}
+											{% if languages is defined %}
+												<div class="relative ml-10 text-base">
+													<button class="flex items-center mt-1.5 uppercase js-lang-switcher-toggle lg:mt-0 hover:text-blue-02">
+														{{ current_language }}
+														<svg class="ml-2 transition-all" width="10" height="8" viewbox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path d="M9 3L5.1523 6.93546C5.06817 7.02151 4.93158 7.02151 4.84745 6.93546L1 3" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="square" stroke-linejoin="bevel"/>
+														</svg>
+													</button>
+													<ul class="sub-menu js-lang-switcher lg:!ml-0 lg:!mt-3 lg:-right-[5px] lg:!left-auto lg:min-w-[70px] text-center">
+														{% for language in languages %}
+															{% if language.code != current_language %}
+																<li class="py-2 -ml-4 lg:ml-0 lg:px-4">
+																	<a class="uppercase hover:text-blue-02" href="{{ language.url }}">{{ language.code }}</a>
+																</li>
+															{% endif %}
+														{% endfor %}
+													</ul>
+												</div>
+											{% endif %}
+										{% endif %}
+									</div> #}
 
 		</div>
 	</nav>

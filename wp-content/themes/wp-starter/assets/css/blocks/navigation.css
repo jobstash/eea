@@ -28,24 +28,29 @@
 }
 
 .menu-item {
-  @apply relative;
+  @apply relative border-b border-nav-border pb-8;
 }
-
+@media (min-width: 1024px) {
+  .menu-item {
+    @apply border-0 pb-0;
+  }
+}
 .menu-item a {
-  @apply transition-all text-xl font-bold leading-none text-white p-4;
+  @apply transition-all text-xl font-bold leading-none text-white pb-0;
 }
 
-/* .menu-item:last-child a {
-  @apply border-none
-} */
+.menu-item:last-child {
+  @apply border-0
+}
 
 @media (min-width: 1024px) {
   .menu-item a {
-    @apply text-base p-0;
+    @apply text-base p-0 text-[14px];
   }
 }
 
-.menu-item.current-menu-item a {
+.menu-item.current-menu-item > div > a,
+.sub-menu .menu-item.current-menu-item  > a {
   @apply text-green-400 ;
 }
 
@@ -61,7 +66,7 @@
 
 @media (min-width: 1024px) {
   .sub-menu {
-    @apply overflow-hidden max-h-0 absolute left-0 top-full mt-6 ml-6  transition-all duration-300  whitespace-nowrap shadow-md rounded-b-xl;
+    @apply overflow-hidden max-h-0 absolute left-0 top-full  transition-all duration-300  whitespace-nowrap shadow-md rounded-b-xl;
   }
   .sub-menu::before {
     @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
@@ -75,16 +80,26 @@
 }
 
 .sub-menu-open {
-  @apply max-h-[500px] py-1.5;
+  @apply max-h-[500px];
+}
+.sub-menu .menu-item  {
+  @apply border-0 pt-4 pb-0 pl-8;
 }
 
+@media (min-width: 1024px) {
+  .sub-menu .menu-item  {
+    @apply pl-4 pt-2;
+  }
+}
+
+
 .sub-menu .menu-item a {
-  @apply text-xl pb-0;
+  @apply text-xl pb-0 inline-block;
 }
 
 @media (min-width: 1024px) {
   .sub-menu .menu-item a {
-    @apply text-base px-6 mt-2.5;
+    @apply text-base text-[14px];
   }
 }
 
@@ -98,7 +113,7 @@
   @apply relative;
 }
 
-.menu-item-has-children > a.is-active svg {
+.menu-item-has-children .is-active.js-subnav-trigger svg {
   @apply rotate-90;
 }
 

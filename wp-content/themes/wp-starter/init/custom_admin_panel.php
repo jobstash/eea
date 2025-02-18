@@ -127,7 +127,8 @@ function wpse_custom_menu_order($menu_ord)
     'edit.php?post_type=page', // Pages
     'edit.php', // Insights
     'edit.php?post_type=case_study', // Case studies
-    'edit.php?post_type=team_member', // Team Members
+    'edit.php?post_type=team', // Team
+    'edit.php?post_type=member', // Member
     'edit.php?post_type=office', // Offices
     'edit.php?post_type=job', // Jobs
     'edit.php?post_type=service', // Jobs

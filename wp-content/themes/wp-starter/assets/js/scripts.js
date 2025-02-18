@@ -267,7 +267,7 @@ function initMenu() {
 
   menuItems.forEach((item) => {
     const subMenu = item.querySelector('.sub-menu');
-    const parentLink = item.querySelector('a');
+    const parentLink = item.querySelector('.js-subnav-trigger');
     parentLink.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopImmediatePropagation();
