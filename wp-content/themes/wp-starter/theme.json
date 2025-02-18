@@ -28,6 +28,12 @@
           "color": "#1A1A1E"
         },
         {
+          "name": "milk",
+          "slug": "milk", 
+          "color": "#C5D2EC"
+        },
+
+        {
           "name": "Blue 01",
           "slug": "blue-01",
           "color": "#001E41"

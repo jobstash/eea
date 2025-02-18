@@ -47,6 +47,10 @@ class StarterSite extends Site
     $context['menu']  = Timber::get_menu('main_menu');
     $context['footer_menu_1']  = Timber::get_menu('footer_menu_1');
     $context['footer_menu_2']  = Timber::get_menu('footer_menu_2');
+    $context['footer_menu_3']  = Timber::get_menu('footer_menu_3');
+    $context['footer_menu_4']  = Timber::get_menu('footer_menu_4');
+    $context['footer_menu_5']  = Timber::get_menu('footer_menu_5');
+    $context['footer_menu_bottom']  = Timber::get_menu('footer_menu_bottom');
     $context['lang_switcher']  = Timber::get_menu('lang_switcher');
     $context['latest_posts'] = Timber::get_posts([
       'post_type' => 'post',

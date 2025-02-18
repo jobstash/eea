@@ -20,12 +20,12 @@ $acf_blocks = array(
     'description'    => __('Members/Team'),
     'keywords'      => array('Members/Team')
   ),
-  // array(
-  //   'name'   => 'platform-hero',
-  //   'title'  => __('Hero Platform'),
-  //   'description'    => __('A block for the Platform Hero.'),
-  //   'keywords'      => array('hero', 'heading')
-  // ),
+  array(
+    'name'   => 'eea-anchor-listing',
+    'title'  => __('EEA anchor listing'),
+    'description'    => __('EEA anchor listing'),
+    'keywords'      => array('eea', 'anchor')
+  ),
   // array(
   //   'name'   => 'banner',
   //   'title'  => __('Banners'),
