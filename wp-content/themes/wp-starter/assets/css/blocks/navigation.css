@@ -20,7 +20,7 @@
 
 @media (min-width: 1024px) {
   .main-menu {
-    @apply flex gap-x-6 shadow-md px-6 py-3 rounded-xl space-y-0;
+    @apply flex gap-x-6 px-6 py-3 rounded-xl space-y-0;
   }
   /* .main-menu::before {
     @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
@@ -66,10 +66,10 @@
 
 @media (min-width: 1024px) {
   .sub-menu {
-    @apply overflow-hidden max-h-0 absolute left-0 top-full  transition-all duration-300  whitespace-nowrap shadow-md rounded-b-xl;
+    @apply overflow-hidden max-h-0 absolute left-0 top-full  transition-all duration-300  whitespace-nowrap ;
   }
   .sub-menu::before {
-    @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
+    @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 rounded-xl;
   }
 }
 

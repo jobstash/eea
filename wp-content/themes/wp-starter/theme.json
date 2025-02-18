@@ -18,6 +18,11 @@
           "color": "#0C0C0C"
         },
         {
+          "name": "card-bg",
+          "slug": "card-bg", 
+          "color": "#1D1D20"
+        },
+        {
           "name": "bg-primary",
           "slug": "bg-primary", 
           "color": "#1A1A1E"

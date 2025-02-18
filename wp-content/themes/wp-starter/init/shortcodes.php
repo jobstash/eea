@@ -20,4 +20,25 @@ function register_shortcodes(){
 
 }
 
+
+function add_title_body_class($classes) {
+  global $post;
+  
+  if (isset($post)) {
+      // Ottiene il titolo della pagina e lo converte in una classe CSS valida
+      $page_title = sanitize_title($post->post_title);
+      $classes[] = 'title-' . $page_title;
+      
+      // Se la pagina ha un parent, aggiungi anche il suo titolo
+      if ($post->post_parent) {
+          $parent = get_post($post->post_parent);
+          $parent_title = sanitize_title($parent->post_title);
+          $classes[] = 'parent-title-' . $parent_title;
+      }
+  }
+  
+  return $classes;
+}
+add_filter('body_class', 'add_title_body_class');
+
 add_action( 'init', 'register_shortcodes');

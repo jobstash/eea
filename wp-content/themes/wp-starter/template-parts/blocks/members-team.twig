@@ -1,27 +1,12 @@
-<section class="container px-4 md:px-12">
+<div class="grid grid-cols-1 gap-6 lg:py-8 md:grid-cols-2 lg:grid-cols-4">
     {% set items = fields.memberteam_posts ?? [] %}
-
     {% if items %}
         {% for post in items %}
             <div class="member-card">
-               {% set thumbnail_id = function('get_post_thumbnail_id', post.ID) %}
-               {% if thumbnail_id %}
-                    {% set image = get_image(thumbnail_id) %}
-                    <img loading="lazy" class="object-cover object-center" 
-                        src="{{ image.src }}" 
-                        srcset="{{ image.srcset }}" 
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" 
-                        alt="{{ image.alt | default(post.post_title) }}">
-                {% endif %}
-                <h2>{{ post.post_title }}</h2>
-                <p>{{ post.post_content }}</p>
-                <p><strong>Position:</strong> {{ function('get_field', 'position', post.ID) }}</p>
-                <p><strong>LinkedIn:</strong> 
-                    <a href="{{ function('get_field', 'linkedin_url', post.ID) }}" target="_blank">Profile</a>
-                </p>
+                {% include ['tease-member.twig'] %}
             </div>
         {% endfor %}
     {% else %}
         <p>No posts selected.</p>
     {% endif %}
-</section>
+</div>

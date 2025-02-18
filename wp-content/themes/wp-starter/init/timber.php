@@ -61,6 +61,12 @@ class StarterSite extends Site
     // Get the current post
     $current_post = Timber::get_post();
     $context['post'] = $current_post;
+    // Get parent if it's a page
+    if ($current_post && $current_post->parent()) {
+      $context['parent'] = $current_post->parent();
+    }
+
+  return $context;
 
     // Fetch related posts by category
     if ($current_post && !empty($current_post->terms('category'))) {

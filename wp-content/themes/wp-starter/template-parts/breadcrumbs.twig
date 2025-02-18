@@ -1,0 +1,29 @@
+<nav class="pb-10 pt-36 md:pb-12" aria-label="Breadcrumb">
+  <ol class="text-base flex font-bold leading-[150%] uppercase">
+    {# <li class="flex items-center">
+      <a href="{{ site.url }}" class="breadcrumb__link">Home</a>
+      <span class="">
+        <svg fill="none" viewbox="0 0 8 12" class="w-[11px] h-[11px]">
+          <path fill="#fff" d="m1 2.125 3.88 3.88L1 9.885a.996.996 0 1 0 1.41 1.41L7 6.705a.996.996 0 0 0 0-1.41L2.41.705a.996.996 0 0 0-1.41 0c-.38.39-.39 1.03 0 1.42Z"/>
+        </svg>
+      </span>
+    </li> #}
+
+    <!-- Parent breadcrumb (if any) -->
+    {% if parent %}
+      <li class="flex items-center transition-all opacity-40">
+        <a href="{{ parent.link }}" class="transition-all hover:opacity-60">{{ parent.title }}</a>
+        <span class="inline-block mx-6">
+          <svg fill="none" viewbox="0 0 8 12" class="w-[11px] h-[11px]">
+            <path fill="#fff" d="m1 2.125 3.88 3.88L1 9.885a.996.996 0 1 0 1.41 1.41L7 6.705a.996.996 0 0 0 0-1.41L2.41.705a.996.996 0 0 0-1.41 0c-.38.39-.39 1.03 0 1.42Z"/>
+          </svg>
+        </span>
+      </li>
+    {% endif %}
+
+    <!-- Current page breadcrumb -->
+    <li class="" aria-current="page">
+      {{ post.title }}
+    </li>
+  </ol>
+</nav>

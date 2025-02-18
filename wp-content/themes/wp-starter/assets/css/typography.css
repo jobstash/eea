@@ -2,14 +2,16 @@
 
 .h1,
 .wysiwyg h1,
-.editor-styles-wrapper h1 {
+.editor-styles-wrapper h1,
+h2.wp-block-heading  {
   @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase;
 }
 
 @media (min-width: 768px) {
   .h1,
   .wysiwyg h1,
-  .editor-styles-wrapper h1 {
+  .editor-styles-wrapper h1,
+  h2.wp-block-heading {
     @apply text-[56px];
   }
 }
@@ -17,7 +19,8 @@
 @media (min-width: 1024px) {
   .h1,
   .wysiwyg h1,
-  .editor-styles-wrapper h1 {
+  .editor-styles-wrapper h1,
+  h2.wp-block-heading {
     @apply text-[56px];
   }
 }
@@ -64,27 +67,40 @@
   }
 }
 
+.h5,
+.wysiwyg h5,
+.editor-styles-wrapper h5 {
+  @apply text-xl leading-[150%] font-bold font-sans antialiased ;
+}
+
+@media (min-width: 1024px) {
+  .h5,
+  .wysiwyg h5,
+  .editor-styles-wrapper h {
+    @apply text-xl ;
+  }
+}
+
 /* BODY */
 
 .body-3 {
-  @apply text-xl leading-[150%] font-sans;
+  @apply text-[12px] leading-[150%] font-sans;
 }
 
 @media (min-width: 1024px) {
   .body-3 {
-    @apply text-2xl;
   }
 }
 
 .body-2 {
-  @apply text-base leading-[140%];
+  @apply text-base leading-[200%];
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .body-2 {
     @apply text-large;
   }
-}
+} */
 
 .body-1 {
   @apply text-xl leading-[150%];
@@ -164,4 +180,16 @@
 
 .wysiwyg  a {
   @apply underline
+}
+
+
+.article-content .core-block > p {
+ @apply text-[#C9C9C9] text-xl leading-[150%]
+}
+
+
+@media (min-width: 1024px) {
+  .article-content .core-block > p {
+    @apply max-w-[66%]
+  }
 }

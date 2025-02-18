@@ -1,7 +1,7 @@
 <footer class="py-10 mt-10 text-white lg:pt-20 flex-0 bg-bg-primary lg:mt-20">
-	<div class="container px-4 space-y-10 md:px-12">
+	<div class="container px-6 space-y-10 md:px-12">
 		<div class="flex flex-col lg:-mx-3 lg:flex-wrap lg:flex-row">
-			<div class="w-full lg:w-1/3 lg:px-3">
+			<div class="w-full lg:w-1/5 lg:px-3">
 				<a class="text-white text-large" href="{{ function('home_url') }}">
 					{% include 'partials/logo.twig' %}
 				</a>
@@ -14,19 +14,9 @@
 					</a>
 				</div>
 			</div>
-			<div class="w-full lg:w-1/3 lg:px-3">
-				{# <div class="space-y-3 lg:w-3/4 lg:space-y-5">
-					<div class="text-xl font-semibold leading-5">
-						Newsletter
-					</div>
-					<p class="text-base font-normal">Want to keep up with our latest news?</br>Sign up now to stay in the loop.</p>
-					<div class="md:w-2/3">
-						<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script> 
-						<script> hbspt.forms.create({ portalId: "144113445", formId: "0a5e9fc5-6c1f-4d40-932b-399995c83826" }); </script>
-					</div>
-				</div> #}
+			<div class="w-full lg:w-1/5 lg:px-3">
 			</div>
-			<div class="flex flex-wrap text-xl font-semibold lg:w-1/3 lg:px-3">
+			<div class="flex flex-wrap text-xl font-semibold lg:w-1/5 lg:px-3">
 				<nav class="w-1/2">
 					<ul class="lg:space-y-4">
 						{% if footer_menu_1 and footer_menu_1.items %}
@@ -77,10 +67,10 @@
 			</a>
 		</div>
 
-		<div class="flex flex-col lg:flex-row justify-between text-[14px] lg:pt-24">
+		{# <div class="flex flex-col lg:flex-row justify-between text-[14px] lg:pt-24">
 			<p>{{copyright}}</p>
 			<a href="{{privacy_policy_page}}" class="inline-block mt-10 underline lg:mt-0">{{ __('Website disclaimer & Privacy Policy', 'website-disclaimer') }}</a>
-		</div>
+		</div> #}
 	</div>
 </footer>
 
