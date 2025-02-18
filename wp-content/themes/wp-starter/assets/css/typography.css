@@ -3,14 +3,22 @@
 .h1,
 .wysiwyg h1,
 .editor-styles-wrapper h1 {
-  @apply text-blue-01 text-5xl leading-[110%] font-light antialiased;
+  @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase;
+}
+
+@media (min-width: 768px) {
+  .h1,
+  .wysiwyg h1,
+  .editor-styles-wrapper h1 {
+    @apply text-[56px];
+  }
 }
 
 @media (min-width: 1024px) {
   .h1,
   .wysiwyg h1,
   .editor-styles-wrapper h1 {
-    @apply text-[72px];
+    @apply text-[56px];
   }
 }
 
@@ -59,7 +67,7 @@
 /* BODY */
 
 .body-3 {
-  @apply text-xl leading-[130%];
+  @apply text-xl leading-[150%] font-sans;
 }
 
 @media (min-width: 1024px) {
@@ -79,7 +87,7 @@
 }
 
 .body-1 {
-  @apply text-lg leading-[140%];
+  @apply text-xl leading-[150%];
 }
 @media (min-width: 1024px) {
   .body-1 {
@@ -152,4 +160,8 @@
   .wysiwyg p {
     @apply mb-6;
   }
+}
+
+.wysiwyg  a {
+  @apply underline
 }

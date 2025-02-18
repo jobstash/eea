@@ -1,64 +1,40 @@
 {% extends 'base.twig' %}
 {% block content %}
-	<div class="container px-4 md:px-8">
+	{% if post.thumbnail %}
+		<div class="w-full -mt-[74px] aspect-h-1 aspect-w-1 overflow-hidden z-10 relative md:aspect-w-16 md:aspect-h-11 lg:aspect-none lg:w-screen lg:height-[800px] lg:relative lg:-mt-[128px]">
+			<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw" alt="{{ post.thumbnail.alt | default('Image') }}">
+		</div>
+	{% endif %}
+	<div class="container relative z-20 px-4 -mt-20 md:px-12 lg:-mt-[500px]">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<h2 class="pb-5 text-center h2 lg:pb-16 lg:pt-12">
+			<h2 class="h1 lg:w-9/12">
 				{{ post.title }}
 			</h2>
-			{% if post.thumbnail %}
-				<div class="w-full h-[230px] relative lg:h-[500px] rounded-xl overflow-hidden">
-					<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw" alt="{{ post.thumbnail.alt | default('Image') }}">
-				</div>
-			{% endif %}
-			<section class="flex flex-col-reverse pt-5 article-content lg:pt-16 lg:flex-row lg:flex lg:justify-between">
-				<div
-					class="lg:w-4/12">
+
+			<section class="flex flex-col article-content">
+				<div class="my-10">
 					{% if has_excerpt(post.ID) %}
-						<div class="mb-5 space-y-5 h4 js-excerpt lg:space-y-10 lg:mb-16">
+						<span class="inline-block pb-10 text-xl font-medium">Introduction</span>
+						<div class="mb-5 space-y-5 body-1">
 							{% set excerpt = post.excerpt.read_more('') %}
 							{{ excerpt|length > 2000 ? excerpt|slice(0, 200) ~ '...' : excerpt }}
 						</div>
 					{% endif %}
-					{% include 'partials/socials.twig' with { 'article_url': post.link } %}
+					{# {% include 'partials/socials.twig' with { 'article_url': post.link } %} #}
 				</div>
-				<div class="article-body body-1 lg:w-7/12 wysiwyg">
+				<div class="space-y-10 article-body body-1 wysiwyg">
 					{{ post.content }}
 				</div>
 			</section>
 		</article>
 
-		<div class="relative p-4 mt-12 text-white lg:mt-24 lg:px-10 lg:py-12">
-			<div class="absolute inset-0 h-full overflow-hidden rounded-xl">
-				<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full -z-10" src="/wp-content/themes/wp-starter/assets/img/bg-banner.jpg" alt="{{ image.alt | default('Background Image') }}">
-			</div>
-			<div class="relative z-10">
-				<h2 class="pb-6 lg:w-6/12 h2">Stay in the loop</h2>
-				<div class="pb-8 lg:w-5/12 body-2">
-					Sign up to our newsletter to keep up with our latest news.
-				</div>
-				<div class="max-w-[400px]">
-					<script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/embed/v2.js"></script>
-					<script>
-						hbspt.forms.create({portalId: "144113445", formId: "0a5e9fc5-6c1f-4d40-932b-399995c83826"});
-					</script>
-				</div>
-			</div>
-		</div>
-
-		<div class="px-4 mt-12 h2 md:px-0 lg:mt-24">
-			You may also be interested in...
-		</div>
-		<div class="px-4 mt-5 lg:mt-16 lg:px-0">
-			<div class="swiper js-related-carousel">
-				<div class="swiper-wrapper">
-					{% for post in related_posts %}
-						<div class="swiper-slide">
-							{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-						</div>
-					{% endfor %}
-				</div>
-				<div class="js-related-carousel-pagination hs-pagination"></div>
-			</div>
+		{# <div class="px-4 mt-12 h2 md:px-0 lg:mt-24">
+					You may also be interested in...
+				</div> #}
+		<div class="pt-10 space-y-12 md:grid md:grid-cols-2 md:space-y-0 lg:grid-cols-3 lg:gap-10">
+			{% for post in related_posts %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
 		</div>
 	</div>
 	<!-- /content-wrapper -->

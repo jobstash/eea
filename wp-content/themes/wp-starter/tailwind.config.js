@@ -23,24 +23,23 @@ module.exports = {
       },
       colors: colorMapper(theme('settings.color.palette', themeConfig)),
       fontFamily: {
-        sans: ['"Inter"', 'sans-serif'],
+        sans: ['Inter', 'courier'],
+        heading: ['Anton', 'sans-serif'],
       },
       fontSize: fontSizeMapper(
         theme('settings.typography.fontSizes', themeConfig)
-      )
+      ),
     },
   },
   corePlugins: {
     aspectRatio: false,
     container: false,
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-  ],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 };
 
 function theme(path, theme) {
-  return path.split('.').reduce(function(previous, current) {
+  return path.split('.').reduce(function (previous, current) {
     return previous ? previous[current] : null;
   }, theme || self);
 }
@@ -48,7 +47,7 @@ function theme(path, theme) {
 function colorMapper(colors) {
   let result = {};
 
-  colors.forEach(function(color) {
+  colors.forEach(function (color) {
     result['' + color.slug + ''] = color.color;
   });
 
@@ -58,7 +57,7 @@ function colorMapper(colors) {
 function fontSizeMapper(fontSizes) {
   let result = {};
 
-  fontSizes.forEach(function(fontSize) {
+  fontSizes.forEach(function (fontSize) {
     result['' + fontSize.slug + ''] = fontSize.size;
   });
 

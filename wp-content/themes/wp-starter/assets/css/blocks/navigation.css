@@ -1,8 +1,8 @@
 /* MAIN NAVIGATION HEADER */
 
-.main-header::before {
+/* .main-header::before {
   @apply content-[''] block absolute -z-10 w-full h-full top-0 backdrop-blur-sm;
-}
+} */
 
 .menu-main-navigation-container {
   @apply grow;
@@ -15,7 +15,7 @@
 }
 
 .main-menu {
-  @apply space-y-5 relative;
+  @apply relative;
 }
 
 @media (min-width: 1024px) {
@@ -32,18 +32,22 @@
 }
 
 .menu-item a {
-  @apply transition-all text-4xl leading-none font-normal text-white;
+  @apply transition-all text-xl font-bold leading-none text-white p-4;
 }
+
+/* .menu-item:last-child a {
+  @apply border-none
+} */
 
 @media (min-width: 1024px) {
   .menu-item a {
-    @apply text-base;
+    @apply text-base p-0;
   }
 }
 
-/* .menu-item.current-menu-item a {
-  @apply opacity-50 ;
-} */
+.menu-item.current-menu-item a {
+  @apply text-green-400 ;
+}
 
 @media (min-width: 1024px) {
   .menu-item a:hover {
@@ -75,7 +79,7 @@
 }
 
 .sub-menu .menu-item a {
-  @apply text-2xl mt-5 inline-block;
+  @apply text-xl pb-0;
 }
 
 @media (min-width: 1024px) {
@@ -95,13 +99,14 @@
 }
 
 .menu-item-has-children > a.is-active svg {
-  @apply rotate-180;
+  @apply rotate-90;
 }
 
 /* LANG SWITCHER */
 .nav-open {
-  @apply translate-x-0;
+  @apply pointer-events-auto opacity-100;
 }
+
 .lang-toggle-active svg {
   @apply rotate-180;
 }

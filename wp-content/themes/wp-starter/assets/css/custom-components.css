@@ -4,7 +4,7 @@
 	}
 	
 	.btn-secondary {
-		@apply text-blue-01 uppercase text-base leading-4 font-semibold underline inline-block
+		@apply text-white  text-base leading-4 font-semibold inline-flex py-[18px]  justify-center rounded-sm border bg-[#141414] border-[#262626]
 	}
 	.btn-white {
 		@apply bg-white whitespace-nowrap text-black rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all;

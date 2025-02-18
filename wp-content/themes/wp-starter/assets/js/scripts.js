@@ -398,16 +398,16 @@ function onResize() {
   initAccordionHorz();
 }
 
-function initSplitExcerptText() {
-  const excerptElement = document.querySelector('.js-excerpt');
+// function initSplitExcerptText() {
+//   const excerptElement = document.querySelector('.js-excerpt');
 
-  if (excerptElement) {
-    const text = excerptElement.textContent.trim();
-    const parts = text.split('.').filter(part => part.trim());
-    const paragraphs = parts.map(part => `<p>${part.trim()}.</p>`).join('');
-    excerptElement.innerHTML = paragraphs;
-  }
-}
+//   if (excerptElement) {
+//     const text = excerptElement.textContent.trim();
+//     const parts = text.split('.').filter(part => part.trim());
+//     const paragraphs = parts.map(part => `<p>${part.trim()}.</p>`).join('');
+//     excerptElement.innerHTML = paragraphs;
+//   }
+// }
 
 function initFAQ() {
   const questions = document.querySelectorAll('.js-accordion-faq h3');
@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLottieAnimations();
   initAccordionHorz();
   initFAQ();
-  initSplitExcerptText();
+  // initSplitExcerptText();
   toggleHeaderClassOnScroll();
   initLangSwitcher();
   window.addEventListener('resize', debounce(onResize, 200));

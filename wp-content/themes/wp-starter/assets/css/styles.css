@@ -126,6 +126,11 @@ h3.active .icon-horizontal {
   opacity: 100;
 }
 
+.js-nav.nav-open .inner-nav {
+  @apply translate-x-0
+}
+
+
 .container {
   @apply max-w-[1504px] mx-auto w-full;
 }
@@ -140,7 +145,7 @@ h3.active .icon-horizontal {
 
 @media (min-width: 1024px) {
   .main-content {
-    @apply pt-[134px];
+    @apply pt-[128px];
   }
 }
 

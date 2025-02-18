@@ -17,10 +17,11 @@ function register_custom_menus()
       // 'secondary_menu' => 'Secondary Menu',
       'footer_menu_1' => 'Footer Menu 1',
       'footer_menu_2' => 'Footer Menu 2',
-      'lang_switcher' => 'Language Switcher',
-      // 'footer_menu_3' => 'Footer Menu 3',
-      // 'footer_menu_4' => 'Footer Menu 4',
-      // 'footer_menu_bottom' => 'Footer Menu Bottom'
+      'footer_menu_3' => 'Footer Menu 3',
+      'footer_menu_4' => 'Footer Menu 4',
+      'footer_menu_4' => 'Footer Menu 4',
+      'footer_menu_5' => 'Footer Menu 5',
+      'footer_menu_bottom' => 'Footer Menu Bottom'
     )
   );
 }

@@ -3,7 +3,7 @@
 {% set image = fields.bg_image ? get_image(fields.bg_image) : false %}
 {% set cta = fields.cta %}
 {% set color_scheme = fields.color_scheme %}
-<section class="container px-4 md:px-8">
+<section class="container px-4 md:px-12">
 	<div class="relative p-4 lg:px-10 lg:py-12 {% if color_scheme %}text-blue-01{% else %}text-white{% endif %}">
 		<div class="absolute inset-0 z-10 h-full overflow-hidden rounded-xl">
 			<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full -z-10" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 1500px" alt="{{ image.alt | default('Icon') }}">

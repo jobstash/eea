@@ -1,19 +1,28 @@
-<section class="container px-4 md:px-8">
-	<div class="relative flex flex-col gap-y-4 p-4 xl:p-0 xl:min-h-[790px]">
+{# <svg class="absolute top-0 left-0 -z-10" width="572" height="1198" viewbox="0 0 572 1198" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M-631 -47.6L-55 -880V208.8L-631 -47.6ZM-4.59961 -880V208.8L571.4 -47.6L-4.59961 -880ZM-404 108.6L-25.6 264L343 112.2L571.4 196.8L-29.8 453.2L-631 196.8L-404 108.6ZM-55 735L-631 486.8L-55 1197.4V735ZM571.4 486.8L-4.59961 735V1197.4L571.4 486.8ZM-25.6 506.4L-404 350.8L-631 439L-29.8 695.6L571.4 439L343 354.4L-25.6 506.4Z" fill="url(#paint0_radial_4864_39510)" style="mix-blend-mode:lighten"/>
+	<defs>
+		<radialGradient id="paint0_radial_4864_39510" cx="0" cy="0" r="1" gradientunits="userSpaceOnUse" gradienttransform="translate(13.0003 159) rotate(-90) scale(1039 635.361)">
+			<stop stop-color="#454545"/>
+			<stop offset="1" stop-color="#0E0E0E" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+</svg> #}
+<section class="container relative px-6 -mt-[134px] md:px-12">
+	<div class="relative flex flex-col md:flex-row-reverse md:flex-wrap">
 		{% set title = fields.title ?? 'Hero Home' %}
 		{% set text = fields.text ?? '' %}
-		{% set image = fields.image ?? '' %}
-
-		<h1 class="mt-[60%] xl:w-8/12 xl:ml-[25%] xl:mt-20 h1">{{ title }}</h1>
-
-		<div class="body-3 xl:w-4/12 xl:ml-[41.666667%] xl:mt-10">
-			{{ text | raw }}
+		{% set image = fields.image ? get_image(fields.image) : false %}
+		<div class="md:w-5/12 md:pl-12">
+			<div class="relative aspect-w-16 aspect-h-15">
+				<img loading="lazy" class="object-cover object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" alt="{{ image.alt | default('Our Team') }}">
+			</div>
+		</div>
+		<div class="md:w-7/12 md:pr-12">
+			<h1 class="h1 pt-[4.5rem] text-white ">{{ title | raw | replace({'<p>': '', '</p>': ''}) }}</h1>
+			<div class="pt-4 body-3">
+				{{ text | raw }}
+			</div>
 		</div>
 
-		{# {% if bg_anim %}
-			<div class="absolute inset-0 overflow-hidden -z-10 rounded-3xl bg-gray-03">
-				<div class="object-cover object-center lottie"  data-lottie-animation='{{ bg_anim | raw }}' data-lottie-loop="true" data-preserve-aspect-ratio="false" data-lottie-autoplay="true" data-lottie-speed="1"></div>
-			</div>
-		{% endif %} #}
 	</div>
 </section>

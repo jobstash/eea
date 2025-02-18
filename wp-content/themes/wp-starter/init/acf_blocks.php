@@ -6,13 +6,19 @@ $acf_blocks = array(
     'name'   => 'hero-home',
     'title'  => __('Hero Home'),
     'description'    => __('A block for Home page Hero.'),
-    'keywords'      => array('hero', 'heading')
+    'keywords'      => array('hero', 'home')
   ),
   array(
     'name'   => 'hero-default',
     'title'  => __('Hero default'),
     'description'    => __('A block for the Default Hero.'),
     'keywords'      => array('hero', 'heading')
+  ),
+  array(
+    'name'   => 'divider',
+    'title'  => __('Divider'),
+    'description'    => __('Divider'),
+    'keywords'      => array('Divider')
   ),
   // array(
   //   'name'   => 'platform-hero',
@@ -146,6 +152,7 @@ $allowed_blocks = array(
   'core/list',
   'core/quote',
   'core/html',
+  'core/divider',
   'core/table',
   'core/list',
   'core/list-item',
