@@ -58,16 +58,9 @@ body.admin-bar {
 }
 
 h3.active .icon-vertical {
-  transform: rotate(90deg);
+  transform: rotate(-180deg);
 }
 
-h3.active .icon-vertical {
-  transform: rotate(90deg);
-}
-
-h3.active .icon-horizontal {
-  transform: scaleX(1);
-}
 
 @media (min-width: 1024px) {
   .js-accordion-horz-item:not(.active):hover .bg-blue-04 {

@@ -56,16 +56,16 @@ h2.wp-block-heading  {
 .h4,
 .wysiwyg h4,
 .editor-styles-wrapper h4 {
-  @apply text-2xl leading-[120%] font-normal antialiased;
+  @apply text-xl leading-[120%] font-bold antialiased;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .h4,
   .wysiwyg h4,
   .editor-styles-wrapper h {
     @apply text-4xl;
   }
-}
+} */
 
 .h5,
 .wysiwyg h5,

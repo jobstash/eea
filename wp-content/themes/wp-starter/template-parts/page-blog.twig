@@ -2,13 +2,13 @@
 
 {% block content %}
     
-    <div class="container px-6 space-y-10 lg:space-y-20 category-archive md:px-12">
+    <div class="container px-6 category-archive md:px-12">
         {% include 'breadcrumbs.twig' with { 'page': page } %}
-        <div class="lg:max-w-[66%] space-y-10 lg:space-y-20">
+        <div class="lg:max-w-[66%] ">
             {{ post.content }}
         </div>
         {% if posts %}
-            <div class="space-y-12 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10">
+            <div class=" md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10">
                 {% for post in posts %}
                     {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
                 {% endfor %}

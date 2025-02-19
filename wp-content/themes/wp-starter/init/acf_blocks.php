@@ -32,6 +32,12 @@ $acf_blocks = array(
     'description'    => __('CTAs'),
     'keywords'      => array('CTA', 'CTAs')
   ),
+  array(
+    'name'   => 'listed-paragraphs',
+    'title'  => __('Listed Paragraphs'),
+    'description'    => __('Listed Paragraphs'),
+    'keywords'      => array('Listed', 'Paragraphs')
+  ),
   // array(
   //   'name'   => 'banner',
   //   'title'  => __('Banners'),
