@@ -1,0 +1,9 @@
+<div class="grid grid-cols-1 gap-6 lg:py-8 md:grid-cols-2 lg:grid-cols-4">
+    {% if entries %}
+        {% for post in entries %}
+            {% include 'tease.twig' with {'post': post} %}
+        {% endfor %}
+    {% else %}
+        <p>No posts selected.</p>
+    {% endif %}
+</div>

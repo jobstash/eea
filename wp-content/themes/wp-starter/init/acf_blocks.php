@@ -86,12 +86,12 @@ $acf_blocks = array(
     'description'    => __('FAQ Accordion'),
     'keywords'      => array('Accordion', 'FAQ', 'QA')
   ),
-  // array(
-  //   'name'   => 'products-overview',
-  //   'title'  => __('Products Overview'),
-  //   'description'    => __('A block for the 3 Products.'),
-  //   'keywords'      => array('products', 'overview', 'teaser')
-  // ),
+  array(
+    'name'   => 'entries',
+    'title'  => __('Entries'),
+    'description'    => __('Entries'),
+    'keywords'      => array('entries')
+  ),
   // array(
   //   'name'   => 'advisory-board',
   //   'title'  => __('Advisory Board'),
