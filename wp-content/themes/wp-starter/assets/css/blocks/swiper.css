@@ -2,14 +2,18 @@
   @apply !h-auto
 }
 
-.hs-pagination  {
+.eea-pagination  {
   @apply relative top-0 text-center pt-6
 }
 
-.hs-pagination  .swiper-pagination-bullet {
-  @apply transition-all origin-center	 ease-out	bg-blue-05 opacity-100
+.eea-pagination  .swiper-pagination-bullet {
+  @apply transition-all origin-center	 ease-out	bg-white/40 opacity-100 w-[10px] h-[10px]
 }
 
-.hs-pagination .swiper-pagination-bullet-active {
-  @apply bg-blue-01 w-6 rounded-md
+.eea-pagination .swiper-pagination-bullet-active {
+  @apply bg-white  rounded-md
+}
+
+.quote-block .swiper-slide-active{
+  @apply bg-[#FAB967] transition-colors
 }

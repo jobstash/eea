@@ -1,25 +1,33 @@
 {% set title = fields.title ?? 'Quote component' %}
 {% set items = fields.items %}
 
-<div>
-    <div class="container px-6 md:px-12">
+    <div class="relative">
         {% if items %}
 			<div class="mt-8 lg:mt-16">
-				<div class="swiper js-quotes-carousel">
-					<div class="swiper-wrapper ">
+				<div class="!overflow-visible swiper js-quotes-carousel">
+					<div class="swiper-wrapper">
 						{% for item in items %}
-							<div class="swiper-slide">
-								<div class="mx-auto text-center lg:w-8/12">
-									<h4 class="h4">{{item.quote}}</h4>
-									<div class="body-1 pt-9">{{item.name}}</div>
-                                    <div class="body-1">{{item.position}}</div>
+							{% set image = item.image ? get_image(item.image) : false %}
+
+							<div class="transition-all duration-500 swiper-slide bg-white/5 p-9">
+								<div class="mx-auto">
+									<h4 class="text-[15px] leading-[150%] pb-6">{{item.quote}}</h4>
+									<div class="flex">
+										{% if image %}
+											<img class="block overflow-hidden rounded-full shrink-0" loading="lazy" width="50" height="50" src="{{ image.src }}" alt="{{ image.alt | default('Icon') }}">
+										{% endif %}
+										<div class="ml-5 uppercase text-[12px]">
+											<span class="font-bold">{{item.name}}</span>
+											<span class="block">{{item.position}}</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						{% endfor %}
+						<div class="swiper-slide"></div>
 					</div>
-					<div class="js-quotes-carousel-pagination hs-pagination"></div>
+					<div class="js-quotes-carousel-pagination eea-pagination"></div>
 				</div>
 			</div>
 		{% endif %}
     </div>
-</div>

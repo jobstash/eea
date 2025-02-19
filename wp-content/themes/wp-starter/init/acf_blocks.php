@@ -27,6 +27,12 @@ $acf_blocks = array(
     'keywords'      => array('eea', 'anchor')
   ),
   array(
+    'name'   => 'eea-board-wall',
+    'title'  => __('EEA board wall'),
+    'description'    => __('EEA board wall'),
+    'keywords'      => array('eea', 'board', 'wall')
+  ),
+  array(
     'name'   => 'ctas',
     'title'  => __('CTAs'),
     'description'    => __('CTAs'),

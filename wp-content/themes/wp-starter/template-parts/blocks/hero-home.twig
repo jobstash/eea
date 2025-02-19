@@ -7,7 +7,16 @@
 		</radialGradient>
 	</defs>
 </svg> #}
-<section class="container relative -mt-[134px] ">
+<svg class="absolute top-0 left-0 w-1/3 -z-10" fill="none" viewBox="0 0 572 1198">
+  <path fill="url(#a)" fill-rule="evenodd" d="M-631-47.6-55-880V208.8L-631-47.6ZM-4.6-880V208.8l576-256.4L-4.6-880ZM-404 108.6-25.6 264 343 112.2l228.4 84.6-601.2 256.4L-631 196.8l227-88.2ZM-55 735l-576-248.2 576 710.6V735Zm626.4-248.2L-4.6 735v462.4l576-710.6Zm-597 19.6L-404 350.8-631 439l601.2 256.6L571.4 439 343 354.4l-368.6 152Z" clip-rule="evenodd" style="mix-blend-mode:lighten"/>
+  <defs>
+    <radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="matrix(0 -1039 635.361 0 13 159)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#454545"/>
+      <stop offset="1" stop-color="#0E0E0E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+<div class="">
 	<div class="relative flex flex-col md:flex-row-reverse md:flex-wrap">
 		{% set title = fields.title ?? 'Hero Home' %}
 		{% set text = fields.text ?? '' %}
@@ -19,10 +28,10 @@
 		</div>
 		<div class="md:w-7/12 md:pr-12">
 			<h1 class="h1 pt-[4.5rem] text-white ">{{ title | raw | replace({'<p>': '', '</p>': ''}) }}</h1>
-			<div class="pt-4 body-3">
+			<div class="pt-4 body-1">
 				{{ text | raw }}
 			</div>
 		</div>
 
 	</div>
-</section>
+</div>

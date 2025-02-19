@@ -126,12 +126,21 @@ const swiperConfigs = {
   },
   quotes: {
     modules: [Pagination],
-    slidesPerView: 1,
-    spaceBetween: 32,
+    slidesPerView: 1.2,
+    spaceBetween: 24,
     pagination: {
       el: '.js-quotes-carousel-pagination',
       clickable: true,
     },
+    breakpoints: {
+      768: {
+        slidesPerView: 2.4,
+      },
+      1024: {
+        slidesPerView: 2,
+      },
+    },
+    
   },
 };
 
@@ -334,8 +343,8 @@ function initAccordionHorz() {
         if (e.propertyName === 'width' && item.classList.contains('active')) {
           const h3 = item.querySelector('h3');
           if (h3) {
-            h3.classList.add('text-4xl');
-            h3.classList.remove('body-3');
+            // h3.classList.add('text-4xl');
+            // h3.classList.remove('body-3');
           }
         }
       });
@@ -348,8 +357,8 @@ function initAccordionHorz() {
 
       const firstH3 = firstItem.querySelector('h3');
       if (firstH3) {
-        firstH3.classList.add('text-4xl');
-        firstH3.classList.remove('body-3');
+        // firstH3.classList.add('text-4xl');
+        // firstH3.classList.remove('body-3');
       }
     }
 
@@ -364,8 +373,8 @@ function initAccordionHorz() {
 
           const h3 = el.querySelector('h3');
           if (h3) {
-            h3.classList.remove('text-4xl');
-            h3.classList.add('body-3');
+            // h3.classList.remove('text-4xl');
+            // h3.classList.add('body-3');
           }
         });
         
