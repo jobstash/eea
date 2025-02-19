@@ -26,6 +26,12 @@ $acf_blocks = array(
     'description'    => __('EEA anchor listing'),
     'keywords'      => array('eea', 'anchor')
   ),
+  array(
+    'name'   => 'ctas',
+    'title'  => __('CTAs'),
+    'description'    => __('CTAs'),
+    'keywords'      => array('CTA', 'CTAs')
+  ),
   // array(
   //   'name'   => 'banner',
   //   'title'  => __('Banners'),
@@ -50,24 +56,24 @@ $acf_blocks = array(
   //   'description'    => __('A Carousel to display Investors'),
   //   'keywords'      => array('Slider', 'Investors')
   // ),
-  // array(
-  //   'name'   => 'partners-carousel',
-  //   'title'  => __('Slider Partner'),
-  //   'description'    => __('A Carousel to display partners'),
-  //   'keywords'      => array('Carousel', 'Partners')
-  // ),
-  // array(
-  //   'name'   => 'horizontal-accordion',
-  //   'title'  => __('Horizontal Accordion'),
-  //   'description'    => __('An horizontal accordions made with tiles'),
-  //   'keywords'      => array('accordion', 'horizontal')
-  // ),
-  // array(
-  //   'name'   => 'faq',
-  //   'title'  => __('FAQ'),
-  //   'description'    => __('FAQ Accordion'),
-  //   'keywords'      => array('Accordion', 'FAQ', 'QA')
-  // ),
+  array(
+    'name'   => 'partners-carousel',
+    'title'  => __('Slider Partner'),
+    'description'    => __('A Carousel to display partners'),
+    'keywords'      => array('Carousel', 'Partners')
+  ),
+  array(
+    'name'   => 'horizontal-accordion',
+    'title'  => __('Horizontal Accordion'),
+    'description'    => __('An horizontal accordions made with tiles'),
+    'keywords'      => array('accordion', 'horizontal')
+  ),
+  array(
+    'name'   => 'faq',
+    'title'  => __('FAQ'),
+    'description'    => __('FAQ Accordion'),
+    'keywords'      => array('Accordion', 'FAQ', 'QA')
+  ),
   // array(
   //   'name'   => 'products-overview',
   //   'title'  => __('Products Overview'),
@@ -128,12 +134,12 @@ $acf_blocks = array(
   //   'description'    => __('Slider News'),
   //   'keywords'      => array('Slider', 'News')
   // ),
-  // array(
-  //   'name'   => 'quote',
-  //   'title'  => __('Quote'),
-  //   'description'    => __('Quote'),
-  //   'keywords'      => array('Quote')
-  // ),
+  array(
+    'name'   => 'quote',
+    'title'  => __('Quote'),
+    'description'    => __('Quote'),
+    'keywords'      => array('Quote')
+  ),
   // array(
   //   'name'   => 'contact',
   //   'title'  => __('Contact'),
