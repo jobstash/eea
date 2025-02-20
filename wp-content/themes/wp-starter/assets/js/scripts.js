@@ -68,7 +68,7 @@ const swiperConfigs = {
     },
     breakpoints: {
       1024: {
-        spaceBetween: 200,
+        spaceBetween: 70,
       },
     },
   },
