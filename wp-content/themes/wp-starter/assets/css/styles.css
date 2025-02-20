@@ -192,8 +192,66 @@ h3.active .icon-vertical {
 }
 
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .core-block > p {
     @apply !w-[66%]
   }
-} 
+}  */
+
+.wpcf7-form-control {
+  @apply bg-transparent text-white placeholder-white/80 border-b border-white focus:outline-none focus:border-white/80;
+}
+
+.wpcf7-form * {
+  @apply !text-base 
+}
+
+.wpcf7-form-control::placeholder {
+  @apply text-white/80;
+}
+
+.wpcf7-list-item-label {
+  @apply text-white/80; 
+}
+
+.wpcf7-radio input {
+  @apply hidden;
+}
+
+.wpcf7-list-item label {
+  @apply flex items-center gap-2 cursor-pointer ;
+}
+
+.wpcf7-list-item-label::before {
+  content: "";
+  @apply w-4 h-4 border border-white rounded-full shrink-0 block;
+}
+
+.wpcf7-radio input:checked + .wpcf7-list-item-label::before {
+  @apply bg-white;
+}
+
+.wpcf7-submit {
+  @apply btn-primary;
+}
+
+.wpcf7-form p {
+  @apply mb-12 flex space-x-8
+}
+
+.wpcf7-form p span {
+  @apply inline-block w-full
+}
+
+.wpcf7-form p span * {
+  @apply w-full pb-4 px-4
+}
+
+.wpcf7-textarea {
+  @apply w-full h-12 bg-transparent text-white placeholder-white/80 border-b border-white focus:outline-none focus:border-white/80;
+}
+
+.wpcf7-form p > label {
+  @apply w-full
+}
+

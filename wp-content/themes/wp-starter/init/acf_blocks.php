@@ -50,24 +50,18 @@ $acf_blocks = array(
     'description'    => __('Home Teaser'),
     'keywords'      => array('Home', 'Teaser')
   ),
-  // array(
-  //   'name'   => 'cta-banner',
-  //   'title'  => __('CTA Banner'),
-  //   'description'    => __('CTA Banner'),
-  //   'keywords'      => array('CTA Banner')
-  // ),
-  // array(
-  //   'name'   => 'simple-banner',
-  //   'title'  => __('Simple Banner'),
-  //   'description'    => __('Simple Banner'),
-  //   'keywords'      => array('Simple Banner')
-  // ),
-  // array(
-  //   'name'   => 'slider-investors',
-  //   'title'  => __('Slider Investors'),
-  //   'description'    => __('A Carousel to display Investors'),
-  //   'keywords'      => array('Slider', 'Investors')
-  // ),
+  array(
+    'name'   => 'application',
+    'title'  => __('Application'),
+    'description'    => __('Application'),
+    'keywords'      => array('Application')
+  ),
+  array(
+    'name'   => 'eea-groups',
+    'title'  => __('EEA Groups'),
+    'description'    => __('EEA Groups'),
+    'keywords'      => array('EEA Groups')
+  ),
   array(
     'name'   => 'partners-carousel',
     'title'  => __('Slider Partner'),
@@ -92,72 +86,12 @@ $acf_blocks = array(
     'description'    => __('Entries'),
     'keywords'      => array('entries')
   ),
-  // array(
-  //   'name'   => 'advisory-board',
-  //   'title'  => __('Advisory Board'),
-  //   'description'    => __('Advisory Board'),
-  //   'keywords'      => array('Advisory Board')
-  // ),
-  // array(
-  //   'name'   => 'apps',
-  //   'title'  => __('Apps Module'),
-  //   'description'    => __('Apps'),
-  //   'keywords'      => array('Apps')
-  // ),
-  // array(
-  //   'name'   => 'text-image',
-  //   'title'  => __('Text and Media'),
-  //   'description'    => __('2 columns layout with text and image'),
-  //   'keywords'      => array('2 columns', 'text', 'image')
-  // ),
-  // array(
-  //   'name'   => 'platform',
-  //   'title'  => __('Text and Lottie'),
-  //   'description'    => __('Text and Lottie'),
-  //   'keywords'      => array('Text and Lottie')
-  // ),
-  // array(
-  //   'name'   => 'text-graphics',
-  //   'title'  => __('Text and Graphics'),
-  //   'description'    => __('Text and Graphics'),
-  //   'keywords'      => array('Text and Graphics')
-  // ),
-  // array(
-  //   'name'   => 'img-graphics-text',
-  //   'title'  => __('Img, graphics and Text'),
-  //   'description'    => __('Img, graphics and Text'),
-  //   'keywords'      => array('Img, graphics and Text')
-  // ),
-  // array(
-  //   'name'   => 'map',
-  //   'title'  => __('Map'),
-  //   'description'    => __('Map'),
-  //   'keywords'      => array('Map', 'location')
-  // ),
-  // array(
-  //   'name'   => 'security',
-  //   'title'  => __('Grid / Security'),
-  //   'description'    => __('An multi column component'),
-  //   'keywords'      => array('Multi', 'Columns')
-  // ),
-  // array(
-  //   'name'   => 'slider-news',
-  //   'title'  => __('Slider News'),
-  //   'description'    => __('Slider News'),
-  //   'keywords'      => array('Slider', 'News')
-  // ),
   array(
     'name'   => 'quote',
     'title'  => __('Quote'),
     'description'    => __('Quote'),
     'keywords'      => array('Quote')
   ),
-  // array(
-  //   'name'   => 'contact',
-  //   'title'  => __('Contact'),
-  //   'description'    => __('Contact'),
-  //   'keywords'      => array('Contact', 'Forms')
-  // ),
 );
 
 // Gutenberg Blocks allowed

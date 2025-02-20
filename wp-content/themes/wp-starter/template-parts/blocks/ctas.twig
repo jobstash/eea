@@ -1,14 +1,31 @@
 {% set ctas = fields.ctas %}
+
 {% if ctas %}
-    <ul class="space-y-7 md:w-1/4 lg:w-full lg:flex lg:space-x-7 lg:space-y-0">
+    <ul class="inline-flex space-y-7 lg:w-full lg:flex lg:space-x-7 lg:space-y-0">
         {% for item in ctas %}
+            {% set theme = item.theme %}
             {% if item.cta %}
                 <li>
-                    <a class="w-full btn-secondary lg:min-w-[290px]" href="{{ item.cta.url }}" target="{{ item.cta.target ?: '_self' }}">
+                    <a class="w-full text-center {% if theme == 'primary' or 'primary-no-icon' %}btn-primary {% else %} btn-secondary {% endif %}" href="{{ item.cta.url }}" target="{{ item.cta.target ?: '_self' }}">
                         {{ item.cta.title }}
-                        <svg class="ml-2" width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 0.25L16 0.25C16.1989 0.25 16.3897 0.329018 16.5303 0.46967C16.671 0.610322 16.75 0.801088 16.75 1V12.25C16.75 12.6642 16.4142 13 16 13C15.5858 13 15.25 12.6642 15.25 12.25V2.81066L1.53033 16.5303C1.23744 16.8232 0.762563 16.8232 0.46967 16.5303C0.176777 16.2374 0.176777 15.7626 0.46967 15.4697L14.1893 1.75L4.75 1.75C4.33579 1.75 4 1.41421 4 1C4 0.585787 4.33579 0.25 4.75 0.25Z" fill="white"/>
-                        </svg>
+                        {% if theme == 'secondary' %}
+                            <svg class="ml-2" width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 0.25L16 0.25C16.1989 0.25 16.3897 0.329018 16.5303 0.46967C16.671 0.610322 16.75 0.801088 16.75 1V12.25C16.75 12.6642 16.4142 13 16 13C15.5858 13 15.25 12.6642 15.25 12.25V2.81066L1.53033 16.5303C1.23744 16.8232 0.762563 16.8232 0.46967 16.5303C0.176777 16.2374 0.176777 15.7626 0.46967 15.4697L14.1893 1.75L4.75 1.75C4.33579 1.75 4 1.41421 4 1C4 0.585787 4.33579 0.25 4.75 0.25Z" fill="white"/>
+                            </svg>
+                        {% endif %}
+                        {% if theme == 'primary' %}
+                            <svg fill="none" viewBox="0 0 19 24" class="block h-[18px] ml-2">
+                                <path fill="url(#a)" fill-rule="evenodd" d="m17.985 15.153-7.955 7.955a.75.75 0 0 1-1.06 0l-7.956-7.955a.75.75 0 0 1 1.061-1.061l6.675 6.675V1.364a.75.75 0 0 1 1.5 0v19.402l6.674-6.674a.75.75 0 1 1 1.061 1.06Z" clip-rule="evenodd"/>
+                                <defs>
+                                    <linearGradient id="a" x1="15.333" x2="3.666" y1="17.804" y2="6.137" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4F5275"/>
+                                    <stop offset="1" stop-color="#45475A"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        {% elseif theme == 'primary-no-icon' %}
+                             
+                        {% endif %}
                     </a>
                 </li>
             {% endif %}

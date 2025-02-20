@@ -182,15 +182,3 @@ h2.wp-block-heading  {
   @apply underline
 }
 
-
-/* .article-content .core-block > p {
- @apply text-[#C9C9C9] text-xl leading-[150%]
-} */
-
-
-/* @media (min-width: 1024px) {
-  .article-content .core-block > p,
-  .article-content .core-block > h2 {
-    @apply max-w-[66%]
-  }
-} */
