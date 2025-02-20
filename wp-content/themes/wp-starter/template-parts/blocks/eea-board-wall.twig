@@ -1,3 +1,4 @@
+{% set colors = ['#FFCF01', '#00B6F0', '#F98D76', '#01AB64', '#B47AB4', '#3E5BA9'] %}
 
 <div class="flex flex-col">
 	<div class="flex flex-col py-6 gap-y-10 lg:gap-y-16">
@@ -5,12 +6,13 @@
 		{% if logos %}
 			<div class="">
 				<div>
-					<div class="flex">
+					<div class="grid grid-cols-2 gap-4 md:grid-cols-3">
 						{% for i in logos %}
-                            {% set image = i.logo ? get_image(i.logo) : false %}
-							<div class="">
-								<div class="">
-									<img loading="lazy" class="" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="200px" alt="{{ image.alt | default('Icon') }}">
+              {% set image = i.logo ? get_image(i.logo) : false %}
+              {% set borderColor = random(colors) %}
+							<div class="bg-[#141414] flex items-center justify-center min-h-[150px] md:min-h-[240px] border-b-[4px]" style="border-color: {{ borderColor }}">
+								<div class="w-1/2 lg:w-2/5 aspect-w-16 aspect-h-9">
+									<img loading="lazy" class="object-contain object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="200px" alt="{{ image.alt | default('Icon') }}">
 								</div>
 							</div>
 						{% endfor %}
@@ -19,43 +21,4 @@
 			</div>
 		{% endif %}
 	</div>
-
 </div>
-{# 
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-  }
-  .grid-item {
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  .grid-item img {
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
-<div id="logoGrid" class="grid"></div>
-
-<script>
-  const logos = [
-    "logo1.png", "logo2.png", "logo3.png", "logo4.png", "logo5.png"
-  ];
-
-  const grid = document.getElementById("logoGrid");
-
-  logos.forEach(logo => {
-    const div = document.createElement("div");
-    div.classList.add("grid-item");
-    div.innerHTML = `<img src="${logo}" alt="Logo">`;
-    grid.appendChild(div);
-  });
-</script> #}
