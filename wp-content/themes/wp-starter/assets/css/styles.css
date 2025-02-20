@@ -67,7 +67,8 @@ h3.active .icon-vertical {
     @apply bg-blue-03 cursor-pointer;
   }
 
-  .js-accordion-horz-item.active p {
+  .js-accordion-horz-item.active p,
+  .js-accordion-horz-item.active h3 {
     @apply opacity-100;
   }
 
