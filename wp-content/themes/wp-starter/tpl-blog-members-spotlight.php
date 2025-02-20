@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Member Spotlight Page */
+/* Template Name: Member Spotlight Category Page */
 $context = Timber::context();
 $context['post'] = Timber::get_post();
 $context['title'] = get_the_title();

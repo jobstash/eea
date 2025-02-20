@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Blog Page */
+/* Template Name: Blog Category Page */
 $context = Timber::context();
 $context['post'] = Timber::get_post();
 $context['title'] = get_the_title();

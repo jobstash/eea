@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Member News Page */
+/* Template Name: Member News Category Page */
 $context = Timber::context();
 $context['post'] = Timber::get_post();
 $context['title'] = get_the_title();

@@ -1,0 +1,67 @@
+{
+    "key": "group_67b759b2c735e",
+    "title": "Resources Category Post",
+    "fields": [
+        {
+            "key": "field_67b759b23da0a",
+            "label": "Download File",
+            "name": "download_file",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:eea-primers"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:surveys-reports"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:technical-specifications"
+            }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:newsletters"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1740071124
+}
