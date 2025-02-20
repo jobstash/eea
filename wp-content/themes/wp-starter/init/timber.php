@@ -70,8 +70,6 @@ class StarterSite extends Site
       $context['parent'] = $current_post->parent();
     }
 
-  return $context;
-
     // Fetch related posts by category
     if ($current_post && !empty($current_post->terms('category'))) {
       $category_ids = array_map(function ($term) {
@@ -132,6 +130,18 @@ class StarterSite extends Site
     } else {
       $context['image'] = false;
     }
+
+    // Get the fields
+    $fields = get_fields();
+    
+    // Convert entries to Timber Posts if they exist
+    if (!empty($fields['entries'])) {
+        $fields['entries'] = array_map(function($post) {
+            return new \Timber\Post($post);
+        }, $fields['entries']);
+    }
+    
+    $context['fields'] = $fields;
 
     return $context;
   }

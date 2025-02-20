@@ -1,3 +1,7 @@
+{% if post.class is not defined or post.class != 'Timber\\Post' %}
+    {% set post = get_post(post) %}
+{% endif %}
+
 <article class="tease h-full tease-{{ post.post_type }}" id="tease-{{ post.ID }}">
 	{% block content %}
 		<div class="flex flex-col h-full">
