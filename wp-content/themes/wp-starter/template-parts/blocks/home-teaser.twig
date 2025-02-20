@@ -1,0 +1,66 @@
+<div>
+	{% set homeTeaserCtas = fields.home_teaser_ctas %}
+	{% set homeTeaserItems = fields.home_teaser_elements %}
+
+	{% if homeTeaserCtas %}
+		<div class="md:grid md:grid-cols-3 md:gap-12">
+			{% for item in homeTeaserCtas %}
+				{% if item.link %}
+					<a class="block transition-all border-b hover:opacity-70 repeater-item border-nav-border lg:border-b-0 lg:border-r lg:pr-12 lg:last:border-r-0 lg:h-full" href="{{ item.link.url }}">
+					{% endif %}
+					<div class="py-10 space-y-5 ">
+
+						{% if item.icon %}
+							<img src="{{ item.icon.url }}" alt="{{ item.icon.alt }}">
+						{% endif %}
+						<div class="flex justify-between pb-3">
+							<div class="space-y-2">
+								<h3 class="text-white h5">{{ item.title }}</h3>
+								<p class="text-[#7E7E81] text-[15px]">{{ item.text }}</p>
+							</div>
+							<div class=" md:hidden lg:flex self-start shrink-0 w-[42px] h-[42px] rounded-full flex items-center justify-center" style="background-color: {{ item.cta_color }}">
+								<svg class="w-[13px] h-[14px]" fill="none" viewbox="0 0 14 14">
+									<path fill="#141414" fill-rule="evenodd" d="M3.828.547h9.14a.609.609 0 0 1 .61.61v9.14a.61.61 0 0 1-1.219 0v-7.67L1.212 13.775a.61.61 0 1 1-.862-.862L11.498 1.766h-7.67a.61.61 0 0 1 0-1.22Z" clip-rule="evenodd"/>
+								</svg>
+							</div>
+						</div>
+
+						<span class="text-[#7E7E81] text-[17px] ">{{ item.link.title }}</span>
+						<div class="md:flex lg:hidden hidden self-start shrink-0 w-[42px] h-[42px] rounded-full  items-center justify-center" style="background-color: {{ item.cta_color }}">
+							<svg class="w-[13px] h-[14px]" fill="none" viewbox="0 0 14 14">
+								<path fill="#141414" fill-rule="evenodd" d="M3.828.547h9.14a.609.609 0 0 1 .61.61v9.14a.61.61 0 0 1-1.219 0v-7.67L1.212 13.775a.61.61 0 1 1-.862-.862L11.498 1.766h-7.67a.61.61 0 0 1 0-1.22Z" clip-rule="evenodd"/>
+							</svg>
+						</div>
+					</div>
+					{% if item.link %}
+					</a>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% if homeTeaserItems %}
+		<div class="relative">
+			<div class="mx-auto my-5">
+				<img class="block mx-auto" src="{{ site.theme.link }}/assets/img/home-teaser.png"/>
+			</div>
+            <div class="md:grid md:grid-cols-3 md:gap-8">
+                {% for item in homeTeaserItems %}
+                    <div>
+                        <div class="relative lg:max-w-[350px] lg:h-auto {% if loop.index == 1 or loop.index == 3 %} lg:-mt-96 {% endif %} lg:mx-auto lg:mb-0 mb-8  py-10 space-y-6 border-b bg-[#111111] border-t-2 rounded-xl p-6 repeater-item border-nav-border" style="border-top-color: {{ item.item_color }}">
+                            <div class="absolute top-0 left-0 hidden w-16 h-16 -translate-x-1/2 -translate-y-1/2 border-[10px] border-white/50 border-opacity-40 lg:block rounded-3xl" style="background-color: {{ item.item_color }}"></div>
+                            {% if item.item_icon %}
+                                <img src="{{ item.item_icon.url }}" alt="{{ item.item_icon.alt }}">
+                            {% endif %}
+                            <div class="flex justify-between">
+                                <div class="space-y-4">
+                                    <h3 class="text-base font-medium text-white">{{ item.item_title }}</h3>
+                                    <p class="text-[#7E7E81] text-base leading-[200%]">{{ item.item_text }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+		</div>
+	{% endif %}
+</div>

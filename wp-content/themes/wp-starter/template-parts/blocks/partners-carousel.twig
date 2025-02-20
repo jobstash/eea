@@ -10,7 +10,7 @@
 							{% set logo = logos[i % logos|length] %}
 							{% set image = logo.image ? get_image(logo.image) : false %}
 
-							<div class="swiper-slide w-full lg:!w-[140px]">
+							<div class="swiper-slide !w-[140px]">
 								<div class="flex flex-col justify-center w-full h-[70px]">
 									<img loading="lazy" class="absolute inset-0 block object-contain object-center w-full h-full" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="200px" alt="{{ image.alt | default('Icon') }}">
 								</div>

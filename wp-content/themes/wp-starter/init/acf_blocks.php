@@ -44,12 +44,12 @@ $acf_blocks = array(
     'description'    => __('Listed Paragraphs'),
     'keywords'      => array('Listed', 'Paragraphs')
   ),
-  // array(
-  //   'name'   => 'banner',
-  //   'title'  => __('Banners'),
-  //   'description'    => __('A Banner to display informations in tiles'),
-  //   'keywords'      => array('Banner')
-  // ),
+  array(
+    'name'   => 'home-teaser',
+    'title'  => __('Home Teaser'),
+    'description'    => __('Home Teaser'),
+    'keywords'      => array('Home', 'Teaser')
+  ),
   // array(
   //   'name'   => 'cta-banner',
   //   'title'  => __('CTA Banner'),
