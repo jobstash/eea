@@ -19,7 +19,7 @@
             "default_value": "",
             "allow_in_bindings": 1,
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 0,
             "delay": 0
         },
@@ -45,9 +45,9 @@
             "new_lines": ""
         },
         {
-            "key": "field_67af7639333c7",
+            "key": "field_67b856e5cad10",
             "label": "Image",
-            "name": "image",
+            "name": "image_hero_home",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -89,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739808940
+    "modified": 1740134727
 }

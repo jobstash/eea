@@ -255,3 +255,17 @@ h3.active .icon-vertical {
   @apply w-full
 }
 
+
+.gradient-text {
+  background: linear-gradient(
+        to right, 
+        #FFCF01 0%, 
+        #FAB967 22%, 
+        #B47AB4 43%, 
+        #01AB64 63%, 
+        #00B6F0 80%, 
+        #3E5BA9 100%
+    );
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
