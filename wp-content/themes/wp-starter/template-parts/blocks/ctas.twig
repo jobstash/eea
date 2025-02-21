@@ -1,12 +1,18 @@
 {% set ctas = fields.ctas %}
 
 {% if ctas %}
-    <ul class="inline-flex space-y-7 lg:w-full lg:flex lg:space-x-7 lg:space-y-0">
+    <ul class="flex flex-wrap gap-7">
         {% for item in ctas %}
             {% set theme = item.theme %}
             {% if item.cta %}
                 <li>
-                    <a class="w-full text-center {% if theme == 'primary' or 'primary-no-icon' %}btn-primary {% else %} btn-secondary {% endif %}" href="{{ item.cta.url }}" target="{{ item.cta.target ?: '_self' }}">
+                    <a class="w-full text-center 
+                                {% if theme == 'primary' or theme == 'primary-no-icon' %}
+                                    btn-primary 
+                                {% else %} 
+                                    btn-secondary px-6
+                                {% endif %}" 
+                        href="{{ item.cta.url }}" target="{{ item.cta.target ?: '_self' }}">
                         {{ item.cta.title }}
                         {% if theme == 'secondary' %}
                             <svg class="ml-2" width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -4,7 +4,7 @@
 .wysiwyg h1,
 .editor-styles-wrapper h1,
 h2.wp-block-heading  {
-  @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase -mb-6;
+  @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase -mb-2;
 }
 
 @media (min-width: 768px) {
@@ -185,7 +185,7 @@ h2.wp-block-heading  {
 @media (min-width: 1024px) {
   .core-block > h2,
   .core-block p {
-    @apply max-w-[66%]
+    @apply max-w-[70%]
   }
 }
 .wp-block-heading {

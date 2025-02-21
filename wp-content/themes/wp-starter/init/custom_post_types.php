@@ -10,7 +10,7 @@ function manage_custom_post_types_and_custom_taxonomies()
   /**
    * Some examples
    */
-  new_post_type("member", "member", 'dashicons-admin-post', array('title', 'editor', 'thumbnail'), array('has_archive' => false));
+  new_post_type("member", "Board Member", 'dashicons-admin-post', array('title', 'editor', 'thumbnail'), array('has_archive' => false));
   new_post_type("team", "team", 'dashicons-admin-post', array('title', 'editor', 'thumbnail'), array('has_archive' => false));
   // new_post_type("office", "offices", 'dashicons-admin-post', array('title', 'thumbnail'), array('has_archive' => false));
   // new_post_type("job", "jobs", 'dashicons-admin-post', array('title', 'editor', 'thumbnail'), array('has_archive' => false));
