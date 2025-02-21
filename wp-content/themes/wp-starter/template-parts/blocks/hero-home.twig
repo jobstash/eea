@@ -16,19 +16,19 @@
     </radialGradient>
   </defs>
 </svg>
-<div class="">
-	<div class="relative flex flex-col md:flex-row-reverse md:flex-wrap">
+<div class="lg:pt-[2rem] pb-7 lg:pb-14">
+	<div class="relative flex flex-col lg:flex-row-reverse lg:flex-wrap">
 		{% set title = fields.title ?? 'Hero Home' %}
 		{% set text = fields.text ?? '' %}
 		{% set image = fields.image_hero_home ? get_image(fields.image_hero_home) : false %}
-		<div class="md:w-5/12 md:pl-12">
+		<div class="lg:w-5/12 lg:pl-12">
 			{% if image %}
 				<div class="relative aspect-w-16 aspect-h-15">
 					<img loading="lazy" class="object-cover object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" alt="{{ image.alt | default('Our Team') }}">
 				</div>
 			{% endif %}
 		</div>
-		<div class="md:w-7/12 md:pr-12">
+		<div class="lg:w-7/12 lg:pr-12">
 			<h1 class="h1 pt-[4.5rem] text-white ">{{ title | raw | replace({'<p>': '', '</p>': ''}) }}</h1>
 			<div class="pt-4 body-1">
 				{{ text | raw }}
