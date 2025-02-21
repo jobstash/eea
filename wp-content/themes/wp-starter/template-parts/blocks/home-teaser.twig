@@ -40,16 +40,16 @@
 	{% endif %}
 	{% if homeTeaserItems %}
 		<div class="relative">
-			<div class="mx-auto my-5">
+			<div class="mx-auto">
 				<img class="block mx-auto" src="{{ site.theme.link }}/assets/img/home-teaser.png"/>
 			</div>
             <div class="md:grid md:grid-cols-3 md:gap-8">
                 {% for item in homeTeaserItems %}
                     <div>
-                        <div class="relative lg:max-w-[350px] lg:h-auto {% if loop.index == 1 or loop.index == 3 %} lg:-mt-96 {% endif %} lg:mx-auto lg:mb-0 mb-8  py-10 space-y-6 border-b bg-[#111111] border-t-2 rounded-xl p-6 repeater-item border-nav-border" style="border-top-color: {{ item.item_color }}">
+                        <div class="relative lg:max-w-[350px] lg:h-auto {% if loop.index == 1 or loop.index == 3 %} lg: -mt-[470px] {% endif %} lg:mx-auto lg:mb-0 mb-8  py-10  border-b bg-[#111111] border-t-2 rounded-xl p-6 repeater-item border-nav-border" style="border-top-color: {{ item.item_color }}">
                             <div class="absolute top-0 left-0 hidden w-16 h-16 -translate-x-1/2 -translate-y-1/2 border-[10px] border-white/50 border-opacity-40 lg:block rounded-3xl" style="background-color: {{ item.item_color }}"></div>
                             {% if item.item_icon %}
-                                <img src="{{ item.item_icon.url }}" alt="{{ item.item_icon.alt }}">
+                                <img class="block mb-6" src="{{ item.item_icon.url }}" alt="{{ item.item_icon.alt }}">
                             {% endif %}
                             <div class="flex justify-between">
                                 <div class="space-y-4">

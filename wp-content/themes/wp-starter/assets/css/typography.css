@@ -4,7 +4,7 @@
 .wysiwyg h1,
 .editor-styles-wrapper h1,
 h2.wp-block-heading  {
-  @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase;
+  @apply text-[32px] leading-[150%] font-light antialiased font-heading uppercase -mb-6;
 }
 
 @media (min-width: 768px) {
@@ -182,3 +182,23 @@ h2.wp-block-heading  {
   @apply underline
 }
 
+@media (min-width: 1024px) {
+  .core-block > h2,
+  .core-block p {
+    @apply max-w-[66%]
+  }
+}
+.wp-block-heading {
+  @apply pt-8
+}
+
+@media (min-width: 768px) {
+  .wp-block-heading {
+    @apply pt-14
+  }
+}
+@media (min-width: 1024px) {
+  .wp-block-heading {
+    @apply pt-20
+  }
+}
