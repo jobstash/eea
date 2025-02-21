@@ -15,10 +15,9 @@
 		@apply bg-white whitespace-nowrap text-black rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all;
 
 	}
-	/* .btn-primary:hover,
-	.btn-white:hover  {
-		@apply rounded-tr-none
-	} */
+	.btn-primary:hover  {
+		@apply opacity-80
+	}
 
 	.btn-primary:disabled {
 		@apply opacity-30 cursor-default rounded-tr-[10px]

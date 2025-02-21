@@ -21,6 +21,12 @@ $acf_blocks = array(
     'keywords'      => array('Members/Team')
   ),
   array(
+    'name'   => 'membership-fees',
+    'title'  => __('Membership fees'),
+    'description'    => __('Membership fees'),
+    'keywords'      => array('Membership fees')
+  ),
+  array(
     'name'   => 'eea-anchor-listing',
     'title'  => __('EEA anchor listing'),
     'description'    => __('EEA anchor listing'),

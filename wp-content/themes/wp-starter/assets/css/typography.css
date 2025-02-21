@@ -184,7 +184,7 @@ h2.wp-block-heading  {
 
 @media (min-width: 1024px) {
   .core-block > h2,
-  .core-block p {
+  .core-block > p {
     @apply max-w-[70%]
   }
 }
