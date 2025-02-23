@@ -11,9 +11,15 @@
 							{% set image = logo.image ? get_image(logo.image) : false %}
 
 							<div class="swiper-slide !w-[140px]">
+								{% if logo.partner_url %}
+								<a href="{{logo.partner_url.url}}" class="hover:opacity-80">
+								{% endif %}
 								<div class="flex flex-col justify-center w-full h-[70px]">
 									<img loading="lazy" class="absolute inset-0 block object-contain object-center w-full h-full grayscale" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="200px" alt="{{ image.alt | default('Icon') }}">
 								</div>
+								{% if logo.partner_url %}
+								</a>
+								{% endif %}
 							</div>
 						{% endfor %}
 					</div>

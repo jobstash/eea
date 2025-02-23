@@ -52,6 +52,24 @@
                     "allow_in_bindings": 0,
                     "preview_size": "medium",
                     "parent_repeater": "field_670fccf5b5986"
+                },
+                {
+                    "key": "field_67baf8464198b",
+                    "label": "Partner URL",
+                    "name": "partner_url",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_670fccf5b5986"
                 }
             ]
         }
@@ -74,5 +92,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1739909597
+    "modified": 1740306520
 }
