@@ -24,7 +24,7 @@
 		<div class="lg:w-5/12 lg:pl-12">
 			{% if image %}
 				<div class="relative aspect-w-16 aspect-h-15">
-					<img loading="lazy" class="object-cover object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" alt="{{ image.alt | default('Our Team') }}">
+					<img loading="lazy" class="object-contain object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" alt="{{ image.alt | default('Our Team') }}">
 				</div>
 			{% endif %}
 		</div>

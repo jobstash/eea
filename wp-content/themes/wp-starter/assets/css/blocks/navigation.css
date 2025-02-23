@@ -143,11 +143,11 @@
 }
 
 .menu-btn-gray  a {
-  @apply rounded-full inline-block bg-[#1B1A1F] border border-[#999999]  py-4 px-7 whitespace-nowrap
+  @apply rounded-full inline-block bg-[#1B1A1F] border border-[#999999]  py-2 px-5 whitespace-nowrap
 }
 
 .menu-btn-black a {
-  @apply rounded-full inline-block bg-black border py-4 px-7 border-white whitespace-nowrap
+  @apply rounded-full inline-block bg-black border   py-2 px-5 border-white whitespace-nowrap
 }
 @media (min-width: 1024px) {
   .menu-btn-gray a,
