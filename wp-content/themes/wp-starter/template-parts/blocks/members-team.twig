@@ -2,6 +2,7 @@
     {% set items = fields.memberteam_posts ?? [] %}
     {% if items %}
         {% for post in items %}
+            {% set shape_index = loop.index0 % 8 + 1 %}
             <div class="member-card">
                 {% include ['tease-member.twig'] %}
             </div>

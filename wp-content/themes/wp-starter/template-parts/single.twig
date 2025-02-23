@@ -2,8 +2,12 @@
 {% block content %}
 	
 	{% if post.thumbnail %}
-		<div class="w-full -mt-[74px] aspect-h-1 aspect-w-1 overflow-hidden -z-10 relative md:aspect-w-16 md:aspect-h-11 lg:aspect-none lg:w-screen lg:height-[800px] lg:relative lg:-mt-[128px]">
-			<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw" alt="{{ post.thumbnail.alt | default('Image') }}">
+		<div class="relative">
+			<div class="absolute inset-0 z-20 hidden w-full h-full bg-black/60 md:block"></div>
+			<div class="w-full -mt-[74px] aspect-h-1 aspect-w-1 overflow-hidden -z-10 relative md:aspect-w-16 md:aspect-h-11 lg:aspect-none lg:w-screen lg:height-[800px] lg:relative lg:-mt-[128px]">
+				
+				<img loading="lazy" class="absolute inset-0 z-10 block object-cover object-center w-full h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw" alt="{{ post.thumbnail.alt | default('Image') }}">
+			</div>
 		</div>
 	{% endif %}
 	<div class="container relative z-20 px-4 -mt-20 md:px-12 lg:-mt-[500px]">
