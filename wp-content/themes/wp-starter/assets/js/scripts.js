@@ -259,16 +259,25 @@ function initLottieAnimations() {
 
 
 
-
 function initMenu() {
   const nav = document.querySelector('.js-nav');
   const menuToggle = document.querySelectorAll('.js-nav-toggle');
+  const body = document.html;
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 767px)').matches; // Adjust breakpoint as needed
+  }
 
   menuToggle.forEach((item) => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopImmediatePropagation();
+      
       nav.classList.toggle('nav-open');
+      
+      if (isMobile()) {
+        body.classList.toggle('overflow-hidden', nav.classList.contains('nav-open'));
+      }
     });
   });
 
@@ -309,6 +318,10 @@ function initMenu() {
         subMenu.classList.remove('sub-menu-open');
         parentLink.classList.remove('is-active');
       });
+
+      if (isMobile()) {
+        body.classList.remove('overflow-hidden');
+      }
     }
   });
 }
