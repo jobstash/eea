@@ -1,0 +1,38 @@
+{% if post.class is not defined or post.class != 'Timber\\Post' %}
+    {% set post = get_post(post) %}
+{% endif %}
+
+<article class="tease h-full tease-{{ post.post_type }}" id="tease-{{ post.ID }}">
+	{% block content %}
+        {% set download_url = post.meta('download_file') %}
+		<div class="flex flex-col h-full">
+			<div class="mb-5 overflow-hidden aspect-w-4 aspect-h-3">
+				{% if post.thumbnail %}
+					<a href="{{ download_url.url }}" class="transition-all hover:opacity-70">
+						<img loading="lazy" class="absolute inset-0 object-cover object-center w-full h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 500px" alt="{{ post.thumbnail.alt | default('Image') }}">
+					</a>
+				{% endif %}
+			</div>
+			<div class="flex flex-col space-y-5 grow">
+				<h3 class="h5">
+					<a href="{{ download_url.url }}">{{ post.title }}</a>
+				</h3>
+				{% if post.excerpt|length %}
+					<p class="text-base leading-[200%] text-white/80">
+						{{ post.excerpt.read_more(false) }}
+					</p>
+				{% endif %}
+				<div class="text-lg text-white/80 ">{{ post.post_date|date("M j, Y") }}</div>
+				
+				
+
+				<a href="{{ download_url.url }}" class="mt-5 btn-secondary">
+					<span>Access Now</span>
+					<svg class="ml-2" width="17" height="17" viewbox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 0.25L16 0.25C16.1989 0.25 16.3897 0.329018 16.5303 0.46967C16.671 0.610322 16.75 0.801088 16.75 1V12.25C16.75 12.6642 16.4142 13 16 13C15.5858 13 15.25 12.6642 15.25 12.25V2.81066L1.53033 16.5303C1.23744 16.8232 0.762563 16.8232 0.46967 16.5303C0.176777 16.2374 0.176777 15.7626 0.46967 15.4697L14.1893 1.75L4.75 1.75C4.33579 1.75 4 1.41421 4 1C4 0.585787 4.33579 0.25 4.75 0.25Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	{% endblock %}
+</article>
