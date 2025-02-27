@@ -260,7 +260,7 @@ function initLottieAnimations() {
 
 
 function initMenu() {
-  const nav = document.querySelector('.js-nav');
+  const nav = document.querySelector('.js-nav-mobile');
   const menuToggle = document.querySelectorAll('.js-nav-toggle');
   const body = document.html;
 

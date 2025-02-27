@@ -104,12 +104,12 @@ h3.active .icon-vertical {
   transition-timing-function: linear !important;
 }
 
-.js-nav.nav-open {
+.js-nav-mobile.nav-open {
   min-height: 100dvh;
   opacity: 100;
 }
 
-.js-nav.nav-open .inner-nav {
+.js-nav-mobile.nav-open .inner-nav {
   @apply translate-x-0;
 }
 
