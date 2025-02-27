@@ -1,5 +1,5 @@
 .pagination {
-    @apply flex mx-auto py-14 justify-center space-x-4 text-2xl
+    @apply flex mx-auto  justify-center space-x-4 text-base
 }
 
 .pagination li > * {
@@ -8,6 +8,10 @@
 
 .pagination li > a.page-numbers:hover,
 .pagination .current {
-    @apply bg-blue-05 rounded-xl
+    @apply  rounded-xl bg-white text-black
 }
 
+
+.pagination button:disabled {
+    @apply opacity-10
+}
