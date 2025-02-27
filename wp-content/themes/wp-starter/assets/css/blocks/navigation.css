@@ -26,7 +26,7 @@
 
 @media (min-width: 1024px) {
   .main-menu {
-    @apply flex px-6 py-3 rounded-xl space-y-0 items-center pr-0 gap-x-6;
+    @apply flex px-6 py-3 rounded-xl space-y-0 items-center pr-0 gap-x-2;
   }
   /* .main-menu::before {
     @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
@@ -74,7 +74,7 @@
 }
 
 @media (min-width: 1024px) {
-  .menu-item a:hover {
+  .menu-item:hover a {
     @apply bg-[#171717] opacity-100;
   }
 }
@@ -85,7 +85,7 @@
 
 @media (min-width: 1024px) {
   .sub-menu {
-    @apply overflow-hidden max-h-0 absolute left-0 top-[130%]  transition-all duration-300  whitespace-nowrap;
+    @apply overflow-hidden max-h-0 absolute left-0 top-full pt-3  transition-all duration-300  whitespace-nowrap;
   }
 }
 
@@ -108,9 +108,9 @@
   }
 }
 @media (min-width: 1024px) {
-.js-subnav-trigger:hover {
-  @apply opacity-80;
-}
+  .js-subnav-trigger:hover {
+    @apply opacity-80;
+  }
 }
 
 .sub-menu .menu-item a {
@@ -121,8 +121,9 @@
   .sub-menu .menu-item a {
     @apply text-base text-[14px] p-0 bg-[#171717] px-5 py-2.5 w-full;
   }
-  .sub-menu .menu-item a:hover {
-    @apply opacity-70;
+  .sub-menu .menu-item a:hover,
+  .sub-menu .current-menu-item a {
+    @apply text-white/50;
   }
 }
 
@@ -163,7 +164,7 @@
 
 .menu-btn-gray,
 .menu-btn-black {
-  @apply border-0 pb-0;
+  @apply border-0 pb-0 ml-4;
 }
 
 .menu-btn-gray a {
