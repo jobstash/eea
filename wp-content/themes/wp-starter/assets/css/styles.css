@@ -191,12 +191,9 @@ h3.active .icon-vertical {
   @apply text-base leading-[200%] text-white/80
 }
 
-
-/* @media (min-width: 1024px) {
-  .core-block > p {
-    @apply !w-[66%]
-  }
-}  */
+.core-block >  p > a {
+  @apply underline
+}
 
 .wpcf7-form-control {
   @apply bg-transparent text-white placeholder-white/80 border-b border-white focus:outline-none focus:border-white/80;

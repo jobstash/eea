@@ -8,8 +8,13 @@ $context['title'] = get_the_title();
 $context['posts'] = Timber::get_posts([
   'post_type' => 'post',
   'category_name' => 'events',
-  'posts_per_page' => 9, // or specify a number like 10
-  'paged'          => $paged,
+  'posts_per_page' => 6,
 ]);
 
-Timber::render('page-blog.twig', $context);
+$context['all_events'] = Timber::get_posts([
+  'post_type' => 'post',
+  'category_name' => 'events',
+  'posts_per_page' => -1, // -1 means get ALL posts
+]);
+
+Timber::render('page-events.twig', $context);

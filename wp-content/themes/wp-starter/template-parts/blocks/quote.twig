@@ -14,7 +14,7 @@
 									<h4 class="text-[15px] leading-[150%] pb-6">{{item.quote}}</h4>
 									<div class="flex">
 										{% if image %}
-											<img class="block overflow-hidden rounded-full shrink-0" loading="lazy" width="50" height="50" src="{{ image.src }}" alt="{{ image.alt | default('Icon') }}">
+											<img class="block object-contain object-center overflow-hidden shrink-0" loading="lazy" width="50" height="50" src="{{ image.src }}" alt="{{ image.alt | default('Icon') }}">
 										{% endif %}
 										<div class="ml-5 uppercase text-[12px]">
 											<span class="font-bold">{{item.name}}</span>

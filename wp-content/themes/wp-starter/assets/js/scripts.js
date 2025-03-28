@@ -2,8 +2,73 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-// Import Lottie
-import lottie from 'lottie-web';
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+document.addEventListener('DOMContentLoaded', function () {
+  let calendarEl = document.getElementById('calendar');
+  let eventDetailsEl = document.getElementById('event-details');
+  if (!calendarEl || !eventDetailsEl) return;
+
+  // Improved date handling to prevent timezone-related shifts
+  const formattedEvents = (window.eventsData || []).map(event => {
+    // Parse the date and create a new Date object
+    const eventDate = new Date(event.date);
+    
+    // Use local date components to avoid timezone issues
+    return {
+      title: event.title,
+      date: eventDate.getFullYear() + '-' + 
+            String(eventDate.getMonth() + 1).padStart(2, '0') + '-' + 
+            String(eventDate.getDate()).padStart(2, '0')
+    };
+  });
+
+  // Group events by date with consistent formatting
+  const eventsByDate = {};
+  formattedEvents.forEach((formattedEvent, index) => {
+    const originalEvent = window.eventsData[index];
+    if (!eventsByDate[formattedEvent.date]) {
+      eventsByDate[formattedEvent.date] = [];
+    }
+    eventsByDate[formattedEvent.date].push(originalEvent);
+  });
+
+  let calendar = new Calendar(calendarEl, {
+    plugins: [dayGridPlugin],
+    initialView: 'dayGridMonth',
+    events: formattedEvents,
+    eventClick: function(info) {
+      const clickedDate = info.event.startStr;
+      const dateEvents = eventsByDate[clickedDate] || [];
+      
+      // Clear previous events
+      eventDetailsEl.innerHTML = '';
+      
+      if (dateEvents.length > 0) {
+        // Create event list
+        const eventList = document.createElement('div');
+        eventList.classList.add('event-list');
+        
+        dateEvents.forEach(event => {
+          const eventItem = document.createElement('div');
+          eventItem.classList.add('event-item');
+          eventItem.innerHTML = `
+            <h3>${event.title}</h3>
+            <p>${event.date}</p>
+          `;
+          eventList.appendChild(eventItem);
+        });
+        
+        eventDetailsEl.appendChild(eventList);
+      } else {
+        eventDetailsEl.innerHTML = '<p>No events on this date</p>';
+      }
+    }
+  });
+
+  calendar.render();
+});
+
 
 // Swiper configuration objects
 const swiperConfigs = {
@@ -311,19 +376,34 @@ function initMenu() {
     }
   });
 
-  // Close menu when clicking outside
+    // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target)) {
-      menuItems.forEach((item) => {
-        const subMenu = item.querySelector('.sub-menu');
-        const parentLink = item.querySelector('.js-subnav-trigger');
-        subMenu.classList.remove('sub-menu-open');
-        parentLink.classList.remove('is-active');
-      });
+    // Check if nav exists and contains the target
+    if (!nav || !nav.contains(e.target)) return;
 
-      if (isMobile()) {
-        body.classList.remove('overflow-hidden');
+    // Ensure menuItems exists and is not empty
+    if (!menuItems || menuItems.length === 0) return;
+
+    menuItems.forEach((item) => {
+      // Skip iteration if item is null
+      if (!item) return;
+
+      const subMenu = item.querySelector('.sub-menu');
+      const parentLink = item.querySelector('.js-subnav-trigger');
+
+      // Only remove classes if elements exist
+      if (subMenu) {
+        subMenu.classList.remove('sub-menu-open');
       }
+
+      if (parentLink) {
+        parentLink.classList.remove('is-active');
+      }
+    });
+
+    // Check if isMobile function exists and body exists
+    if (typeof isMobile === 'function' && isMobile() && body) {
+      body.classList.remove('overflow-hidden');
     }
   });
 }

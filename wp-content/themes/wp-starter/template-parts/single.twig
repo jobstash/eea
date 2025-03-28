@@ -5,19 +5,18 @@
 		<div class="relative">
 			<div class="absolute inset-0 z-20 hidden w-full h-full bg-black/60 md:block"></div>
 			<div class="w-full -mt-[74px] aspect-h-1 aspect-w-1 overflow-hidden -z-10 relative md:aspect-w-16 md:aspect-h-11 lg:aspect-none lg:w-screen lg:h-[800px] lg:relative lg:-mt-[128px]">
-				
 				<img loading="lazy" class="absolute inset-0 z-10 block object-cover object-center w-full h-full lg:!w-full lg:!h-full" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw" alt="{{ post.thumbnail.alt | default('Image') }}">
 			</div>
 		</div>
 	{% endif %}
-	<div class="container relative z-20 px-4 -mt-20 md:px-12 lg:-mt-[500px]">
+	<div class="container relative z-20 px-4 {% if post.thumbnail %}-mt-20 lg:-mt-[500px] {% endif %} md:px-12 ">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<h2 class="h1 lg:w-9/12">
 				{{ post.title }}
 			</h2>
 
 			<section class="flex flex-col article-content">
-				<div class="my-10">
+				<div class="my-10 lg:w-9/12">
 					{% if has_excerpt(post.ID) %}
 						<span class="inline-block pb-10 text-xl font-medium">Introduction</span>
 						<div class="mb-5 space-y-5 body-1">

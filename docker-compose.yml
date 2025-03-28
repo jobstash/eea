@@ -87,6 +87,6 @@ services:
       PMA_HOST: ${PMA_HOST}
       PMA_USER: ${PMA_USER}
       PMA_PASSWORD: ${PMA_PASSWORD}
-      UPLOAD_LIMIT: 75M
+      UPLOAD_LIMIT: 516M
 volumes:
   db-data:

@@ -63,4 +63,3 @@ function my_custom_mce_formats($init_array) {
   return $init_array;
 }
 add_filter('tiny_mce_before_init', 'my_custom_mce_formats');
-
