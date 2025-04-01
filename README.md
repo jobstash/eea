@@ -17,7 +17,7 @@ The Stack requires:
 
 ### Getting Started
 
-First of all you need to clone the repository locally on your machine and switch to branch develop, this is the branch where we all the new features will be merged into.
+First of all you need to clone the repository locally on your machine and switch to branch `develop`, this is the branch where  all the new features will be merged into.
 
 After cloning the repo:
 
