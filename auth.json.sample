@@ -1,8 +1,8 @@
-{   
+{
   "http-basic": {
     "connect.advancedcustomfields.com": {
-      "username": "ACF_PRO_KEY",
-      "password": "https://tueftellab.de"
+      "username": "b3JkZXJfaWQ9NTUwMzh8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMDQtMjggMTE6NTc6NTU=",
+      "password": "http://localhost"
     }
   }
 }

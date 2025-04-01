@@ -2,7 +2,14 @@
 
 ## 1. Description
 
-The aim of this project is to centralize a main scaffolding to be used as starter project for derivated projects. The stack is based on Worpress and to set up a new project you can use this as from Gitlab Repo to start up.
+Dedicated wordpress theme and installation for https://entethalliance.org/
+
+The Stack requires:
+
+1. Docker -> https://www.docker.com/
+2. Node.js -> https://nodejs.org/en
+3. Composer -> https://getcomposer.org/
+
 
 ## 2. Local Development
 
@@ -10,29 +17,33 @@ The aim of this project is to centralize a main scaffolding to be used as starte
 
 ### Getting Started
 
-After cloning its repository:
+First of all you need to clone the repository locally on your machine and switch to branch develop, this is the branch where we all the new features will be merged into.
+
+After cloning the repo:
 
 1. Go to project root directory
 2. Run `cp .env.sample .env && cp auth.json.sample auth.json`
-3. Edit `.env` file accordingly
-4. Edit auth.json file, add your personal gitlab token with at least the scope `api` (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token)
-5. Run `make composer-update` OR simply `composer update`, if you have composer installed
-6. Run `make start` to start the project.
-7. Wait a bit, until WP installation done and open [localhost](http://localhost) or [localhost/wp-admin](http://localhost/wp-admin) (please check for the correct http port. -- _default is 80_)
+3. Run `make start` to start the project.
+4. Run `make composer install` to install backend dependencies
+5. Wait a bit, until WP installation done and open [localhost](http://localhost) or [localhost/wp-admin](http://localhost/wp-admin) (please check for the correct http port. -- _default is 80_)
+6. Go to (adminer) http://localhost/8000 to import some **[seed] (this will be provided but not in repo, because we don't want to expose data).
+7. Let's now finish the setup to run the frontend!
 
-### Step by step
+### Run the frontend 
 
-A step-by-step guide to start (launch) the project, and start working on it.
+A step-by-step guide to start (launch) the frontend part, and start working on it.
 
-EXAMPLE:
+1. Go to directory `/wp-content`
+2. upload the `/uploads` folder (this will be provided separately)
+3. Run `npm install` to **install front-end** dependencies
+4. Run `npm dev` to **start working** on the front-end
+5. Run `npm prod` to **create production assets** (CSS/JS)
 
-1. `make start` should get you http://localhost _(runs a `docker-compose up` with the right file)_
-2. Run `make composer-update` to **install back-end** dependencies
-3. Go to (adminer) http://localhost/db to import some **[seed](config/seed.sql.gz) data**
-4. Run `npm install` to **install front-end** dependencies
-5. Run `npm dev` to **start working** on the front-end
-6. Run `npm prod` to **create production assets** (CSS/JS)
-7. `make stop` will take down your containers _(runs a `docker-compose stop` with the right file)_
+
+### Stopping local development
+
+1. `make stop` will take down your containers _(runs a `docker-compose stop` with the right file)_
+
 
 ### Troubleshooting
 
