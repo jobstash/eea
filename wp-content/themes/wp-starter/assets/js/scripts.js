@@ -4,24 +4,63 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import { Calendar } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   let calendarEl = document.getElementById('calendar');
   let eventDetailsEl = document.getElementById('event-details');
   if (!calendarEl || !eventDetailsEl) return;
 
+  // Helper function to format event date as YYYY-MM-DD
+  const formatEventDate = (date) => {
+    const eventDate = new Date(date);
+    return eventDate.getFullYear() + '-' +
+           String(eventDate.getMonth() + 1).padStart(2, '0') + '-' +
+           String(eventDate.getDate()).padStart(2, '0');
+  };
+
+  // Create Swiper for displaying events
+  const createSwiperForEvents = (events) => {
+    // Create Swiper container
+    const swiperContainer = document.createElement('div');
+    swiperContainer.classList.add('swiper');
+
+    // Create Swiper wrapper
+    const swiperWrapper = document.createElement('div');
+    swiperWrapper.classList.add('swiper-wrapper');
+
+    // Add events as Swiper slides
+    events.forEach(event => {
+      const swiperSlide = document.createElement('div');
+      swiperSlide.classList.add('swiper-slide');
+
+      swiperSlide.innerHTML = `
+        <div class="event-item">
+          <h3>${event.title}</h3>
+          <p>${event.date}</p>
+        </div>
+      `;
+      swiperWrapper.appendChild(swiperSlide);
+    });
+
+    // Append the wrapper and initialize Swiper
+    swiperContainer.appendChild(swiperWrapper);
+    eventDetailsEl.appendChild(swiperContainer);
+
+    // Initialize Swiper
+    new Swiper(swiperContainer, {
+      loop: false,
+      spaceBetween: 20,
+      slidesPerView: 2.4,
+    });
+  };
+
   // Improved date handling to prevent timezone-related shifts
-  const formattedEvents = (window.eventsData || []).map(event => {
-    // Parse the date and create a new Date object
-    const eventDate = new Date(event.date);
-    
-    // Use local date components to avoid timezone issues
-    return {
-      title: event.title,
-      date: eventDate.getFullYear() + '-' + 
-            String(eventDate.getMonth() + 1).padStart(2, '0') + '-' + 
-            String(eventDate.getDate()).padStart(2, '0')
-    };
-  });
+  const formattedEvents = (window.eventsData || []).map(event => ({
+    title: event.title,
+    date: formatEventDate(event.date)
+  }));
 
   // Group events by date with consistent formatting
   const eventsByDate = {};
@@ -45,21 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
       eventDetailsEl.innerHTML = '';
       
       if (dateEvents.length > 0) {
-        // Create event list
-        const eventList = document.createElement('div');
-        eventList.classList.add('event-list');
-        
-        dateEvents.forEach(event => {
-          const eventItem = document.createElement('div');
-          eventItem.classList.add('event-item');
-          eventItem.innerHTML = `
-            <h3>${event.title}</h3>
-            <p>${event.date}</p>
-          `;
-          eventList.appendChild(eventItem);
-        });
-        
-        eventDetailsEl.appendChild(eventList);
+        createSwiperForEvents(dateEvents);
       } else {
         eventDetailsEl.innerHTML = '<p>No events on this date</p>';
       }
@@ -67,7 +92,19 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   calendar.render();
+
+  // Check if there are events for today and display them
+  const today = new Date();
+  const todayString = formatEventDate(today);
+
+  const todayEvents = eventsByDate[todayString] || [];
+  if (todayEvents.length > 0) {
+    createSwiperForEvents(todayEvents);
+  } else {
+    eventDetailsEl.innerHTML = '<p>No events today</p>';
+  }
 });
+
 
 
 // Swiper configuration objects

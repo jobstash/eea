@@ -186,6 +186,12 @@ h3.active .icon-vertical {
   }
 }
 
+.swiper-events .swiper-slide {
+  @apply w-1/3
+}
+.event-item {
+  border: 1px solid white;
+}
 
 .core-block > p {
   @apply text-base leading-[200%] text-white/80
