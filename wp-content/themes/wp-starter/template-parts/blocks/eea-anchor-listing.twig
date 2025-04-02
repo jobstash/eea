@@ -1,0 +1,53 @@
+{% set eea_members = fields.eea_member ?? [] %}
+{% set grouped_members = {} %}
+
+{# Group members by first letter, with proper trimming to avoid space issues #}
+{% for member in eea_members %}
+	{% set trimmed_title = member.eea_member_title|trim %}
+	{% if trimmed_title|length > 0 %}
+		{% set first_letter = trimmed_title|first|upper %}
+		{% if grouped_members[first_letter] is not defined %}
+			{% set grouped_members = grouped_members|merge({(first_letter): []}) %}
+		{% endif %}
+		{% set grouped_members = grouped_members|merge({
+            (first_letter): grouped_members[first_letter]|merge([member])
+        }) %}
+	{% endif %}
+{% endfor %}
+
+{# Get only letters that have members for navigation #}
+{% set letters_with_members = grouped_members|keys|sort %}
+
+{# Alphabet navigation at the top - only showing letters with members #}
+<nav class="alphabet-nav">
+	<ul class="flex space-x-2 overflow-auto">
+		{% for letter in letters_with_members %}
+			<li>
+				<a class="font-bold flex items-center justify-center text-2xl bg-[#1E1E1E] rounded-[20px] h-[64px] w-[64px]" href="#section-{{ letter }}">{{ letter }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
+
+{# Display grouped members only for letters that have members #}
+{% for letter in letters_with_members %}
+	<div id="section-{{ letter }}" class="letter-group scroll-mt-24">
+		<h2 class="pt-12 text-base leading-[150%] font-bold">{{ letter }}</h2>
+		<ul class="members-list lg:grid lg:grid-cols-3 lg:gap-10">
+			{% for member in grouped_members[letter] %}
+				<li class="flex justify-between items-center mt-8 py-3 px-4 border-b border-white/10 bg-[#171717] text-base text-white font-bold">
+                    <div>
+                        <span class="inline-block bg-[#282828] mr-2 p-1.5">{{ letter }}</span>
+                        {{ member.eea_member_title|trim }}
+					</div>
+                    <a href="{{member.website_url}}" class="flex items-center space-x-2">
+                        <span class="text-[14px] text-white/60 font-normal">Website</span>
+						<svg fill="none" viewbox="0 0 8 12" class="w-[12px] h-[12px]">
+							<path fill="#fff" fill-opacity=".6" d="M1.705 0 .295 1.41 4.875 6l-4.58 4.59L1.705 12l6-6-6-6Z"/>
+						</svg>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endfor %}

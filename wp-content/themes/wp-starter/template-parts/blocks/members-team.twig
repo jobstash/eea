@@ -1,0 +1,13 @@
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    {% set items = fields.memberteam_posts ?? [] %}
+    {% if items %}
+        {% for post in items %}
+            {% set shape_index = loop.index0 % 8 + 1 %}
+            <div class="member-card">
+                {% include ['tease-member.twig'] %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts selected.</p>
+    {% endif %}
+</div>

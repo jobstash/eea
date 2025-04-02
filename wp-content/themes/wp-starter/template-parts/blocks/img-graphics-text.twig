@@ -1,0 +1,32 @@
+<section class="container px-6 md:px-12">
+	<div class="flex flex-col p-5 bg-green-05 gap-y-4 rounded-xl lg:p-9">
+		{% set title = fields.title ?? 'Img, graphics and Text' %}
+		{% set text = fields.text ?? '' %}
+		{% set cta = fields.cta %}
+		{% set image = fields.image ? get_image(fields.image) : false %}
+
+		<div class="flex flex-col justify-between lg:flex-row lg:flex-wrap lg:justify-between lg:-mx-2 gap-y-4 lg:gap-y-0">
+			<div class="relative mb-20 -mx-6 lg:mb-0 lg:w-6/12">
+				<svg class="absolute bottom-0 left-0 -mb-16 -ml-3 lg:w-[330px] lg:-ml-7 lg:h-auto" width="181" height="168" viewbox="0 0 181 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M180.501 149.932V167.965H90.4177C36.2697 167.965 0 131.227 0 76.2126V0.964844H16.827C16.827 22.8746 23.623 41.3351 36.4735 54.3727C49.4054 67.4802 67.8459 74.4923 89.5703 74.667C89.8473 74.667 90.1325 74.667 90.4177 74.667C95.9914 74.667 101.337 74.2216 106.43 73.3396C106.438 80.2034 106.585 86.1415 107.041 91.4857C108.043 103.397 110.561 112.339 116.534 121.787C126.036 136.825 141.852 145.889 163.658 148.849C168.922 149.565 174.537 149.924 180.501 149.924V149.932Z" fill="#53A57B"/>
+				</svg>
+				<svg class="absolute top-0 right-0 -mt-10 -mr-4 lg:top-[265px] lg:mr-24" width="146" height="145" viewbox="0 0 146 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M146 68.3693V76.2183C146 93.0619 141.142 107.621 132.431 118.952C130.488 121.492 128.342 123.869 126.018 126.075C113.323 138.113 95.2385 145 73.4322 145C51.6259 145 33.4168 138.113 20.656 126.075C18.2928 123.849 16.1135 121.44 14.1442 118.867C5.4401 107.549 0.595703 93.0226 0.595703 76.2183V68.3693C0.595703 27.5402 29.813 0 73.4322 0C117.051 0 146 27.5402 146 68.3693Z" fill="#8CC8AF"/>
+				</svg>
+				<div class="overflow-hidden rounded-r-full rounded-bl-full aspect-w-16 aspect-h-8 lg:ml-7 lg:-mt-16">
+					<img loading="lazy" class="object-cover object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 700px" alt="{{ image.alt | default('Our Team') }}">
+
+				</div>
+			</div>
+			<div class="md:w-4/5 md:mt-4 lg:mt-0 lg:w-1/2 xl:w-5/12 lg:pl-8">
+				<h2 class="pb-4 h2">{{ title }}</h2>
+				<div class="self-end body-2 wysiwyg xl:pt-28">
+					{{ text | raw }}
+				</div>
+				{% if cta %}
+					<a href="{{ cta.url }}" target="{{ cta.target }}" class="w-full mt-6 text-center btn-primary lg:w-auto">{{ cta.title }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

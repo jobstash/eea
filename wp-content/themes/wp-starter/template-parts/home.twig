@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="container px-6 md:px-12">
+		{# <h2 class="pb-5 text-center h2 lg:pb-16 lg:pt-12">Our news</h2> #}
+		<div class="space-y-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:space-y-0 md:gap-4">
+			{% for post in posts %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
+		</div>
+		{% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+	</div>
+{% endblock %}

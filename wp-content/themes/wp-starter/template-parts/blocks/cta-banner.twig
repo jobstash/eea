@@ -1,0 +1,21 @@
+{% set title = fields.title ?? 'CTA Banner' %}
+{% set text = fields.text ?? '' %}
+{% set image = fields.bg_image ? get_image(fields.bg_image) : false %}
+{% set cta = fields.cta %}
+{% set color_scheme = fields.color_scheme %}
+<section class="container px-6 md:px-12">
+	<div class="relative p-4 lg:px-10 lg:py-12 {% if color_scheme %}text-blue-01{% else %}text-white{% endif %}">
+		<div class="absolute inset-0 z-10 h-full overflow-hidden rounded-xl">
+			<img loading="lazy" class="absolute inset-0 block object-cover object-center w-full h-full -z-10" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 1500px" alt="{{ image.alt | default('Icon') }}">
+		</div>
+		<div class="relative z-20">
+			<h2 class="w-3/4 pb-6 md:w-6/12 h2">{{ title }}</h2>
+			<div class="w-3/4 pb-8 md:w-5/12 body-2">
+				{{ text | raw }}
+			</div>
+			{% if cta %}
+				<a href="{{ cta.url }}" target="{{ cta.target }}" class="{% if color_scheme %}btn-primary{% else %}btn-white{% endif %}">{{ cta.title }}</a>
+			{% endif %}
+		</div>
+	</div>
+</section>

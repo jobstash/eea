@@ -1,0 +1,27 @@
+{% set footer_menus = [footer_menu_1, footer_menu_2, footer_menu_3, footer_menu_4, footer_menu_5] %}
+<div class="space-y-10 md:space-y-0 md:grid md:grid-cols-3 md:gap-10 lg:grid-cols-5">
+	{% for footer_menu in footer_menus %}
+		{% if footer_menu and footer_menu.items %}
+			<ul class="">
+				{% for item in footer_menu.items %}
+					<li class="">
+						<div>
+							<a class="text-milk text-[17px]" href="{{ item.link }}" title="Go to {{ item.title }} page.">
+								{{ item.title }}
+							</a>
+						</div>
+						{% if item.children %}
+							<ul class="mt-3 space-y-3">
+								{% for child in item.children %}
+									<li class="space-y-3">
+										<a target="{{child.target}}" href="{{ child.link }}" title="Go to {{ child.title }} page.">{{ child.title }}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endfor %}
+</div>

@@ -1,0 +1,17 @@
+.pagination {
+    @apply flex mx-auto  justify-center space-x-4 text-base
+}
+
+.pagination li > * {
+    @apply w-[37px] h-[37px] justify-center items-center flex  p-0
+}
+
+.pagination li > a.page-numbers:hover,
+.pagination .current {
+    @apply  rounded-xl bg-white text-black
+}
+
+
+.pagination button:disabled {
+    @apply opacity-10
+}

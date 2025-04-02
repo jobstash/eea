@@ -1,0 +1,36 @@
+<div class="">
+	<div class="flex flex-col ">
+		{% set title = fields.title ?? 'FAQ Accordion' %}
+		{% set qas = fields.qas %}
+		{% if qas %}
+			<div class="flex flex-wrap w-full">
+				<div class="w-full space-y-10 js-accordion-faq">
+					{% for qa in qas %}
+						<div class="border border-[#4A4A4A] px-10 py-6">
+							<h3
+								class="relative flex text-base cursor-pointer">
+								{# <svg class="absolute top-0 left-0 transition-transform" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<!-- Horizontal bar of the plus sign -->
+									<path d="M31 15.4995L0.204098 15.4995" stroke="currentColor" stroke-width="1.5"></path>
+									<!-- Vertical bar of the plus sign (will rotate) -->
+									<path class="transition-transform duration-500 ease-in-out icon-vertical" d="M15.6016 0.102051V30.898" stroke="currentColor" stroke-width="1.5"></path>
+								</svg> #}
+								{{ qa.question }}
+								<svg class="icon-vertical w-[20px] h-20px] transition-transform absolute right-0 top-0" fill="none" viewbox="0 0 20 20">
+									<path fill="#fff" d="M17.954 6.616a1.25 1.25 0 0 0-1.767 0l-6.188 6.188-6.187-6.188a1.25 1.25 0 0 0-1.768 1.768l7.072 7.071a1.25 1.25 0 0 0 1.767 0l7.071-7.071a1.25 1.25 0 0 0 0-1.768Z"/>
+								</svg>
+							</h3>
+
+							<div class="overflow-hidden transition-all duration-1000 ease-in-out opacity-0 faq-answer">
+								<hr class="my-10 border-t border-white/80"></hr>
+								<div class="pb-4">
+									{{ qa.answer }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>

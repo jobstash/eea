@@ -1,0 +1,36 @@
+<section class="container px-6 md:px-12">
+	<div class="flex flex-col px-4 md:p-0">
+		{% set is_reversed = fields.reversed %}
+		{% set title = fields.title ?? 'Text Image' %}
+		{% set text = fields.text ?? '' %}
+		{% set image = fields.image ? get_image(fields.image) : false %}
+
+		<div class="flex md:justify-between md:items-center
+					{% if is_reversed %}
+						flex-col-reverse md:flex-row-reverse
+					{% else %}
+						flex-col md:flex-row
+					{% endif %}
+			">
+			<div class="flex flex-col gap-y-4 md:w-1/2 {% if is_reversed %} md:pl-12 md:self-start {% else %} md:pr-12 {% endif %} lg:w-5/12 lg:gap-y-20">
+				<h2 class="h2">{{ title }}</h2>
+				<div class="body-2 wysiwyg">
+					{{ text | raw }}
+				</div>
+			</div>
+			<div class="md:w-1/2 md:self-start lg:w-6/12 ">
+				<div class="relative overflow-hidden aspect-w-16 aspect-h-14
+                    {% if is_reversed %}
+                        mb-12 lg:mb-0 -ml-8 rounded-br-[150px] rounded-tr-3xl lg:rounded-br-[200px] lg:rounded-l-3xl
+                    {% else %}
+                        mt-12 md:mt-0 lg:mt-0 -mr-9 lg:mr-0 rounded-r-[900px] rounded-l-full
+                    {% endif %}
+                ">
+					{% if image %}
+						<img loading="lazy" class="absolute inset-0 block object-cover object-center" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw" alt="{{ image.alt | default('Icon') }}">
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

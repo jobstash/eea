@@ -1,0 +1,5 @@
+{% if file_exists %}
+	<div id="{{ block.id }}" class="{{ block.name }}-block acf-block">
+		{{ include(template) }}
+	</div>
+{% endif %}

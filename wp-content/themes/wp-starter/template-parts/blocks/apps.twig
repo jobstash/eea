@@ -1,0 +1,79 @@
+{% set bg_color_class = 'bg-gray-03' %}
+
+{% set variant = fields.variant %}
+{% set id = fields.anchor_id %}
+
+{% if fields.bg_color == 'red' %}
+	{% set bg_color_class = 'bg-coral-03' %}
+{% elseif fields.bg_color == 'blue' %}
+	{% set bg_color_class = 'bg-blue-05' %}
+{% elseif fields.bg_color == 'green' %}
+	{% set bg_color_class = 'bg-green-05' %}
+{% elseif fields.bg_color == 'white' %}
+	{% set bg_color_class = 'bg-transparent' %}
+{% endif %}
+
+<section class="container relative px-4 md:px-12 scroll-m-20" id="{{id}}">
+	{% if fields.bg_color == 'red' %}
+		<svg class="absolute top-0 h-[430px] w-[220px] -mt-10 lg:min-h-[110%] lg:-mb-5 lg:w-auto  lg:-mt-5 right-0" width="345" height="597" viewbox="0 0 345 597" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M349 0.0312224V597H341.182C235.194 595.72 162.451 568.875 112.507 532.571C85.6112 512.999 65.3145 490.679 50.0216 468.142C20.2802 424.377 7.45793 377.96 2.5792 328.014C0.546399 307.162 -0.110376 285.655 0.0147199 263.492C1.07803 263.492 2.17255 263.492 3.26713 263.492C24.6585 263.492 45.1742 261.9 64.7204 258.747C122.64 249.413 171.927 226.47 209.331 190.978C256.898 145.871 282.762 82.5031 284.357 7.30448C284.388 4.86966 284.419 2.43482 284.419 0H349V0.0312224Z" fill="#FAA59B"/>
+		</svg>
+	{% elseif fields.bg_color == 'blue' %}
+		<svg class="absolute top-0 -mt-5 -ml-8 h-[340px]" width="323" height="500" viewbox="0 0 323 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M-215.419 500L303 500C314.046 500 323 491.046 323 480L323 250.463C323 100.47 228.104 2.96846e-05 85.9975 2.34729e-05L-215.418 1.37945e-05C-356.104 7.64494e-06 -451 100.47 -451 250.463C-451 400.456 -356.104 500 -215.419 500Z" fill="#84AFF5"/>
+		</svg>
+	{% elseif fields.bg_color == 'green' %}
+		<svg class="absolute top-0 left-0 -mt-5 lg:hidden" width="177" height="185" viewBox="0 0 177 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M177 87.2298V97.244C177 118.734 170.82 137.309 159.737 151.767C157.265 155.007 154.534 158.039 151.577 160.854C135.425 176.214 112.416 185 84.6712 185C56.9267 185 33.7589 176.214 17.523 160.854C14.5164 158.014 11.7436 154.941 9.23806 151.658C-1.83638 137.217 -8 118.684 -8 97.244V87.2298C-8 35.1375 29.1737 0 84.6712 0C140.169 0 177 35.1375 177 87.2298Z" fill="#8CC8AF"/>
+		</svg>
+		<svg class="hidden absolute top-0 right-0 lg:left-0 z-10 -mt-6 lg:-mt-7  lg:-ml-1 lg:w-[450px] lg:h-[450px] lg:block" width="309" height="448" viewbox="0 0 309 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M309 211.238V235.488C309 287.529 294.034 332.511 267.195 367.522C261.209 375.369 254.595 382.711 247.436 389.527C208.321 426.723 152.602 448 85.4146 448C18.2278 448 -37.8758 426.723 -77.1929 389.527C-84.4738 382.651 -91.1885 375.208 -97.2559 367.259C-124.074 332.289 -139 287.408 -139 235.488V211.238C-139 85.0897 -48.9793 0 85.4146 0C219.809 0 309 85.0897 309 211.238Z" fill="#8CC8AF"/>
+		</svg>
+	{% endif %}
+	<div class="{% if variant == false %} {{ bg_color_class }} {% else %} mt-20 {% endif %} flex flex-col px-4 py-6 gap-y-4 rounded-xl lg:px-6 lg:py-8 lg:flex-row lg:flex-wrap {% if fields.bg_color =='red' %} lg:flex-row-reverse{% endif %}">
+		{% set supertitle = fields.supertitle ?? '' %}
+		{% set title = fields.title ?? 'Apps' %}
+		{% set text = fields.text ?? '' %}
+		{% set items = fields.items %}
+		{% set image = fields.image ? get_image(fields.image) : false %}
+
+		<div class="z-20 relative flex flex-col gap-y-4 lag:gap-y-0 lg:flex-row lg:flex-wrap lg:w-9/12 {% if fields.bg_color =='green' %}mt-36 lg:mt-0{% endif %} {% if fields.bg_color =='red' %} lg:flex-row-reverse{% endif %}">
+			{% if image  %}
+				<div class="lg:w-2/5">
+					<img loading="lazy" class="mb-8 lg:mb-0 lg:w-full" src="{{ image.src }}" srcset="{{ image.srcset }}" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 600px" alt="{{ image.alt | default('Icon') }}">
+				</div>
+			{% else %}
+				<div class="w-[300px]"></div>
+			{% endif %}
+			<div class="md:w-4/5 lg:w-3/5 lg:px-16">
+				{% if supertitle  %}
+					<h3 class="inline-block w-auto px-2 mt-4 py-0.5 text-base self-start uppercase bg-white rounded-md mb-4">{{ supertitle }}</h3>
+				{% endif %}
+				<h2 class="mb-4 h2 lg:mb-16">{{ title }}</h2>
+				<div class="self-end body-2">
+					{{ text | raw }}
+				</div>
+			</div>
+		</div>
+
+		{% if items %}
+			<div class="relative z-20 flex flex-wrap gap-y-4 md:pt-8 md:w-4/5 lg:w-3/12 lg:items-stretch">
+				{% for item in items %}
+					<div class="w-full p-5 rounded-3xl {% if variant == true %}{{ bg_color_class }}{% else %}bg-white{% endif %}">
+						{% set icon = item.icon ? get_image(item.icon) : false %}
+						<div class="flex lg:block lg:space-y-4 xl:space-y-0 xl:flex">
+							{% if icon %}
+								<div class="w-[50px]">
+									<div class="aspect-w-1 aspect-h-1">
+										<img loading="lazy" class="object-contain object-center" src="{{ icon.src }}" alt="{{ icon.alt | default('Icon') }}">
+									</div>
+								</div>
+							{% endif %}
+							<p class="w-full {% if icon %}pl-5 lg:pl-0 xl:pl-5{% endif %} body-1">{{ item.text }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</section>

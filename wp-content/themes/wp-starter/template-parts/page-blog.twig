@@ -1,0 +1,30 @@
+{% extends 'base.twig' %}
+
+
+{% block content %}
+
+	<div class="container px-6 category-archive md:px-12">
+		{% include 'breadcrumbs.twig' with { 'page': page } %}
+		<div class="space-y-10 lg:space-y-12">
+			{{ post.content }}
+
+			{% if posts %}
+
+				<div class=" md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10">
+					{% for post in posts %}
+						{% set category = post.terms('category')|first %}
+						
+						{% include ['tease-' ~ category.slug ~ '.twig', 'tease.twig'] %}
+
+					{% endfor %}
+				</div>
+
+				<div class="container">
+					{% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+				</div>
+			{% else %}
+				<p>No posts found.</p>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

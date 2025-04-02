@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "settings": {
+    "layout": {
+      "contentSize": "960px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "palette": [
+        {
+          "name": "nav-border",
+          "slug": "nav-border", 
+          "color": "#1B1B1B"
+        },
+        {
+          "name": "main-bg",
+          "slug": "main-bg", 
+          "color": "#0C0C0C"
+        },
+        {
+          "name": "card-bg",
+          "slug": "card-bg", 
+          "color": "#1C1C1E"
+        },
+        {
+          "name": "bg-primary",
+          "slug": "bg-primary", 
+          "color": "#1A1A1E"
+        },
+        {
+          "name": "milk",
+          "slug": "milk", 
+          "color": "#C5D2EC"
+        },
+
+        {
+          "name": "Blue 01",
+          "slug": "blue-01",
+          "color": "#001E41"
+        },
+        {
+          "name": "Blue 02",
+          "slug": "blue-02",
+          "color": "#003791"
+        },
+        {
+          "name": "Blue 03",
+          "slug": "blue-03",
+          "color": "#4175E1"
+        },
+        {
+          "name": "Blue 04",
+          "slug": "blue-04",
+          "color": "#84AFF5"
+        },
+        {
+          "name": "Blue 05",
+          "slug": "blue-05",
+          "color": "#D2E1F5"
+        },
+        {
+          "name": "Green 01",
+          "slug": "green-01",
+          "color": "#003791"
+        },
+        {
+          "name": "Green 02",
+          "slug": "green-02",
+          "color": "#003791"
+        },
+        {
+          "name": "Green 03",
+          "slug": "green-03",
+          "color": "#003791"
+        },
+        {
+          "name": "Green 04",
+          "slug": "green-04",
+          "color": "#003791"
+        },
+        {
+          "name": "Green 05",
+          "slug": "green-05",
+          "color": "#CDE6DC"
+        },
+        {
+          "name": "Coral 01",
+          "slug": "coral-01",
+          "color": "#FA6749"
+        },
+        {
+          "name": "Coral 02",
+          "slug": "coral-02",
+          "color": "#003791"
+        },
+        {
+          "name": "Coral 03",
+          "slug": "coral-03",
+          "color": "#FFE6E1"
+        },
+        {
+          "name": "Gray 01",
+          "slug": "gray-01",
+          "color": "#003791"
+        },
+        {
+          "name": "Gray 02",
+          "slug": "gray-02",
+          "color": "#003791"
+        },
+        {
+          "name": "Gray 03",
+          "slug": "gray-03",
+          "color": "#F0F0F0"
+        }
+      ]
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "Small",
+          "slug": "small",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "regular",
+          "name": "Regular",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "large",
+          "name": "Large",
+          "size": "1.125rem"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "1.25rem"
+        },
+        {
+          "slug": "2xl",
+          "name": "2XL",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "3xl",
+          "name": "3XL",
+          "size": "1.875rem"
+        },
+        {
+          "slug": "4xl",
+          "name": "4XL",
+          "size": "2rem"
+        },
+        {
+          "slug": "5xl",
+          "name": "5XL",
+          "size": "3rem"
+        },
+        {
+          "slug": "6xl",
+          "name": "6XL",
+          "size": "3.5rem"
+        }
+      ]
+    }
+  }
+}

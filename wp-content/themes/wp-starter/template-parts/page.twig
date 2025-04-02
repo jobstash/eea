@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	<div class="container px-6 content-wrapper md:px-12">
+		{% if post.slug != 'homepage' %}
+			{% include 'breadcrumbs.twig' with { 'page': page } %}
+		{% endif %}
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<section class="article-content">
+				<div class="-mt-5 space-y-10 article-body md:space-y-12">
+					{{ post.content }}
+				</div>
+			</section>
+		</article>
+	</div>
+	<!-- /content-wrapper -->
+{% endblock %}

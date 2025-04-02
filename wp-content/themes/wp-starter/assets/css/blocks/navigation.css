@@ -1,0 +1,182 @@
+/* MAIN NAVIGATION HEADER */
+
+.main-header::before {
+  @apply content-[''] block absolute -z-10 w-full h-full top-0 backdrop-blur-lg;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 00%,
+    rgba(252, 70, 107, 0) 100%
+  );
+}
+
+.menu-main-navigation-container {
+  @apply grow;
+}
+
+@media (min-width: 1024px) {
+  .menu-main-navigation-container {
+    @apply pl-10 flex justify-between items-center;
+  }
+}
+
+.main-menu {
+  @apply relative;
+}
+
+@media (min-width: 1024px) {
+  .main-menu {
+    @apply flex px-6 py-3 rounded-xl space-y-0 items-center pr-0 gap-x-2;
+  }
+  /* .main-menu::before {
+    @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
+  } */
+}
+
+.menu-item {
+  @apply relative border-b border-nav-border pb-8;
+}
+@media (min-width: 1024px) {
+  .menu-item {
+    @apply border-0 pb-0;
+  }
+}
+.menu-item > div {
+  @apply transition-all text-xl font-bold leading-none text-white pb-0 pl-4;
+}
+
+@media (min-width: 1024px) {
+  .menu-item > div {
+    @apply pl-0;
+  }
+}
+
+.menu-item:last-child {
+  @apply border-0;
+}
+
+@media (min-width: 1024px) {
+  .menu-item a {
+    @apply text-base py-3 px-5 rounded-md text-[14px];
+  }
+}
+
+.menu-item.current-menu-item > div > a,
+.sub-menu .menu-item.current-menu-item > a {
+  @apply opacity-50;
+}
+
+@media (min-width: 1024px) {
+  .menu-item.current-menu-item > div > a,
+  .sub-menu .menu-item.current-menu-item > a {
+    @apply opacity-100 bg-[#171717] ;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu-item:hover a {
+    @apply bg-[#171717] opacity-100;
+  }
+}
+
+.sub-menu {
+  @apply max-h-0 overflow-hidden	transition-all duration-500 relative;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu {
+    @apply overflow-hidden max-h-0 absolute left-0 top-full pt-3  transition-all duration-300  whitespace-nowrap;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  .sub-menu::before {
+    @apply bg-white/80;
+  }
+}
+
+.sub-menu-open {
+  @apply max-h-[500px];
+}
+.sub-menu .menu-item {
+  @apply border-0 pt-2.5 pb-0 pl-8;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu .menu-item {
+    @apply p-0 mb-3;
+  }
+}
+@media (min-width: 1024px) {
+  .js-subnav-trigger:hover {
+    @apply opacity-80;
+  }
+}
+
+.sub-menu .menu-item a {
+  @apply text-lg pb-0 inline-block;
+}
+
+@media (min-width: 1024px) {
+  .sub-menu .menu-item a {
+    @apply text-base text-[14px] p-0 bg-[#171717] px-5 py-2.5 w-full;
+  }
+  .sub-menu .menu-item a:hover,
+  .sub-menu .current-menu-item a {
+    @apply text-white/50;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sub-menu .menu-item:last-child a {
+    @apply mb-1.5;
+  }
+}
+
+.menu-item-has-children a {
+  @apply relative;
+}
+
+@media (min-width: 1024px) {
+  .menu-item-has-children:hover svg {
+    @apply rotate-90;
+  }
+}
+
+.is-active svg {
+  @apply rotate-90;
+}
+
+@media (min-width: 1024px) {
+  .menu-item-has-children:hover > .sub-menu {
+    @apply max-h-[999px];
+  }
+}
+
+/* LANG SWITCHER */
+.nav-open {
+  @apply pointer-events-auto opacity-100;
+}
+
+.lang-toggle-active svg {
+  @apply rotate-180;
+}
+
+.menu-btn-gray,
+.menu-btn-black {
+  @apply border-0 pb-0 ml-4;
+}
+
+.menu-btn-gray a {
+  @apply rounded-full inline-block bg-[#1B1A1F] border border-[#999999]  !py-2 px-5 whitespace-nowrap;
+}
+
+.menu-btn-black a {
+  @apply rounded-full inline-block bg-black border   py-2 px-5 border-white whitespace-nowrap !py-2;
+}
+@media (min-width: 1024px) {
+  .menu-btn-gray a,
+  .menu-btn-black a {
+    @apply text-[15px];
+  }
+}

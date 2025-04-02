@@ -1,0 +1,46 @@
+<section class="container px-6 md:px-12 lg:px-16">
+	<div class="flex flex-col px-4 lg:px-0">
+		{% set title = fields.title ?? 'Latest Posts' %}
+		{% set text = fields.text ?? '' %}
+		{% set cta = fields.cta %}
+		<div class="flex flex-col justify-between gap-y-4 lg:flex-row lg:flex-wrap">
+			<div class="lg:flex lg:justify-between lg:w-full lg:items-center">
+				<h2 class="lg:w-6/12 h2">
+					{{ title }}
+				</h2>
+				{% if cta %}
+					<a href="{{ cta.url }}" target="{{ cta.target }}" class="hidden btn-primary lg:block">{{ cta.title }}</a>
+				{% endif %}
+			</div>
+			<p class="body-2 lg:w-1/2">{{ text | raw }}</p>
+		</div>
+
+		{% if latest_posts %}
+			<div class="relative lg:mt-11 lg:w-auto lg:ml-0">
+				<div class="absolute top-[50%] -mt-5 left-0 items-center justify-center hidden -ml-14 cursor-pointer js-news-prev btn-primary lg:flex w-9 h-9">
+					<svg class="rotate-180" width="11" height="19" viewbox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 1.25L9.50341 9.18589C9.68934 9.35941 9.68934 9.64111 9.50341 9.81463L1 17.75" stroke="#F0F0F0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+					</svg>
+				</div>
+				<div class="absolute top-[50%] -mt-5 right-0 items-center justify-center hidden -mr-14 cursor-pointer js-news-next btn-primary lg:flex w-9 h-9">
+					<svg width="11" height="19" viewbox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 1.25L9.50341 9.18589C9.68934 9.35941 9.68934 9.64111 9.50341 9.81463L1 17.75" stroke="#F0F0F0" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+					</svg>
+				</div>
+				<div class="relative swiper js-news-carousel">
+					<div class="swiper-wrapper">
+						{% for post in latest_posts %}
+							<div class="w-full swiper-slide">
+								{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="js-news-carousel-pagination eea-pagination"></div>
+			</div>
+		{% endif %}
+		{% if cta %}
+			<a href="{{ cta.url }}" target="{{ cta.target }}" class="self-end w-full mt-4 text-center btn-primary lg:hidden">{{ cta.title }}</a>
+		{% endif %}
+	</div>
+</section>
