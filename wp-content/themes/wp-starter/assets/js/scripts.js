@@ -2,101 +2,198 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import { Calendar } from '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-
-
+import { Calendar } from '@fullcalendar/core'; // Make sure you import Calendar
+import dayGridPlugin from '@fullcalendar/daygrid'; // Make sure you import the plugin
+// Assuming Swiper is globally available or imported appropriately
 
 document.addEventListener('DOMContentLoaded', function () {
   let calendarEl = document.getElementById('calendar');
   let eventDetailsEl = document.getElementById('event-details');
-  if (!calendarEl || !eventDetailsEl) return;
+  if (!calendarEl || !eventDetailsEl) {
+    console.error("Calendar or Event Details element not found!");
+    return;
+  }
+
+  // Assuming window.eventsData is populated correctly beforehand
+  const eventsData = window.eventsData || [];
 
   // Helper function to format event date as YYYY-MM-DD
-  const formatEventDate = (date) => {
-    const eventDate = new Date(date);
+  const formatEventDate = (dateInput) => {
+    // Handles both Date objects and string dates that Date constructor can parse
+    const eventDate = new Date(dateInput);
+    if (isNaN(eventDate.getTime())) {
+        // Handle invalid date input if necessary
+        console.error("Invalid date encountered:", dateInput);
+        return null; // Or return a default/error string
+    }
     return eventDate.getFullYear() + '-' +
            String(eventDate.getMonth() + 1).padStart(2, '0') + '-' +
            String(eventDate.getDate()).padStart(2, '0');
   };
 
-  // Create Swiper for displaying events
+  // Create Swiper for displaying events (ensure Swiper library is loaded)
   const createSwiperForEvents = (events) => {
-    // Create Swiper container
-    const swiperContainer = document.createElement('div');
-    swiperContainer.classList.add('swiper');
+    // Clear previous content first
+    eventDetailsEl.innerHTML = '';
 
-    // Create Swiper wrapper
+    const swiperContainer = document.createElement('div');
+    swiperContainer.classList.add('swiper', 'event-swiper'); // Add a specific class
+
     const swiperWrapper = document.createElement('div');
     swiperWrapper.classList.add('swiper-wrapper');
 
-    // Add events as Swiper slides
     events.forEach(event => {
       const swiperSlide = document.createElement('div');
       swiperSlide.classList.add('swiper-slide');
-
-      swiperSlide.innerHTML = `
-        <div class="event-item">
-          <h3>${event.title}</h3>
-          <p>${event.date}</p>
+    
+      const article = document.createElement('article');
+      article.className = `tease h-full border border-white/30 p-6 tease-${event.post_type || 'default'}`;
+      article.id = `tease-${event.id || ''}`;
+    
+      article.innerHTML = `
+        <div class="flex flex-col h-full">
+          <div class="flex flex-col space-y-5 grow">
+            <h3 class="pb-6 border-b h5 border-white/50">
+              <a href="${event.link || '#'}">${event.event_date || formatEventDate(event.date)}</a>
+            </h3>
+            <h3 class="h5">
+              <a href="${event.link || '#'}">${event.title || 'Untitled'}</a>
+            </h3>
+            ${event.excerpt ? `
+              <p class="text-base leading-[200%] text-white/80">
+                ${event.excerpt}
+              </p>` : ''}
+            <a href="${event.link || '#'}" class="mt-5 btn-secondary">
+              <span>Learn More</span>
+              <svg class="ml-2" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 0.25L16 0.25C16.1989 0.25 16.3897 0.329018 16.5303 0.46967C16.671 0.610322 16.75 0.801088 16.75 1V12.25C16.75 12.6642 16.4142 13 16 13C15.5858 13 15.25 12.6642 15.25 12.25V2.81066L1.53033 16.5303C1.23744 16.8232 0.762563 16.8232 0.46967 16.5303C0.176777 16.2374 0.176777 15.7626 0.46967 15.4697L14.1893 1.75L4.75 1.75C4.33579 1.75 4 1.41421 4 1C4 0.585787 4.33579 0.25 4.75 0.25Z" fill="white"/>
+              </svg>
+            </a>
+          </div>
         </div>
       `;
+    
+      swiperSlide.appendChild(article);
       swiperWrapper.appendChild(swiperSlide);
     });
+    
 
-    // Append the wrapper and initialize Swiper
     swiperContainer.appendChild(swiperWrapper);
+
+    // Add navigation buttons if desired
+    // const prevButton = document.createElement('div');
+    // prevButton.className = 'swiper-button-prev';
+    // swiperContainer.appendChild(prevButton);
+
+    // const nextButton = document.createElement('div');
+    // nextButton.className = 'swiper-button-next';
+    // swiperContainer.appendChild(nextButton);
+
     eventDetailsEl.appendChild(swiperContainer);
 
     // Initialize Swiper
+    // Ensure the Swiper instance isn't duplicated if called rapidly
+    if (swiperContainer.swiper) {
+        swiperContainer.swiper.destroy(true, true);
+    }
     new Swiper(swiperContainer, {
-      loop: false,
-      spaceBetween: 20,
-      slidesPerView: 2.4,
+        loop: false,
+        spaceBetween: 30,
+        slidesPerView: 1.1, // Adjust as needed
+        // Add breakpoints if needed for responsiveness
+        breakpoints: {
+          // when window width is >= 640px
+          1024: {
+            spaceBetween: 60,
+            slidesPerView: 1.6,
+          },
+        }
     });
   };
 
-  // Improved date handling to prevent timezone-related shifts
-  const formattedEvents = (window.eventsData || []).map(event => ({
-    title: event.title,
-    date: formatEventDate(event.date)
-  }));
 
-  // Group events by date with consistent formatting
+  // --- Prepare Events Data ---
+  // We still need to group events by date for the button logic
   const eventsByDate = {};
-  formattedEvents.forEach((formattedEvent, index) => {
-    const originalEvent = window.eventsData[index];
-    if (!eventsByDate[formattedEvent.date]) {
-      eventsByDate[formattedEvent.date] = [];
+  eventsData.forEach(event => {
+    const dateStr = formatEventDate(event.date);
+    if(dateStr) { // Only process if date is valid
+        if (!eventsByDate[dateStr]) {
+          eventsByDate[dateStr] = [];
+        }
+        // Store the original event object
+        eventsByDate[dateStr].push(event);
     }
-    eventsByDate[formattedEvent.date].push(originalEvent);
   });
 
+  // --- Initialize FullCalendar ---
   let calendar = new Calendar(calendarEl, {
     plugins: [dayGridPlugin],
     initialView: 'dayGridMonth',
-    events: formattedEvents,
-    eventClick: function(info) {
-      const clickedDate = info.event.startStr;
-      const dateEvents = eventsByDate[clickedDate] || [];
-      
-      // Clear previous events
-      eventDetailsEl.innerHTML = '';
-      
-      if (dateEvents.length > 0) {
-        createSwiperForEvents(dateEvents);
-      } else {
-        eventDetailsEl.innerHTML = '<p>No events on this date</p>';
+    height: 'auto',
+    // events: formattedEvents, // REMOVE this - we are not rendering events directly
+    // eventColor: 'transparent', // REMOVE - No longer needed
+    showNonCurrentDates: false,
+    fixedWeekCount: false,
+    dayHeaders: false,
+    // eventBorderColor: 'white', // REMOVE - No longer needed
+    // eventTextColor: 'white', // REMOVE - No longer needed
+    headerToolbar: {
+      left: 'prev',
+      center: 'title',
+      right: 'next'
+    },
+
+    // Use dayCellDidMount to add the button *after* the cell is rendered
+    dayCellDidMount: function(info) {
+      // Skip adding buttons to "other month" cells if they are visible
+      if (info.isOther) {
+          return;
       }
-    }
+
+      const dateStr = formatEventDate(info.date);
+      const eventsForDay = eventsByDate[dateStr] || [];
+
+      // Only add a button if there are events for this day
+      if (eventsForDay.length > 0) {
+        // Check if button already exists (extra safety, though dayCellDidMount should be reliable)
+        if (!info.el.querySelector('.view-events-button')) {
+            const buttonEl = document.createElement('button');
+            buttonEl.textContent = ``;
+            buttonEl.className = 'view-events-button'; // Add your styling class
+
+            // Button click event
+            buttonEl.addEventListener('click', function(e) {
+              e.stopPropagation(); // Prevent potential calendar dateClick triggers
+              eventDetailsEl.innerHTML = ''; // Clear previous content
+              createSwiperForEvents(eventsForDay); // Show events in swiper
+            });
+
+            // Append the button to the day cell's content area
+            // Finding the right place might need inspection of FullCalendar's generated HTML
+            // '.fc-daygrid-day-events' or '.fc-daygrid-day-top' might be suitable targets
+            // Appending directly to info.el (the <td>) is also an option
+            const dayTopContainer = info.el.querySelector('.fc-daygrid-day-top');
+            if (dayTopContainer) {
+                 // Append near the date number
+                 dayTopContainer.appendChild(buttonEl);
+            } else {
+                 // Fallback: append directly to the cell
+                 info.el.appendChild(buttonEl);
+            }
+
+            // Optionally add a class to the cell itself for styling
+            info.el.classList.add('has-events-button');
+        }
+      }
+    },
   });
 
   calendar.render();
 
-  // Check if there are events for today and display them
+  // --- Auto show today's events ---
   const today = new Date();
   const todayString = formatEventDate(today);
-
   const todayEvents = eventsByDate[todayString] || [];
   if (todayEvents.length > 0) {
     createSwiperForEvents(todayEvents);
@@ -104,8 +201,6 @@ document.addEventListener('DOMContentLoaded', function () {
     eventDetailsEl.innerHTML = '<p>No events today</p>';
   }
 });
-
-
 
 // Swiper configuration objects
 const swiperConfigs = {
