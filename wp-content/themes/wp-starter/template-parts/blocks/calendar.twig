@@ -1,0 +1,19 @@
+<div class="space-y-8">
+	<h2 class="wp-block-heading">MEETING CALENDAR</h2>
+	<h3 class="!font-medium h2">Events & Calendar</h3>
+	<p class="text-base lg:w-8/12 text-white/80">The EEA welcomes participation from all legally operating organizations including for-profit companies, non-profit organizations, and industry associations</p>
+
+	<div class="flex flex-wrap">
+		<div id="calendar" class="relative z-20 w-full pb-6 lg:pb-0 lg:w-2/5 bg-main-bg "></div>
+		<div id="event-details" class="relative z-10 min-w-full lg:min-w-0 lg:w-3/5 lg:pl-14"></div>
+	</div>
+	<script>
+		window.eventsData = [];{% for event in all_events %}window.eventsData.push({
+title: "{{ event.title|e('js') }}",
+date: "{{ event.meta('event_date')|e('js') }}",
+event_date: "{{ event.meta('event_date')|date('F j, Y')|e('js') }}",
+link: "{{ event.link|e('js') }}",
+excerpt: "{{ event.excerpt.read_more(false)|striptags|e('js') }}"
+});{% endfor %}
+	</script>
+</div>
