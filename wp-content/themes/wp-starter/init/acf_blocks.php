@@ -98,6 +98,12 @@ $acf_blocks = array(
     'description'    => __('Quote'),
     'keywords'      => array('Quote')
   ),
+  array(
+    'name'   => 'calendar',
+    'title'  => __('Calendar'),
+    'description'    => __('Calendar'),
+    'keywords'      => array('Calendar')
+  ),
 );
 
 // Gutenberg Blocks allowed
@@ -177,6 +183,14 @@ function acf_blocks_render_callback($block, $content = '', $is_preview = false)
 
   if (file_exists(get_theme_file_path("template-parts/blocks/{$slug}.twig"))) {
     $context['file_exists'] = get_theme_file_path("template-parts/blocks/{$slug}.twig");
+    // Specific logic for the 'calendar' block
+    if ($slug === 'calendar') {
+      $context['all_events'] = Timber::get_posts([
+          'post_type'      => 'post',
+          'category_name'  => 'events',
+          'posts_per_page' => -1, // Get all events
+      ]);
+  }
     // Render the block.
     Timber::render("template-parts/blocks/block.twig", $context);
   }

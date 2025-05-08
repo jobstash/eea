@@ -5,10 +5,17 @@
 
 	<div class="container px-6 category-archive lg:px-12">
 		{% include 'breadcrumbs.twig' with { 'page': page } %}
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<section class="article-content">
+				<div class="-mt-5 space-y-10 article-body md:space-y-12">
+					{{ post.content }}
+				</div>
+			</section>
+		</article>
 		<div class="space-y-10 lg:space-y-12">
-			<h2 class="mt-10 h1 lG:mt-12">Events</h2>
+			<h2 class="mt-10 h1 lg:mt-12">Events</h2>
 			{% if posts %}
-				<div class="space-y-6 lg:grid lg:grid-cols-2 lg:grid-cols-3 lg:gap-10 lg:space-y-0">
+				<div class="space-y-6 lg:grid lg:grid-cols-3 lg:gap-10 lg:space-y-0">
 					{% for post in posts %}
 						{% set category = post.terms('category')|first %}
 						
@@ -19,26 +26,7 @@
 			{% else %}
 				<p>No posts found.</p>
 			{% endif %}
-			<h2 class="h1">MEETING CALENDAR</h2>
-			<h3 class="!font-medium h2">Events & Calendar</h3>
-			<p class="text-base lg:w-8/12 text-white/80">The EEA welcomes participation from all legally operating organizations including for-profit companies, non-profit organizations, and industry associations</p>
-		
-			<div class="flex flex-wrap">
-				<div id="calendar" class="relative z-20 w-full pb-6 lg:pb-0 lg:w-1/3 bg-main-bg lg:pr-14"></div>
-				<div id="event-details" class="relative z-10 min-w-full lg:min-w-0 lg:w-2/3 "></div>
-			</div>
-			<script>
-			window.eventsData = [];
-			{% for event in all_events %}
-			window.eventsData.push({
-				title: "{{ event.title|e('js') }}",
-				date: "{{ event.meta('event_date')|e('js') }}",
-				event_date: "{{ event.meta('event_date')|date('F j, Y')|e('js') }}",
-				link: "{{ event.link|e('js') }}",
-				excerpt: "{{ event.excerpt.read_more(false)|striptags|e('js') }}"
-			});
-			{% endfor %}
-			</script>
+			
 
 		</div>
 	</div>
