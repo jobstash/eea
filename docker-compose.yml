@@ -1,3 +1,4 @@
+version: '2'
 services:
   composer:
     restart: 'no'
@@ -46,16 +47,16 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+    #image: docker.io/bitnami/wordpress-nginx:5
     build:
       context: .
       dockerfile: Dockerfile
       args:
         APP_UID: "${UID}"
         APP_GID: "${GID}"
-        ENVIRONMENT: "${ENVIRONMENT:-development}"
     ports:
-      - '8080:80'
-      - '8443:443'
+      - '80:8080'
+      - '443:8443'
     env_file:
       - ./.env
     environment:
@@ -67,12 +68,12 @@ services:
       WORDPRESS_DATABASE_NAME: ${DB_DATABASE}
       WORDPRESS_DATABASE_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - ./wp-content:/var/www/wp-content
-      - ./.env:/var/www/.env
-      - ./config/wp-config.php:/var/www/wp-config.php
-      - ./vendor:/var/www/vendor
-      - ./.htaccess:/var/www/.htaccess
-      - ./build/docker/wordpress/wordpress-php.ini:/etc/php84/conf.d/wordpress-php.ini
+      - ./wp-content:/opt/bitnami/wordpress/wp-content
+      - ./.env:/opt/bitnami/wordpress/.env
+      - ./config/wp-config.php:/opt/bitnami/wordpress/wp-config.php
+      - ./vendor:/opt/bitnami/wordpress/vendor
+      - ./.htaccess:/opt/bitnami/wordpress/.htaccess
+      - ./build/docker/wordpress/wordpress-php.ini:/opt/bitnami/php/etc/conf.d/wordpress-php.ini
   phpmyadmin:
     env_file:
       - ./.env

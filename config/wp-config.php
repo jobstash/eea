@@ -91,7 +91,7 @@ $table_prefix = getenv('WP_TABLE_PREFIX');
  */
 define('WP_DEBUG', getenv('WP_DEBUG'));
 define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG'));
-define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY'));
+define('WP_DEBUG_DISPLAY', false);
 define('WP_ENV', getenv('ENVIRONMENT'));
 define('WP_ENVIRONMENT_TYPE', getenv('ENVIRONMENT'));
 

@@ -1,10 +1,10 @@
 @layer components {
 	.btn-primary {
-		@apply bg-white inline-flex whitespace-nowrap text-black rounded-[8px] px-[35px] py-[18px] antialiased text-base leading-[120%] font-bold text-center transition-all;
+		@apply bg-white inline-flex whitespace-nowrap text-black rounded-[8px] px-[35px] py-[18px] antialiased text-base leading-[120%] font-bold text-center transition-all no-underline;
 	}
 	
 	.btn-secondary {
-		@apply text-white  text-base leading-4 font-semibold inline-flex transition-all py-[18px]  justify-center rounded-sm border bg-[#141414] border-[#262626]
+		@apply text-white  text-base leading-4 font-semibold inline-flex transition-all py-[18px]  justify-center rounded-sm border bg-[#141414] border-[#262626] no-underline
 	}
 
 	.btn-secondary:hover {
@@ -12,7 +12,7 @@
 	}
 
 	.btn-white {
-		@apply bg-white whitespace-nowrap text-black rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all;
+		@apply bg-white whitespace-nowrap text-black rounded-[10px] px-[14px] py-[10px] antialiased uppercase text-base leading-4 inline-block font-semibold text-center transition-all no-underline;
 
 	}
 	.btn-primary:hover  {
