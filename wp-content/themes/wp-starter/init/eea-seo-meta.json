@@ -1,0 +1,944 @@
+{
+  "homepage": {
+    "title": "Enterprise Ethereum Alliance - Driving Ethereum Adoption in Business",
+    "description": "The Enterprise Ethereum Alliance connects Fortune 500 enterprises, startups, and technology vendors to build enterprise blockchain solutions.",
+    "og_image": ""
+  },
+  "posts": {
+    "from-code-to-capital-what-it-will-take-for-tokenized-collateral-to-scale": {
+      "id": 1369,
+      "title": "From Code to Capital: What It Will Take for Tokenized Collateral to Scale",
+      "description": "Key takeaways from the Abu Dhabi Finance Week panel conversation in December. At Abu Dhabi Finance Week 2025, conversations on capital \u2026",
+      "og_image": ""
+    },
+    "insights-from-eea-x-ey-sibos-frankfurt-stablecoins-in-business-payments": {
+      "id": 1361,
+      "title": "Insights from EEA x EY @ Sibos Frankfurt: Stablecoins in Business Payments",
+      "description": "At Sibos Frankfurt, the conversation around blockchain-based payments crossed a clear line. The conversation had shifted from theoretical relevance to...",
+      "og_image": ""
+    },
+    "how-public-and-permissioned-networks-are-converging-key-insights-from-our-sibos-panel": {
+      "id": 1357,
+      "title": "How Public and Permissioned Networks Are Converging: Key Insights from our Sibos Panel",
+      "description": "The opening panel at Sibos 2025 brought forward a clear message: public and permissioned blockchain networks are converging, and this \u2026",
+      "og_image": ""
+    },
+    "tokenized-assets-as-the-next-collateral-layer-bridging-defi-and-tradfi": {
+      "id": 1343,
+      "title": "Tokenized Assets as the Next Collateral Layer: Bridging DeFi and TradFi",
+      "description": "At this point, we\u2019re well aware that capital markets are shifting from testing blockchain to deploying it in production. At the \u2026",
+      "og_image": ""
+    },
+    "ethereums-fusaka-upgrade-key-takeaways-from-the-eea-executive-briefing": {
+      "id": 1330,
+      "title": "Ethereum\u2019s Fusaka Upgrade: Key Takeaways from the EEA Executive Briefing",
+      "description": "The Enterprise Ethereum Alliance hosted a private executive session at Microsoft\u2019s New York offices to explore Ethereum\u2019s upcoming Fusaka upgrade, \u2026",
+      "og_image": ""
+    },
+    "building-bridges-over-dinner-inside-the-eeas-private-gathering-in-august": {
+      "id": 1326,
+      "title": "Building Bridges Over Dinner: Inside the EEA\u2019s Private Gathering in September",
+      "description": "In September, the Enterprise Ethereum Alliance hosted an intimate private dinner in partnership with Coti (EEA L2 focused on Privacy) \u2026",
+      "og_image": ""
+    },
+    "takeways-from-eea-webinar-with-cftc-chairman-chris-giancarlo": {
+      "id": 1290,
+      "title": "Notes from EEA Webinar with CFTC Chairman Chris Giancarlo",
+      "description": "Our recent webinar with former CFTC Chairman Chris Giancarlo and the Wilkie Farr team couldn\u2019t have come at a more \u2026",
+      "og_image": ""
+    },
+    "sec-moves-closer-to-clarity-what-ethereums-role-in-tokenized-securities-really-means": {
+      "id": 1293,
+      "title": "EEA invited to the SEC Crypto Task force for Crypto Week",
+      "description": "A historical signal for Ethereum. On July 16th, the Enterprise Ethereum Alliance (EEA), joined a delegation led by ERC-3643 Association and \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-accelerates-strategic-vision-with-new-leadership-and-board-appointments": {
+      "id": 1274,
+      "title": "Enterprise Ethereum Alliance Accelerates Strategic Vision with New Leadership and Board Appointments",
+      "description": "Redwan Meslem joins as Executive Director while representatives from L2BEAT and Lido DAO are appointed to EEA\u2019s Board alongside JP \u2026",
+      "og_image": ""
+    },
+    "consensus-toronto-ey-x-eea-the-future-of-enterprise-ethereum": {
+      "id": 1234,
+      "title": "Consensus Toronto \u2013 EY x EEA: The Future of Enterprise Ethereum",
+      "description": "Register https://lu.ma/yddk7q58",
+      "og_image": ""
+    },
+    "a-forward-looking-dialogue-on-web3-and-enterprise-ethereum": {
+      "id": 1225,
+      "title": "May 20th \u2013 Navigating the New Regulatory Landscape for Web3 & Enterprise Ethereum",
+      "description": "Join the EEA and leading legal experts for a vital discussion on policy, compliance, and the future of decentralized innovation. As \u2026",
+      "og_image": ""
+    },
+    "eea-1871-innovation-summit-emerging-tech": {
+      "id": 1213,
+      "title": "EEA @ 1871 Innovation Summit: Emerging Tech",
+      "description": "Last week at the 1871 Innovation Summit: Emerging Tech in Chicago, the Enterprise Ethereum Alliance (EEA) proudly joined a powerful \u2026",
+      "og_image": ""
+    },
+    "eea-ey-nyc-blockchain-meetup": {
+      "id": 1172,
+      "title": "EEA & EY \u2013 NYC Blockchain meetup",
+      "description": "March 18th, 2025 The Enterprise Ethereum Alliance (EEA) and EY Blockchain team hosted a focused discussion on stablecoins and enterprise blockchain \u2026",
+      "og_image": ""
+    },
+    "eea-das-ey-msft": {
+      "id": 1168,
+      "title": "EEA @DAS \u2013 EY & MSFT",
+      "description": "Paul Brody and Yorke Rhodes III, respectively Chairman and Director at the EEA were on stage for Digital Asset Summit \u2026",
+      "og_image": ""
+    },
+    "eea-ethdenver25": {
+      "id": 1165,
+      "title": "EEA @EthDenver25",
+      "description": "Follow EEA event calendar to not miss the next gathering !",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-cube3-ai-ceo-einaras-gravrock": {
+      "id": 1087,
+      "title": "EEA Member Spotlight with CUBE3.AI CEO Einaras Gravrock",
+      "description": "As an EEA member, CUBE3.AI is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-jerome-ostorero-of-coinchange": {
+      "id": 1083,
+      "title": "EEA Member Spotlight with J\u00e9r\u00f4me Ostorero of Coinchange",
+      "description": "As an EEA member, Coinchange is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-uncx-networks-ceo-and-co-founder-antoine-chaveron": {
+      "id": 1080,
+      "title": "EEA Member Spotlight with UNCX Network\u2019s CEO and Co-founder Antoine Chaveron",
+      "description": "As an EEA member, UNCX Network is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below,...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-bitwaves-senior-solution-architect-kunz-mainali": {
+      "id": 1078,
+      "title": "EEA Member Spotlight with Bitwave\u2019s Senior Solution Architect Kunz Mainali",
+      "description": "As an EEA member, Bitwave is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-brainbots-ceo-heiko-fransen": {
+      "id": 1076,
+      "title": "EEA Member Spotlight with brainbot\u2019s CEO Heiko Fran\u00dfen",
+      "description": "As an EEA member, brainbot is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-alexandre-bourget-streamingfasts-co-founder-and-cto-2": {
+      "id": 1038,
+      "title": "EEA Member Spotlight with Alexandre Bourget, StreamingFast\u2019s Co-founder and CTO",
+      "description": "As an EEA member, StreamingFast will be part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A...",
+      "og_image": ""
+    },
+    "new-strategic-members": {
+      "id": 837,
+      "title": "New Strategic members",
+      "description": "Enterprise Ethereum Alliance Welcomes Strategic New Members The Enterprise Ethereum Alliance (EEA) announces the addition of key industry leaders to its \u2026",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-toposware-enterprise-programs-lead-tom-harvey": {
+      "id": 850,
+      "title": "EEA Member Spotlight with Toposware Enterprise Programs Lead Tom Harvey",
+      "description": "As an EEA member, Toposware is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-trons-director-of-ecosystem-development-dave-uhryniak": {
+      "id": 848,
+      "title": "EEA Member Spotlight with TRON\u2019s Director of Ecosystem Development Dave Uhryniak",
+      "description": "As an EEA member, TRON is part of a community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, we interviewed...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-dmitriy-ershov-ceo-of-rocknblock": {
+      "id": 830,
+      "title": "EEA Member Spotlight with Dmitriy Ershov, CEO of Rock\u2019n\u2019Block",
+      "description": "Rock\u2019n\u2019Block is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A \u2026",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-shells-head-of-blockchain-web3-vikram-seth": {
+      "id": 821,
+      "title": "EEA Member Spotlight with Shell\u2019s Head of Blockchain & Web3, Vikram Seth",
+      "description": "As an EEA member, Shell is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-wanchains-vice-president-of-engineering-dr-weijia-zhang": {
+      "id": 811,
+      "title": "EEA Member Spotlight with Wanchain\u2019s Vice President of Engineering Dr. Weijia Zhang",
+      "description": "As an EEA member, Wanchain is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "2024-10-31-thank-you-anais": {
+      "id": 822,
+      "title": "Thank you Ana\u00efs Ofranc and QualitaX",
+      "description": "After several years in leadership roles with the Crosschain Interoperability WG, first as part of EEA\u2019s technical staff and latterly \u2026",
+      "og_image": ""
+    },
+    "review-and-feedback-guidelines": {
+      "id": 791,
+      "title": "Review and Feedback guidelines",
+      "description": "How to comment on EEA documents Please use the Contact Form on this website to provide comments on EEA Specifications including Review Drafts \u2026",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-unicorn-ultra-network-cmo-chloe-phung": {
+      "id": 636,
+      "title": "EEA Member Spotlight with Unicorn Ultra Network CMO Chloe Phung",
+      "description": "As an EEA member, Unicorn Ultra Network (U2U) is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In...",
+      "og_image": ""
+    },
+    "another-implementation-of-eeas-dlt-interoperability-specification": {
+      "id": 710,
+      "title": "Another implementation of EEA\u2019s DLT Interoperability Specification",
+      "description": "1 October 2024 EEA\u2019s Crosschain Interoperability Working Group has just published a case study describing an implementation of the EEA DLT \u2026",
+      "og_image": ""
+    },
+    "test-title": {
+      "id": 634,
+      "title": "EEA Member Spotlight with Jon Trask, CEO & Founder of Dimitra Incorporated",
+      "description": "As an EEA member, Dimitra is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In \u2026",
+      "og_image": ""
+    },
+    "eea-releases-dlt-interoperability-specification": {
+      "id": 719,
+      "title": "EEA Releases DLT Interoperability Specification",
+      "description": "19 September 2024 The EEA today released version 1 of its new DLT Interoperability Specification. About the specification This specification provides a...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-edge-nodes-kyle-rojas-business-development-and-partnerships": {
+      "id": 1072,
+      "title": "EEA Member Spotlight with Edge & Node\u2019s Kyle Rojas, Business Development and Partnerships",
+      "description": "As an EEA member, Edge & Node is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "bringing-ecosystems-together-how-w3c-dids-and-vcs-can-help-with-ethereums-three-transitions": {
+      "id": 1099,
+      "title": "Bringing Ecosystems Together: How W3C DIDs and VCs can help with Ethereum\u2019s Three Transitions",
+      "description": "Abstract Vitalik Buterin identified three crucial transitions for Ethereum: scaling through L2 rollups to reduce costs, enhancing wallet security via...",
+      "og_image": ""
+    },
+    "eea-distributed-ledger-technologies-interoperability-case-study-september-2024": {
+      "id": 1031,
+      "title": "EEA Distributed Ledger Technologies Interoperability: Case Study, September 2024",
+      "description": "(Bridging between Stellar and Polygon networks)",
+      "og_image": ""
+    },
+    "ethereum-l2-working-group-current-state-of-l2-bridges-2024-update": {
+      "id": 1034,
+      "title": "Ethereum L2 Working Group: Current State of L2 Bridges \u2013 2024 Update",
+      "description": "Ethereum L2 Working Group: Current State of L2 Bridges \u2013 2024 Update",
+      "og_image": ""
+    },
+    "resolving-the-dichotomy-defi-compliance-under-zero-knowledge": {
+      "id": 858,
+      "title": "Resolving the Dichotomy: DeFi Compliance under Zero-Knowledge",
+      "description": "Opinion from Dr. Andreas Freund. 21 August 2024 TL/DR There are platform solutions for DeFi protocols to integrate regulatory compliance without...",
+      "og_image": ""
+    },
+    "eea-releases-defi-risk-assessment-guidelines-v1": {
+      "id": 846,
+      "title": "EEA Releases DeFi Risk Assessment Guidelines v1",
+      "description": "17 July 2024 EEA Introduces Enterprise Standard for Assessing DeFi Protocols EEA today published the DeFi Risk Assessment Guidelines, Version 1...",
+      "og_image": ""
+    },
+    "eea-releases-dlt-interoperability-case-study": {
+      "id": 738,
+      "title": "EEA Releases DLT Interoperability Case Study",
+      "description": "Monday 8 July 2024 A new case study showcases the successful implementation of cross-chain Delivery versus Payment (DvP) settlement using EEA \u2026",
+      "og_image": ""
+    },
+    "eea-distributed-ledger-technologies-interoperability-case-study-july-2024": {
+      "id": 1028,
+      "title": "EEA Distributed Ledger Technologies Interoperability: Case Study, July 2024",
+      "description": "EEA Distributed Ledger Technologies Interoperability: Case Study, July 2024",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-announces-new-leadership-and-vision": {
+      "id": 722,
+      "title": "Enterprise Ethereum Alliance Announces New Leadership and Vision",
+      "description": "EEA Board Members Paul Brody of EY and Microsoft\u2019s Karen Scarbrough to Lead the Alliance into a New Era of \u2026",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-conor-svensson-founder-and-ceo-of-web3-labs": {
+      "id": 1068,
+      "title": "EEA Member Spotlight with Conor Svensson, Founder and CEO of Web3 Labs",
+      "description": "Web3 Labs is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA interviewed...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-tetsushi-hisata-founder-and-ceo-of-datachain": {
+      "id": 854,
+      "title": "EEA Member Spotlight with Tetsushi Hisata, Founder and CEO of Datachain",
+      "description": "As an EEA member, Datachain is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-adrian-corcoran-head-of-partnerships-at-0chain-2": {
+      "id": 1064,
+      "title": "EEA Member Spotlight with Adrian Corcoran, Head of Partnerships at 0Chain",
+      "description": "As an EEA member, 0Chain is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-vinicius-farias-ribeiro-head-of-expansion-at-cartesi-2": {
+      "id": 1062,
+      "title": "EEA Member Spotlight with Vinicius Farias Ribeiro, Head of Expansion at Cartesi",
+      "description": "As an EEA member, Cartesi is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-kfir-nissan-co-founder-and-ceo-of-valid-network": {
+      "id": 1060,
+      "title": "EEA Member Spotlight with Kfir Nissan, Co-Founder and CEO of Valid Network",
+      "description": "As an EEA member, Valid Network is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below,...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-marc-meyer-director-of-payments-at-crowdz": {
+      "id": 1058,
+      "title": "EEA Member Spotlight with Marc Meyer, Director of Payments at Crowdz",
+      "description": "As an EEA member, Crowdz is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-daniel-huangceo-co-founder-of-bsos": {
+      "id": 1056,
+      "title": "EEA Member Spotlight with Daniel Huang,CEO & Co-founder of BSOS",
+      "description": "As an EEA member, BSOS is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-alan-vey-ceo-of-aventus-technologies": {
+      "id": 1054,
+      "title": "EEA Member Spotlight with Alan Vey, CEO of Aventus Technologies",
+      "description": "As an EEA member, Aventus Technologies is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-nitin-goyal-head-of-enterprise-engagement-at-polygon": {
+      "id": 1052,
+      "title": "EEA Member Spotlight with Nitin Goyal, Head of Enterprise Engagement at Polygon",
+      "description": "As an EEA member, Polygon is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-richard-ma-ceo-and-co-founder-at-quantstamp": {
+      "id": 1050,
+      "title": "EEA Member Spotlight with Richard Ma, CEO and Co-founder at Quantstamp",
+      "description": "As an EEA member, Quantstamp is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-mark-fitzgibbon-dao-member-operations-at-api3": {
+      "id": 1048,
+      "title": "EEA Member Spotlight with Mark Fitzgibbon, DAO Member \u2013 Operations at API3",
+      "description": "As an EEA member, API3 is part of the EEA community of organizations working to advance Ethereum and drive industry adoption. In the Q&A below, the EEA...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-jonas-simanavicius-co-founder-and-cto-at-syntropy": {
+      "id": 1046,
+      "title": "EEA Member Spotlight with Jonas Simanavicius, Co-founder and CTO at Syntropy",
+      "description": "EEA Member Spotlight with Jonas Simanavicius, Co-founder and CTO at Syntropy As an EEA member, Syntropy is part of the EEA community of organizations...",
+      "og_image": ""
+    },
+    "eea-member-spotlight-with-alexandre-bourget-streamingfasts-co-founder-and-cto": {
+      "id": 1044,
+      "title": "EEA Member Spotlight with Alexandre Bourget, StreamingFast\u2019s Co-founder and CTO",
+      "description": "EEA Member Spotlight with Alexandre Bourget, StreamingFast\u2019s Co-founder and CTO As an EEA member, StreamingFast will be part of the EEA community of...",
+      "og_image": ""
+    },
+    "the-eeas-drama-wg-has-released-a-review-draft-of-its-defi-risk-guidelines-discussion-paper-for-public-feedback": {
+      "id": 766,
+      "title": "DRAMA WG releases Defi Risk Guidelines Review Draft",
+      "description": "16 January 2024 The EEA\u2019s Defi Risk Assessment, Management, and Accounting Working Group (more often called the \u201cDRAMA WG\u201c) today released \u2026",
+      "og_image": ""
+    },
+    "ethereum-layer-2-for-the-enterprise-an-update": {
+      "id": 827,
+      "title": "EEA releases Ethereum Layer 2 for the Enterprise: An Update",
+      "description": "The EEA today released an update to its Layer 2 for the Enterprise report. The summary report is an update to \u2026",
+      "og_image": ""
+    },
+    "eea-releases-its-second-ethereum-business-readiness-report": {
+      "id": 765,
+      "title": "EEA Releases its Second Ethereum Business Readiness Report",
+      "description": "2023 edition provides the most comprehensive snapshot of \u201creal-world\u201d business adoption of Ethereum available today. Report features insights from the...",
+      "og_image": ""
+    },
+    "eea-ethereum-business-readiness-report-2023": {
+      "id": 1022,
+      "title": "EEA Ethereum Business Readiness Report 2023",
+      "description": "EEA Ethereum Business Readiness Report 2023",
+      "og_image": ""
+    },
+    "eea-releases-its-second-ethereum-business-readiness-report-3": {
+      "id": 818,
+      "title": "EEA Releases its Second Ethereum Business Readiness Report",
+      "description": "2023 edition provides the most comprehensive snapshot of \u201creal-world\u201d business adoption of Ethereum available today. Report features insights from the...",
+      "og_image": ""
+    },
+    "eea-releases-its-second-ethereum-business-readiness-report-2": {
+      "id": 768,
+      "title": "EEA Releases its Second Ethereum Business Readiness Report",
+      "description": "2023 edition provides the most comprehensive snapshot of \u201creal-world\u201d business adoption of Ethereum available today. Report features insights from the...",
+      "og_image": ""
+    },
+    "eea-releases-version-2-of-the-ethtrust-security-levels-specification": {
+      "id": 806,
+      "title": "EEA Releases Version 2 of the EthTrust Security Levels Specification",
+      "description": "Standard represents a major advance in ensuring security within the Ethereum ecosystem. Wakefield, Mass. \u2014 December 18, 2023 \u2014 The Enterprise Ethereum...",
+      "og_image": ""
+    },
+    "eea-releases-v2-of-ethtrust-security-levels-specification": {
+      "id": 799,
+      "title": "EEA Releases Version 2 of the EthTrust Security Levels Specification",
+      "description": "Standard represents a major advance in ensuring security within the Ethereum ecosystem. Wakefield, Mass. \u2014 December 18, 2023 \u2014 The Enterprise \u2026",
+      "og_image": ""
+    },
+    "interview-with-vikram-seth-of-shell": {
+      "id": 829,
+      "title": "Interview With Vikram Seth of Shell",
+      "description": "Interview by Tom Lyons We don\u2019t usually associate companies like Shell with blockchain. How long has Shell been in this space? Shell \u2026",
+      "og_image": ""
+    },
+    "interview-with-deutsche-telekoms-markus-schorn-and-jens-herrmann": {
+      "id": 836,
+      "title": "Interview With Deutsche Telekom\u2019s Markus Schorn and Jens Herrmann",
+      "description": "The following is an interview with Deutsche Telekom\u2019s Web3 Program Co-Lead Markus Schorn and Sr. Manager of Corporate Strategy Jens \u2026",
+      "og_image": ""
+    },
+    "ethereum-layer-2-and-scalability-solutions-for-the-enterprise-an-update": {
+      "id": 1025,
+      "title": "Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update",
+      "description": "Ethereum Layer 2 and Scalability Solutions for the Enterprise: An Update",
+      "og_image": ""
+    },
+    "steering-towards-a-new-horizon-in-enterprise-collaboration-baseline-reference-implementation-3-hits-beta-version": {
+      "id": 774,
+      "title": "Steering Towards a New Horizon in Enterprise Collaboration: Baseline Reference Implementation 3 Hits Beta Version",
+      "description": "In the evolving digital landscape, the complexity of business interactions and transactions within and across enterprise ecosystems continues to escalate....",
+      "og_image": ""
+    },
+    "in-this-next-cycle-the-technology-will-be-ready-for-primetime-interview-with-alex-tapscott": {
+      "id": 661,
+      "title": "\u201cIn this next cycle, the technology will be ready for primetime.\u201d \u2013 Interview with Alex Tapscott",
+      "description": "Alex Tapscott is a well-known voice in the blockchain and Ethereum space. In 2016, he was co-author with his father, \u2026",
+      "og_image": ""
+    },
+    "the-mainstreaming-of-decentralization": {
+      "id": 790,
+      "title": "The mainstreaming of decentralization",
+      "description": "By Daniel C. Burnett, EEA Executive Director Recently, I sent an email to all the members of the Enterprise Ethereum Alliance \u2026",
+      "og_image": ""
+    },
+    "the-continuing-evolution-of-public-ethereum-as-a-business-platform": {
+      "id": 745,
+      "title": "The continuing evolution of public Ethereum as a business platform",
+      "description": "by Tom Lyons In our Ethereum Business Readiness Report, published last June, we highlighted the ongoing maturation of the public Ethereum \u2026",
+      "og_image": ""
+    },
+    "introduction-to-smart-contract-security": {
+      "id": 945,
+      "title": "Introduction to Smart Contract Security \u2013 version 1",
+      "description": "Introduction to Smart Contract Security \u2013 version 1",
+      "og_image": ""
+    },
+    "2023-02-21-ethtq-repository-available-for-use": {
+      "id": 859,
+      "title": "EthTQ Resource Repository available for use",
+      "description": "By Sonal Patel, co-chair of the Ethereum Training Quality Working Group Are you searching for resources to build your expertise in \u2026",
+      "og_image": ""
+    },
+    "should-blockchain-projects-care-about-business-models": {
+      "id": 813,
+      "title": "Should blockchain projects care about business models?",
+      "description": "Opinion by Vinicius \u2018Vini\u2019 Farias Riberiro, EEA Regional Representative for Portugal A brief discussion about blockchain business models. IMHO, definitely...",
+      "og_image": ""
+    },
+    "new-baseline-protocol-reference-implementation-hits-milestone": {
+      "id": 734,
+      "title": "New Baseline Protocol Reference Implementation Hits Milestone",
+      "description": "By Baseline Outreach Team Recently, the Baseline Core Developer Community announced on the Baseline Show the completion of a major milestone for the third...",
+      "og_image": ""
+    },
+    "eea-publishes-qbft-blockchain-consensus-protocol": {
+      "id": 731,
+      "title": "EEA Publishes QBFT Blockchain Consensus Protocol",
+      "description": "Today EEA is proud to publish the QBFT Blockchain Consensus Protocol, a Byzantine Fault-Tolerant Proof-of-Authority consensus algorithm designed for...",
+      "og_image": ""
+    },
+    "introduction-to-ethereum-in-healthcare-version-1": {
+      "id": 950,
+      "title": "Introduction to Ethereum in Healthcare \u2013 Version 1",
+      "description": "Introduction to Ethereum in Healthcare \u2013 Version 1",
+      "og_image": ""
+    },
+    "introduction-to-smart-contracts-version-2-2": {
+      "id": 989,
+      "title": "Introduction to Smart Contracts \u2013 Version 2.2",
+      "description": "Introduction to Smart Contracts \u2013 Version 2.2",
+      "og_image": ""
+    },
+    "introduction-to-defi-version-2-1": {
+      "id": 986,
+      "title": "Introduction to DeFi \u2013 Version 2.1",
+      "description": "Introduction to DeFi \u2013 Version 2.1",
+      "og_image": ""
+    },
+    "understanding-web3-for-business-version-1-1": {
+      "id": 973,
+      "title": "Understanding Web3 for Business \u2013 Version 1.1",
+      "description": "Understanding Web3 for Business \u2013 Version 1.1",
+      "og_image": ""
+    },
+    "introduction-to-nfts-and-copyright-version-1": {
+      "id": 954,
+      "title": "Introduction to NFTs and Copyright \u2013 Version 1",
+      "description": "Introduction to NFTs and Copyright \u2013 Version 1",
+      "og_image": ""
+    },
+    "introduction-to-daos-version-2": {
+      "id": 992,
+      "title": "Introduction to DAOs \u2013 Version 2",
+      "description": "Introduction to DAOs \u2013 Version 2",
+      "og_image": ""
+    },
+    "introduction-to-ethereum-layer-2-version-2": {
+      "id": 998,
+      "title": "Introduction to Ethereum Layer 2 \u2013 Version 2",
+      "description": "Introduction to Ethereum Layer 2 \u2013 Version 2",
+      "og_image": ""
+    },
+    "introduction-to-stablecoins-version-2": {
+      "id": 980,
+      "title": "Introduction to Stablecoins \u2013 Version 2",
+      "description": "Introduction to Stablecoins \u2013 Version 2",
+      "og_image": ""
+    },
+    "introduction-to-rollups-version-1": {
+      "id": 961,
+      "title": "Introduction to Rollups \u2013 Version 1",
+      "description": "Introduction to Rollups \u2013 Version 1",
+      "og_image": ""
+    },
+    "introduction-to-sidechains-version-1": {
+      "id": 958,
+      "title": "Introduction to Sidechains \u2013 Version 1",
+      "description": "Introduction to Sidechains \u2013 Version 1",
+      "og_image": ""
+    },
+    "ey-joins-the-enterprise-ethereum-alliance-board-to-advance-ethereum-business-readiness": {
+      "id": 711,
+      "title": "EY Joins the Enterprise Ethereum Alliance Board to Advance Ethereum Business Readiness",
+      "description": "EY Global Blockchain Leader, Paul Brody, Appointed as EEA Board of Directors Representative to Help Guide Increasing Business \u2026",
+      "og_image": ""
+    },
+    "introduction-to-nfts-version-2": {
+      "id": 983,
+      "title": "Introduction to NFTs \u2013 Version 2",
+      "description": "Introduction to NFTs \u2013 Version 2",
+      "og_image": ""
+    },
+    "introduction-to-tokenization-version-1": {
+      "id": 967,
+      "title": "Introduction to Tokenization \u2013 Version 1",
+      "description": "Introduction to Tokenization \u2013 Version 1",
+      "og_image": ""
+    },
+    "introduction-to-crypto-wallets-version-1": {
+      "id": 964,
+      "title": "Introduction to Crypto Wallets \u2013 Version 1",
+      "description": "Introduction to Crypto Wallets \u2013 Version 1",
+      "og_image": ""
+    },
+    "understanding-proof-of-stake-version-2": {
+      "id": 976,
+      "title": "Understanding Proof of Stake \u2013 Version 2",
+      "description": "Understanding Proof of Stake \u2013 Version 2",
+      "og_image": ""
+    },
+    "introduction-to-ethereum-and-sustainability-version-2": {
+      "id": 970,
+      "title": "Introduction to Ethereum and Sustainability \u2013 Version 2",
+      "description": "Introduction to Ethereum and Sustainability \u2013 Version 2",
+      "og_image": ""
+    },
+    "welcome-to-ethereum-version-2": {
+      "id": 995,
+      "title": "Welcome to Ethereum \u2013 Version 2",
+      "description": "Welcome to Ethereum \u2013 Version 2",
+      "og_image": ""
+    },
+    "enterprise-blockchains-redux-how-to-be-not-not-nist-compliant-without-breaking-the-bank": {
+      "id": 853,
+      "title": "Enterprise Blockchains Redux: How to be not-not NIST compliant without breaking the bank",
+      "description": "Opinion from Dr. Andreas Freund, EEA Mainnet Interest Group Member Blockchains have a seldom talked about problem which is independent of \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-advances-smart-contract-security-with-ethtrust-specification": {
+      "id": 729,
+      "title": "Enterprise Ethereum Alliance Advances Smart Contract Security with EthTrust Specification",
+      "description": "EEA EthTrust Security Levels Specification Defines Smart Contract Security Certification Requirements for Ethereum Ecosystem WAKEFIELD, Mass. \u2013 August 22,...",
+      "og_image": ""
+    },
+    "why-are-blockchains-useful-for-business": {
+      "id": 727,
+      "title": "Why are Blockchains Useful for Business?",
+      "description": "A recent article by Josh Stark sets up a new framework for understanding the utility of blockchains. He summarized it \u2026",
+      "og_image": ""
+    },
+    "crosschain-bridges-overview-where-we-are-now-2": {
+      "id": 835,
+      "title": "Crosschain Bridges Overview: Where We Are Now",
+      "description": "By Angela Potter, Lead Product Manager at ConsenSys and EEA member, with input from the EEA Crosschain Interoperability Working Group The \u2026",
+      "og_image": ""
+    },
+    "celebrate-ethereums-heroes-and-milestones-at-the-eeas-7th-anniversary-special-event": {
+      "id": 838,
+      "title": "Celebrate Ethereum\u2019s Heroes and Milestones at the EEA\u2019s 7th Anniversary Special Event",
+      "description": "Hear from NFT Archaeologist Adam McBride, Blockchain Research Institute\u2019s Don Tapscott, Angel Investor Grant Hummer and Other Business Leaders on July \u2026",
+      "og_image": ""
+    },
+    "seven-ways-to-learn-about-business-ethereum": {
+      "id": 844,
+      "title": "Seven Ways to Learn About Business Ethereum",
+      "description": "Mark your calendars. Our EEA Ethereum 7th Anniversary Special is fast approaching, and we want to see you there. This \u2026",
+      "og_image": ""
+    },
+    "is-ethereum-ready-for-business-eea-inaugural-report-investigates": {
+      "id": 847,
+      "title": "Is Ethereum Ready for Business? EEA Inaugural Report Investigates",
+      "description": "EEA Ethereum Business Readiness Report 2022 Assesses Ethereum\u2019s Business Potential Based on In-Depth Analysis from Case Studies, Interviews, and Ecosystem...",
+      "og_image": ""
+    },
+    "the-demands-for-cross-chain-transactions-between-ethereum-and-other-blockchains-have-been-soaring": {
+      "id": 857,
+      "title": "The Demands for Cross-chain Transactions Between Ethereum and Other Blockchains Have been Soaring",
+      "description": "By Motoki Yoshida, Datachain, Inc. There is no doubt that Ethereum is one of the most well-known blockchains in the world. \u2026",
+      "og_image": ""
+    },
+    "unlocking-the-next-steps-in-crosschain-interoperability": {
+      "id": 868,
+      "title": "Unlocking the Next Steps in Crosschain Interoperability",
+      "description": "Crosschain interoperability is emerging as one of the most crucial features of blockchain technology.The growing and pressing demand for interoperability \u2026",
+      "og_image": ""
+    },
+    "eea-workshop-on-sustainability-and-resource-efficiency-in-public-and-private-ethereum-networks": {
+      "id": 1010,
+      "title": "EEA Workshop on Sustainability and Resource Efficiency in Public and Private Ethereum Networks",
+      "description": "EEA Workshop on Sustainability and Resource Efficiency in Public and Private Ethereum Networks",
+      "og_image": ""
+    },
+    "careers-in-ethereum-and-web3-to-connect-job-seekers-with-global-hiring-organizations": {
+      "id": 798,
+      "title": "\u201cCareers in Ethereum and Web3\u201d to Connect Job Seekers with Global Hiring Organizations",
+      "description": "Virtual Job Fair Presented by the Enterprise Ethereum Alliance and the Blockchain Education Network to Offer Job Seekers Career Connections \u2026",
+      "og_image": ""
+    },
+    "introducing-the-eeas-ethereum-training-quality-working-group": {
+      "id": 773,
+      "title": "Introducing the EEA\u2019s Ethereum Training Quality Working Group",
+      "description": "A rapidly increasing number of companies and individuals are looking to educate themselves to successfully work in the blockchain space. \u2026",
+      "og_image": ""
+    },
+    "ethereums-environmental-footprint-breaking-down-the-misconceptions": {
+      "id": 775,
+      "title": "Ethereum\u2019s Environmental Footprint: Breaking Down the Misconceptions",
+      "description": "By Yorke E. Rhodes III, EEA Board Member and Co-Founder blockchain @Microsoft There\u2019s no denying that blockchain, Ethereum, non-fungible tokens (NFTs) \u2026",
+      "og_image": ""
+    },
+    "eea-ethereum-business-readiness-report-2022": {
+      "id": 1014,
+      "title": "EEA Ethereum Business Readiness Report 2022 \u2013 WIP",
+      "description": "EEA Ethereum Business Readiness Report 2022 \u2013 WIP",
+      "og_image": ""
+    },
+    "chain-reaction-the-insanity-of-l1-bridges-cross-chain-chaos": {
+      "id": 772,
+      "title": "Chain Reaction: The Insanity of L1 Bridges (Cross-Chain Chaos)",
+      "description": "By Andreas Freund, EEA Mainnet Interest Group Member, with input from the Mainnet IG and Cross-chain WG The Wormhole hack at about $320M \u2026",
+      "og_image": ""
+    },
+    "scaling-a-500bn-ecosystem-enterprise-use-cases-for-ethereum": {
+      "id": 800,
+      "title": "Scaling a $500Bn+ Ecosystem: Enterprise Use Cases for Ethereum Layer 2 Solutions",
+      "description": "By Andreas Freund, EEA Mainnet Interest Group Member There are new, exciting, never-before-possible enterprise use cases for L2 solutions meeting...",
+      "og_image": ""
+    },
+    "eea-presents-ethereum-in-finance-a-view-from-singapore-virtual-event": {
+      "id": 861,
+      "title": "EEA Presents \u201cEthereum in Finance \u2013 A View from Singapore\u201d Virtual Event",
+      "description": "ConsenSys\u2019 Charles d\u2019Haussy, MAS\u2019 Alan Lim and Standard Chartered Bank\u2019s Vinoy Kumar Join Moderator DBS Digital Exchange\u2019s Daniel Lee to \u2026",
+      "og_image": ""
+    },
+    "scaling-a-500bn-ecosystem-layer-2-and-other-ethereum-scalability-solutions-and-their-current-solution-landscape": {
+      "id": 741,
+      "title": "Scaling a $500Bn+ Ecosystem: Layer 2 and Other Ethereum Scalability Solutions and Their Current Solution Landscape",
+      "description": "By Andreas Freund, EEA Mainnet Interest Group Member The following is a current state of the Ethereum scalability ecosystem mini report, \u2026",
+      "og_image": ""
+    },
+    "introducing-the-eea-defi-interest-group": {
+      "id": 781,
+      "title": "Introducing the EEA DeFi Interest Group",
+      "description": "If you haven\u2019t been tuned in to the Decentralized Finance (DeFi) space, it\u2019s time to pay attention. DeFi has quickly \u2026",
+      "og_image": ""
+    },
+    "eea-ethereum-developer-tool-survey-results": {
+      "id": 747,
+      "title": "EEA Ethereum Developer Tool Survey Results",
+      "description": "The Enterprise Ethereum Alliance Mainnet Working Group created a survey to solicit input from enterprise developers working on Ethereum applications. \u2026",
+      "og_image": ""
+    },
+    "how-ethereum-layer-2-scaling-solutions-address-barriers-to-enterprises-building-on-mainnet": {
+      "id": 648,
+      "title": "how ethereum layer 2 scaling solutions address barriers to enterprises building on mainnet",
+      "description": "Tas Dienes, EEA Mainnet Working Group December 2020 If you\u2019ve been following the buzz in the Ethereum ecosystem recently, you\u2019ve probably heard \u2026",
+      "og_image": ""
+    },
+    "ethereum-mainnet-use-case-analysis-v1": {
+      "id": 1019,
+      "title": "Ethereum Mainnet Use Case Analysis v1",
+      "description": "Ethereum Mainnet Use Case Analysis v1",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-appoints-dr-daniel-burnett-as-executive-director": {
+      "id": 804,
+      "title": "Enterprise Ethereum Alliance Appoints Dr. Daniel Burnett as Executive Director",
+      "description": "Instrumental in the Successful Rollout of the Baseline Protocol, Former PegaSys Blockchain Standards Architect to Advance EEA\u2019s Mission, Engage Members \u2026",
+      "og_image": ""
+    },
+    "interoperability-use-case": {
+      "id": 1001,
+      "title": "Interoperability Use Case",
+      "description": "Interoperability Use Case",
+      "og_image": ""
+    },
+    "statement-from-the-chairman-of-the-eea-board": {
+      "id": 875,
+      "title": "Statement from the Chairman of the EEA Board",
+      "description": "Dear EEA Community: I\u2019m writing to let you know about an upcoming change in the organization. Ron Resnick will be stepping \u2026",
+      "og_image": ""
+    },
+    "eea-mainnet-working-group-forms-task-force-eminent-ethereum-mainnet-integration-for-enterprises": {
+      "id": 795,
+      "title": "EEA Mainnet Working Group forms Task Force \u201cEMINENT\u201d (Ethereum Mainnet Integration for Enterprises)",
+      "description": "Some fresh news from New York City and Berlin: The Enterprise Ethereum Alliance Mainnet Working Group has formed a key \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-testnet-offers-global-businesses-a-way-to-collaborate-to-advance-real-world-blockchain-platforms": {
+      "id": 864,
+      "title": "Enterprise Ethereum Alliance TestNet Offers Global Businesses a Way to Collaborate to Advance Real-World Blockchain Platforms",
+      "description": "With Whiteblock as the EEA\u2019s Official TestNet Provider, the EEA Business Community Can Innovate Together within a Controlled Environment, without \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-and-chamber-of-digital-commerce-launch-strategic-partnership-to-advance-the-token-enabled-economy": {
+      "id": 763,
+      "title": "Enterprise Ethereum Alliance and Chamber of Digital Commerce Launch Strategic Partnership to Advance the Token-Enabled Economy",
+      "description": "Partnership Facilitates Collaboration Between the Chamber\u2019s Token Alliance and the EEA\u2019s Working Group and Token Taxonomy Initiative Efforts WASHINGTON,...",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-unveils-token-enabled-blockchain-in-action-at-devcon-5": {
+      "id": 736,
+      "title": "Enterprise Ethereum Alliance Unveils Token-Enabled Blockchain in Action at Devcon 5",
+      "description": "New EEA Specifications, Demonstrations, and Mainnet Initiative Highlight Maturation of Real Deployments of Enterprise Ethereum Applications OSAKA, JAPAN...",
+      "og_image": ""
+    },
+    "telecommunications-use-cases": {
+      "id": 1007,
+      "title": "Telecommunications Use Cases",
+      "description": "Telecommunications Use Cases",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-releases-latest-specification-to-accelerate-blockchain-ecosystem": {
+      "id": 788,
+      "title": "Enterprise Ethereum Alliance Releases Latest Specification to Accelerate Blockchain Ecosystem",
+      "description": "NEW YORK \u2013 May 13, 2019 \u2013 The Enterprise Ethereum Alliance (EEA) today announced the publication of the Enterprise Ethereum Client Specification V3, \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-releases-dff-chain-trusted-compute-specification-1-0": {
+      "id": 782,
+      "title": "Enterprise Ethereum Alliance Releases Off-Chain Trusted Compute Specification 1.0",
+      "description": "May 13, 2019 New Application Programming Interfaces Help Programmers Achieve the Privacy, Low Latency, and Throughput Required for Enterprise Use Cases \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-releases-off-chain-trusted-compute-specification-1-0": {
+      "id": 767,
+      "title": "Enterprise Ethereum Alliance Releases Off-Chain Trusted Compute Specification 1.0",
+      "description": "New York \u2013 May 13, 2019 \u2013The Enterprise Ethereum Alliance (EEA) today announced the public availability of the EEA Off-Chain Trusted Compute Specification...",
+      "og_image": ""
+    },
+    "eea-hosts-first-workshop-in-china": {
+      "id": 885,
+      "title": "EEA Hosts First Workshop in China",
+      "description": "On April 12, 2019, the first EEA China workshop hosted by Wanchain was held in Beijing with representatives from nearly \u2026",
+      "og_image": ""
+    },
+    "legal-industrys-role-in-the-future-of-blockchain": {
+      "id": 880,
+      "title": "Legal Industry\u2019s Role in the Future of Blockchain",
+      "description": "The EEA Legal Advisory Working Group (LAWG), led by EEA Chief Legal Counsel and Corporate Secretary Oksana Davis and \u2026",
+      "og_image": ""
+    },
+    "6-questions-with-chaals-nevile": {
+      "id": 892,
+      "title": "6 QUESTIONS WITH CHAALS NEVILE",
+      "description": "6 QUESTIONS WITH CHAALS NEVILE \u2013 EEA TECHNICAL PROGRAM DIRECTOR* *First published on Blockchain Expo What is your role as part of \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-launches-blockchain-neutral-token-taxonomy-initiative-to-accelerate-a-token-powered-blockchain-future": {
+      "id": 724,
+      "title": "Enterprise Ethereum Alliance Launches Blockchain-Neutral Token Taxonomy Initiative to Accelerate a Token-Powered Blockchain Future",
+      "description": "New York, NY \u2013 April 17, 2019 \u2013 The Enterprise Ethereum Alliance (EEA) today announced the formation of the blockchain-neutral Token Taxonomy Initiative...",
+      "og_image": ""
+    },
+    "real-estate-use-cases": {
+      "id": 1004,
+      "title": "Real Estate Use Cases",
+      "description": "Real Estate Use Cases",
+      "og_image": ""
+    },
+    "why-standards-are-whats-next-in-the-web-3-0-blockchain-revolution": {
+      "id": 894,
+      "title": "Why Standards are \u201cWhat\u2019s Next\u201d in the Web 3.0 Blockchain Revolution",
+      "description": "With the introduction of a new technology, it takes a global standards organization with a world-class testing and certification program \u2026",
+      "og_image": ""
+    },
+    "join-the-eea-and-global-blockchain-leaders-at-the-hi-con-conference-in-tokyo-japan-nov-10-2018": {
+      "id": 890,
+      "title": "Join the EEA and Global Blockchain Leaders at the Hi-Con Conference in Tokyo, Japan, Nov. 10, 2018",
+      "description": "EEA is pleased to be an official partner of Hi-Con 2018, a premier conference for the next generation of dApp creators, \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-expands-presence-in-asia-appoints-blockchain-expert-kazuaki-ishiguro-to-lead-japanese-office": {
+      "id": 814,
+      "title": "Enterprise Ethereum Alliance Expands Presence in Asia; Appoints Blockchain Expert Kazuaki Ishiguro to Lead Japanese Office",
+      "description": "July 19, 2018 Join the EEA\u2019s Kazuaki Ishiguro, Regional EEA Members and Local Blockchain Experts at the Free, Three-day Ethereum Hackathon \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-specification-clears-the-path-to-a-global-blockchain-ecosystem": {
+      "id": 721,
+      "title": "Enterprise Ethereum Alliance Specification Clears the Path to a Global Blockchain Ecosystem",
+      "description": "Enterprise Ethereum Alliance Specification Clears the Path to a Global Blockchain Ecosystem May 16, 2018 EEA Specification-based Enterprise Ethereum Smart...",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-becomes-worlds-largest-open-source-blockchain-initiative": {
+      "id": 695,
+      "title": "Enterprise Ethereum Alliance Becomes World\u2019s Largest Open-source Blockchain Initiative",
+      "description": "NEW YORK, NY, USA \u2013 July 18, 2017 \u2013 Enterprise Ethereum Alliance (EEA) announced today that 34 organizations have joined the blockchain industry \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-announces-support-for-blockchain-consensus-algorithm-integration": {
+      "id": 751,
+      "title": "Enterprise Ethereum Alliance Announces Support for Blockchain Consensus Algorithm Integration",
+      "description": "Enterprise Ethereum Alliance Announces Support for Blockchain Consensus Algorithm Integration July 7, 2017 WAKEFIELD, Mass., USA \u2013 July 5, 2017 \u2013 The...",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-expands-dramatically-announcing-86-new-members": {
+      "id": 752,
+      "title": "Enterprise Ethereum Alliance expands dramatically announcing 86 new members",
+      "description": "Enterprise Ethereum Alliance expands dramatically announcing 86 new members including Broadridge, DTCC, Deloitte, Infosys, Merck KGaA, MUFG, National \u2026",
+      "og_image": ""
+    },
+    "enterprise-ethereum-alliance-launches": {
+      "id": 712,
+      "title": "Enterprise Ethereum Alliance Launches",
+      "description": "Newly formed enterprise collaboration drives Ethereum blockchain technology best practices focusing on security, privacy, scalability, and...",
+      "og_image": ""
+    }
+  },
+  "pages": {
+    "contact-page": {
+      "title": "contact-page",
+      "description": "Get in touch with the Enterprise Ethereum Alliance. Contact us for membership inquiries, partnership opportunities, or general questions.",
+      "og_image": ""
+    },
+    "archives": {
+      "title": "Archives",
+      "description": "Archives",
+      "og_image": ""
+    },
+    "newsletters": {
+      "title": "EEA NEWSLETTER",
+      "description": "Subscribe to the EEA newsletter for the latest updates on enterprise Ethereum adoption, member news, and industry insights.",
+      "og_image": ""
+    },
+    "press-releases": {
+      "title": "Press Releases",
+      "description": "PRESS RELEASES Latest EEA press releases",
+      "og_image": ""
+    },
+    "faqs": {
+      "title": "FAQs",
+      "description": "New Members: Join the EEA and Enjoy Exclusive Benefits Enter your information below; please note, if you are signing up for \u2026",
+      "og_image": ""
+    },
+    "become-a-member": {
+      "title": "Become A Member",
+      "description": "Join the Enterprise Ethereum Alliance and connect with industry leaders building the future of enterprise blockchain. Membership benefits include working groups, events, and more.",
+      "og_image": ""
+    },
+    "terms-and-condition": {
+      "title": "Terms and Condition",
+      "description": "Enterprise Ethereum Alliance terms and conditions for website use and membership.",
+      "og_image": ""
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Enterprise Ethereum Alliance privacy policy. Learn how we collect, use, and protect your personal information.",
+      "og_image": ""
+    },
+    "eea-primers": {
+      "title": "EEA Primers",
+      "description": "Educational resources about Ethereum for business professionals. Learn about smart contracts, tokenization, DeFi, and enterprise blockchain.",
+      "og_image": ""
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "EEA blog featuring insights on enterprise Ethereum adoption, member spotlights, industry analysis, and technical deep-dives.",
+      "og_image": ""
+    },
+    "news": {
+      "title": "News & Events",
+      "description": "News & Events",
+      "og_image": ""
+    },
+    "technical-specifications": {
+      "title": "Technical specifications",
+      "description": "Technical specifications The EEA makes available its current release specifications and drafts in active development from this page. Previous release...",
+      "og_image": ""
+    },
+    "webinars": {
+      "title": "Webinars",
+      "description": "EEA webinars featuring member companies and industry experts discussing enterprise blockchain solutions and Ethereum developments.",
+      "og_image": ""
+    },
+    "surveys-reports": {
+      "title": "Surveys & Reports",
+      "description": "Surveys & Reports",
+      "og_image": ""
+    },
+    "eea-groups": {
+      "title": "EEA Groups",
+      "description": "Working Group Leadership EEA Working Groups collaborate to develop open freely-implementable specifications to accelerate the acceptance and deployment of...",
+      "og_image": ""
+    },
+    "homepage": {
+      "title": "Homepage",
+      "description": "The Enterprise Ethereum Alliance connects Fortune 500 enterprises, startups, and technology vendors with Ethereum experts.",
+      "og_image": ""
+    },
+    "eea-members": {
+      "title": "EEA Members",
+      "description": "Meet the Enterprise Ethereum Alliance members - leading companies building and deploying Ethereum-based enterprise solutions.",
+      "og_image": ""
+    },
+    "members": {
+      "title": "Members spotlight",
+      "description": "member-spotlight The EEA welcomes participation from all legally operating organizations including for-profit companies, non-profit organizations, and...",
+      "og_image": ""
+    },
+    "the-eea-team-members": {
+      "title": "The EEA Team",
+      "description": "Meet the EEA team working to connect enterprises with Ethereum technology and drive blockchain adoption.",
+      "og_image": ""
+    },
+    "eea-board": {
+      "title": "Members of the board",
+      "description": "Meet the EEA Board of Directors - industry leaders guiding the strategic direction of enterprise Ethereum adoption.",
+      "og_image": ""
+    },
+    "about-enterprise-ethereum-alliance": {
+      "title": "About",
+      "description": "About the Enterprise Ethereum Alliance - the world's largest open-source blockchain initiative connecting enterprises with Ethereum experts.",
+      "og_image": ""
+    }
+  }
+}

@@ -25,6 +25,7 @@ require_once 'init/menus.php';
 require_once 'init/shortcodes.php';
 require_once 'init/acf_blocks.php';
 require_once 'init/structured-data.php';
+require_once 'init/seo-meta.php';
 
 // Block REST API user enumeration (security)
 add_filter('rest_endpoints', function ($endpoints) {
