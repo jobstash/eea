@@ -65,6 +65,15 @@ Theme deploys automatically when you push (develop → staging, main → product
 - **Staging:** push to branch `develop` → deploys to https://eeastage.wpenginepowered.com/
 - **Production:** push to branch `main` → deploys to https://entethalliance.org/
 
+**Staging – Basic Auth**
+
+The staging environment is protected by HTTP Basic Authentication. To access https://eeastage.wpenginepowered.com/ use:
+
+- **User:** `eeastage`
+- **Password:** `ethereum84874`
+
+(Credentials can be changed in WP Engine User Portal → staging install → Basic Auth.)
+
 **One-time setup:**
 
 1. **SSH key for WP Engine SSH Gateway**  
