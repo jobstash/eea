@@ -21,6 +21,7 @@ First versioned release.
 
 - **CI/CD pipeline:** GitHub Actions workflows for deploy to Staging (on push to `develop`) and Production (on push to `main`). Each run builds the theme frontend (`npm ci` + `npm run build`) before deploying to WP Engine.
 - **Versioning:** CHANGELOG and theme version in `style.css` / `package.json` (SemVer).
+- **SEO meta tags:** Meta description, Open Graph, and Twitter Card tags without plugin (`init/seo-meta.php` + `eea-seo-meta.json`).
 
 ### Changed
 
