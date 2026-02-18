@@ -22,16 +22,6 @@ jobs:
           sed -i "s/^Version: .*/Version: $V/" wp-content/themes/wp-starter/style.css
           sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$V\"/" wp-content/themes/wp-starter/package.json
 
-      - name: Create and push tag from VERSION
-        run: |
-          V=$(cat VERSION | tr -d '\n')
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          if ! git rev-parse "v$V" >/dev/null 2>&1; then
-            git tag "v$V"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git "v$V"
-          fi
-
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
