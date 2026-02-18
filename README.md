@@ -62,7 +62,7 @@ A step-by-step guide to start (launch) the frontend part, and start working on i
 
 Theme deploys automatically when you push:
 
-- **Staging:** push to branch `release/x.x.x` (e.g. `release/1.0.0`) → deploys to https://eeastage.wpenginepowered.com/
+- **Staging:** push to branch `develop` → deploys to https://eeastage.wpenginepowered.com/
 - **Production:** push to branch `main` → deploys to https://entethalliance.org/
 
 **One-time setup:**

@@ -1,12 +1,12 @@
 # Deploy theme to WP Engine Staging (eeastage.wpenginepowered.com)
-# Trigger: push to branch release/x.x.x (e.g. release/1.0.0)
+# Trigger: push to branch develop
 # One-time setup: https://wpengine.com/support/github-action-deploy/
 
 name: Deploy to WP Engine Staging
 
 on:
   push:
-    branches: ['release/**']
+    branches: [develop]
 
 jobs:
   deploy:
