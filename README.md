@@ -53,5 +53,27 @@ A step-by-step guide to start (launch) the frontend part, and start working on i
 
 ## 3. Deploy
 
+### Manual
+
 1. Run `make prod`
 2. Upload the theme folder to the server
+
+### CI/CD (GitHub Actions → WP Engine)
+
+Theme deploys automatically when you push:
+
+- **Staging:** push to branch `release/x.x.x` (e.g. `release/1.0.0`) → deploys to https://eeastage.wpenginepowered.com/
+- **Production:** push to branch `main` → deploys to https://entethalliance.org/
+
+**One-time setup:**
+
+1. **SSH key for WP Engine SSH Gateway**  
+   Generate an ED25519 key (passwordless). Add the **public** key in [WP Engine User Portal](https://my.wpengine.com) → SSH Gateway → Add key. Add the **private** key in GitHub repo → Settings → Secrets and variables → Actions → New repository secret: name `WPE_SSHG_KEY_PRIVATE`, value = private key contents.
+
+2. **Environment names**  
+   In the same GitHub Secrets, add:
+   - `WPE_STAGING_ENV` = WP Engine environment name for staging (e.g. the install/env name for eeastage in the portal).
+   - `WPE_PRODUCTION_ENV` = WP Engine environment name for production (e.g. the install/env name for entethalliance.org).
+
+Workflows: [.github/workflows/deploy-staging.yml](.github/workflows/deploy-staging.yml), [.github/workflows/deploy-production.yml](.github/workflows/deploy-production.yml).  
+Details: [WP Engine – GitHub Action deploy](https://wpengine.com/support/github-action-deploy/).
