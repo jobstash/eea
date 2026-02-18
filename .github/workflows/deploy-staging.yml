@@ -1,0 +1,25 @@
+# Deploy theme to WP Engine Staging (eeastage.wpenginepowered.com)
+# Trigger: push to branch develop
+# One-time setup: https://wpengine.com/support/github-action-deploy/
+
+name: Deploy to WP Engine Staging
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy theme to WP Engine Staging
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: ${{ secrets.WPE_STAGING_ENV }}
+          SRC_PATH: "wp-content/themes/wp-starter/"
+          REMOTE_PATH: "wp-content/themes/wp-starter/"
+          PHP_LINT: true
+          CACHE_CLEAR: true
