@@ -33,6 +33,8 @@ wp-content/cache/supercache/*
 !/config
 !/build/docker
 !/_dumps
+!/.github
+!/.github/**
 !/.gitlab
 !/.gitlab-ci.yml
 !/.htaccess
