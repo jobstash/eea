@@ -25,8 +25,8 @@ After cloning the repo:
 2. Run `cp .env.sample .env && cp auth.json.sample auth.json`
 3. Run `make start` to start the project.
 4. Run `make composer install` to install backend dependencies
-5. Wait a bit, until WP installation done and open [localhost](http://localhost) or [localhost/wp-admin](http://localhost/wp-admin) (please check for the correct http port. -- _default is 80_)
-6. Go to (adminer) http://localhost/8000 to import some **[seed] (this will be provided but not in repo, because we don't want to expose data).
+5. Wait until WordPress is ready, then open **http://localhost:8080** (site) or **http://localhost:8080/wp-admin** (admin). The stack uses **trafex/wordpress** (PHP-FPM + Nginx) on port 8080.
+6. phpMyAdmin: **http://localhost:8000** (for DB/seed import). (this will be provided but not in repo, because we don't want to expose data).
 7. Let's now finish the setup to run the frontend!
 
 ### Run the frontend 
@@ -86,3 +86,27 @@ The staging environment is protected by HTTP Basic Authentication. To access htt
 
 Workflows: [.github/workflows/deploy-staging.yml](.github/workflows/deploy-staging.yml), [.github/workflows/deploy-production.yml](.github/workflows/deploy-production.yml).  
 Details: [WP Engine – GitHub Action deploy](https://wpengine.com/support/github-action-deploy/).
+
+### Download uploads from production (WP Engine)
+
+To pull the whole `wp-content/uploads` folder from production to your machine (e.g. for local media):
+
+1. You need SSH access to WP Engine (same key as for deploy, added in [User Portal → SSH Gateway](https://my.wpengine.com/profile/ssh_keys)).
+2. Replace `ENV` below with your **production environment name** (same as in the User Portal, e.g. the value you use for `WPE_PRODUCTION_ENV`).
+3. From the project root, run (use the path to your WP Engine private key if different):
+
+```bash
+rsync -avz -e "ssh -i ~/.ssh/wpengine_ed25519 -o IdentitiesOnly=yes" \
+  ENV@ENV.ssh.wpengine.net:sites/ENV/wp-content/uploads/ \
+  ./wp-content/uploads/
+```
+
+Example if the production env is `entethalliance`:
+
+```bash
+rsync -avz -e "ssh -i ~/.ssh/wpengine_ed25519 -o IdentitiesOnly=yes" \
+  entethalliance@entethalliance.ssh.wpengine.net:sites/entethalliance/wp-content/uploads/ \
+  ./wp-content/uploads/
+```
+
+To download only a subfolder (e.g. a single year): append the path after `uploads/`, e.g. `uploads/2025/`.
