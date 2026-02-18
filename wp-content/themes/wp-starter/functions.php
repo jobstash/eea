@@ -4,6 +4,7 @@
 if (!defined('ABSPATH'))
   exit;
 
+// CI: deploy on push to develop (staging) / main (production)
 // Make theme available for translation
 // Community translations can be found at https://github.com/roots/sage-translations
 load_theme_textdomain('presspack', get_template_directory() . '/lang');

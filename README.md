@@ -60,7 +60,7 @@ A step-by-step guide to start (launch) the frontend part, and start working on i
 
 ### CI/CD (GitHub Actions → WP Engine)
 
-Theme deploys automatically when you push:
+Theme deploys automatically when you push (develop → staging, main → production):
 
 - **Staging:** push to branch `develop` → deploys to https://eeastage.wpenginepowered.com/
 - **Production:** push to branch `main` → deploys to https://entethalliance.org/
