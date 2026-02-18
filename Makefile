@@ -7,7 +7,7 @@ CONTAINER?=${PROJECT_NAME}-wordpress-1
 BUILDCHAIN?=${PROJECT_NAME}-node-1
 COMPOSE=UID=${UID} GID=${GID} APP_UID=${APP_UID} docker compose -p ${PROJECT_NAME} -f $(DOCKER_COMPOSE_FILE)
 
-.PHONY: default clean composer composer-install npm npm-install npm-dev craft restoredb bash update-clean stop start restart logs
+.PHONY: default clean composer composer-install npm npm-install npm-dev craft restoredb bash update-clean stop start restart rebuild-wordpress logs
 
 default: build composer-install npm-install npm-dev
 
@@ -93,6 +93,11 @@ build:
 	fi
 
 restart: stop start
+
+# Rebuild WordPress image (picks up nginx/php-fpm timeout fixes) and restart container. Use after code changes in build/docker/ so refresh/504 issues are fixed.
+rebuild-wordpress:
+	${COMPOSE} build wordpress
+	${COMPOSE} up -d wordpress
 
 logs:
 	${COMPOSE} logs -f -t

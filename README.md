@@ -1,57 +1,112 @@
-# Enterprise ethereum alliance
+# Enterprise Ethereum Alliance
 
 ## 1. Description
 
-Dedicated wordpress theme and installation for https://entethalliance.org/
+WordPress theme and setup for **https://entethalliance.org/**.
 
-The Stack requires:
+**Requirements:** Docker, Node.js, Composer.
 
-1. Docker -> https://www.docker.com/
-2. Node.js -> https://nodejs.org/en
-3. Composer -> https://getcomposer.org/
+- Docker: https://www.docker.com/
+- Node.js: https://nodejs.org/
+- Composer: https://getcomposer.org/
 
+---
 
-## 2. Local Development
+## 2. Environments (Staging & Production)
 
-<!-- How does a developer starts working on this? -->
+There are **two remote environments**, both on WP Engine:
 
-### Getting Started
+| Environment | URL | How to deploy | Notes |
+|-------------|-----|----------------|-------|
+| **Staging** | https://eeastage.wpenginepowered.com/ | Push to branch **`develop`** | Protected by Basic Auth (see below). Use for testing before production. |
+| **Production** | https://entethalliance.org/ | Push to branch **`main`** | Live site. |
 
-First of all you need to clone the repository locally on your machine and switch to branch `develop`, this is the branch where  all the new features will be merged into.
+- **Deploy to Staging:** push (or merge) to `develop` → GitHub Actions builds the theme (including frontend assets) and deploys to staging.
+- **Deploy to Production:** merge `develop` into `main` and push → GitHub Actions builds and deploys to production.
 
-After cloning the repo:
+Staging is behind HTTP Basic Auth. Credentials:
 
-1. Go to project root directory
-2. Run `cp .env.sample .env && cp auth.json.sample auth.json`
-3. Run `make start` to start the project.
-4. Run `make composer install` to install backend dependencies
-5. Wait a bit, until WP installation done and open [localhost](http://localhost) or [localhost/wp-admin](http://localhost/wp-admin) (please check for the correct http port. -- _default is 80_)
-6. Go to (adminer) http://localhost/8000 to import some **[seed] (this will be provided but not in repo, because we don't want to expose data).
-7. Let's now finish the setup to run the frontend!
+- **User:** `eeastage`
+- **Password:** `ethereum84874`
 
-### Run the frontend 
+---
 
-A step-by-step guide to start (launch) the frontend part, and start working on it.
+## 3. Local Development
 
-1. Go to directory `/wp-content`
-2. upload the `/uploads` folder (this will be provided separately)
-3. Run `npm install` to **install front-end** dependencies
-4. Run `npm dev` to **start working** on the front-end
-5. Run `npm prod` to **create production assets** (CSS/JS)
+### Getting started
 
+1. Clone the repo and switch to branch **`develop`** (where features are merged).
+2. From the **project root**:
+   ```bash
+   cp .env.sample .env && cp auth.json.sample auth.json
+   make start
+   make composer install
+   ```
+3. Wait until WordPress is up, then open:
+   - **Site:** http://localhost:8080  
+   - **Admin:** http://localhost:8080/wp-admin  
+   - **phpMyAdmin (DB/seed):** http://localhost:8000  
 
-### Stopping local development
+   The stack is **trafex/wordpress** (PHP-FPM + Nginx) on port **8080**.
 
-1. `make stop` will take down your containers _(runs a `docker-compose stop` with the right file)_
+### Frontend (theme)
 
+From the **project root**:
+
+1. **Install dependencies and run dev server** (with hot reload):
+   ```bash
+   cd wp-content/themes/wp-starter
+   npm install
+   npm run dev
+   ```
+   Keep this terminal running while you work on CSS/JS.
+
+2. **Production build (e.g. to test built assets locally):**
+   ```bash
+   cd wp-content/themes/wp-starter
+   npm run build
+   ```
+   On staging/production the theme is built automatically in CI before deploy; you don’t need to commit `dist/`.
+
+### Stopping
+
+- **Stop containers:** `make stop`
 
 ### Troubleshooting
 
-> ⚠️ this deletes your local DB (`down -v`), and re`build`s everything, but:
+If the stack misbehaves, a full reset (removes local DB and rebuilds) is:
 
-**If something doesn't work**: try running `make clean`
+```bash
+make clean
+```
 
-## 3. Deploy
+---
 
-1. Run `make prod`
-2. Upload the theme folder to the server
+## 4. Deploy (summary)
+
+### CI/CD (recommended)
+
+- **Staging:** push to **`develop`** → workflow builds theme + frontend and deploys to **https://eeastage.wpenginepowered.com/**
+- **Production:** push to **`main`** → workflow builds and deploys to **https://entethalliance.org/**, and creates git tag **vX.Y.Z** from `VERSION` (if not already present).
+
+### Release flow (one version to update)
+
+1. Create branch **`release/x.x.x`** (e.g. `release/1.1.0`).
+2. Update **only** the root file **`VERSION`** with the new version (e.g. `1.1.0`). Update [CHANGELOG.md](CHANGELOG.md) (add `[x.x.x] - date` and move “Unreleased” notes into it).
+3. Merge into **`main`** (e.g. via PR). On push to `main`, the workflow builds the theme (injecting `VERSION` into `style.css` and `package.json`), deploys to production, and creates the tag **vx.x.x** automatically.
+
+You never edit `style.css` or `package.json` for the version; CI keeps them in sync from `VERSION`.
+
+Workflows: [deploy-staging.yml](.github/workflows/deploy-staging.yml), [deploy-production.yml](.github/workflows/deploy-production.yml).  
+WP Engine docs: [GitHub Action deploy](https://wpengine.com/support/github-action-deploy/).
+
+### One-time GitHub setup
+
+1. **SSH key for WP Engine**  
+   Create an ED25519 key. Add the **public** key in [WP Engine User Portal](https://my.wpengine.com) → SSH Gateway. Add the **private** key in the repo: Settings → Secrets and variables → Actions → secret `WPE_SSHG_KEY_PRIVATE`.
+
+2. **Secrets**  
+   In the same place, add:
+   - `WPE_STAGING_ENV` = WP Engine staging environment name (e.g. for eeastage).
+   - `WPE_PRODUCTION_ENV` = WP Engine production environment name (e.g. for entethalliance.org).
+
