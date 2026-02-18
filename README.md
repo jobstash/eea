@@ -87,7 +87,15 @@ make clean
 ### CI/CD (recommended)
 
 - **Staging:** push to **`develop`** → workflow builds theme + frontend and deploys to **https://eeastage.wpenginepowered.com/**
-- **Production:** push to **`main`** → workflow builds and deploys to **https://entethalliance.org/**
+- **Production:** push to **`main`** → workflow builds and deploys to **https://entethalliance.org/**, and creates git tag **vX.Y.Z** from `VERSION` (if not already present).
+
+### Release flow (one version to update)
+
+1. Create branch **`release/x.x.x`** (e.g. `release/1.1.0`).
+2. Update **only** the root file **`VERSION`** with the new version (e.g. `1.1.0`). Update [CHANGELOG.md](CHANGELOG.md) (add `[x.x.x] - date` and move “Unreleased” notes into it).
+3. Merge into **`main`** (e.g. via PR). On push to `main`, the workflow builds the theme (injecting `VERSION` into `style.css` and `package.json`), deploys to production, and creates the tag **vx.x.x** automatically.
+
+You never edit `style.css` or `package.json` for the version; CI keeps them in sync from `VERSION`.
 
 Workflows: [deploy-staging.yml](.github/workflows/deploy-staging.yml), [deploy-production.yml](.github/workflows/deploy-production.yml).  
 WP Engine docs: [GitHub Action deploy](https://wpengine.com/support/github-action-deploy/).
@@ -101,3 +109,4 @@ WP Engine docs: [GitHub Action deploy](https://wpengine.com/support/github-actio
    In the same place, add:
    - `WPE_STAGING_ENV` = WP Engine staging environment name (e.g. for eeastage).
    - `WPE_PRODUCTION_ENV` = WP Engine production environment name (e.g. for entethalliance.org).
+

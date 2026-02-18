@@ -14,6 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set theme version from VERSION
+        run: |
+          V=$(cat VERSION | tr -d '\n')
+          sed -i "s/^Version: .*/Version: $V/" wp-content/themes/wp-starter/style.css
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$V\"/" wp-content/themes/wp-starter/package.json
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
