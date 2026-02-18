@@ -21,46 +21,45 @@ define('DIST_PATH', get_template_directory() . '/' . DIST_DEF);
 define('JS_DEPENDENCY', array()); // array('jquery') as example
 define('JS_LOAD_IN_FOOTER', true); // load scripts in footer?
 
-// deafult server address, port and entry point can be customized in vite.config.json
-define('VITE_SERVER', 'http://' . getenv('NODE_HOST') . ':' . getenv('NODE_PORT'));
+// Default server address; NODE_HOST/NODE_PORT must be reachable by the browser (e.g. localhost:3000)
+$vite_host = getenv('NODE_HOST') ?: 'localhost';
+$vite_port = getenv('NODE_PORT') ?: '3000';
+define('VITE_SERVER', 'http://' . $vite_host . ':' . $vite_port);
 
-define('VITE_ENTRY_POINT', '/main.js');
+// Must match vite.config.js base in dev: /wp-content/themes/wp-starter/
+define('VITE_ENTRY_POINT', '/wp-content/themes/wp-starter/main.js');
 
 function enqueue_vite_scripts()
 {
 
   if (defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT === true) {
 
-    // insert hmr into head for live reload
-    function vite_head_module_hook()
+    // Load Vite script in footer so the page paints first and doesn't stall waiting for dev server
+    function vite_footer_module_hook()
     {
-      echo '<script type="module" crossorigin src="' . VITE_SERVER . VITE_ENTRY_POINT . '"></script>';
+      echo '<script type="module" crossorigin src="' . VITE_SERVER . VITE_ENTRY_POINT . '" defer></script>';
     }
-    add_action('wp_head', 'vite_head_module_hook');
+    add_action('wp_footer', 'vite_footer_module_hook', 5);
   } else {
 
     // production version, 'npm run build' must be executed in order to generate assets
-    // ----------
+    $manifest_path = DIST_PATH . '/manifest.json';
+    if (!is_file($manifest_path)) {
+      return;
+    }
+    $manifest = json_decode(file_get_contents($manifest_path), true);
 
-    // read manifest.json to figure out what to enqueue
-    $manifest = json_decode(file_get_contents(DIST_PATH . '/manifest.json'), true);
-
-    // is ok
     if (is_array($manifest)) {
 
-
-      // get first key, by default is 'main.js' but it can change
       $manifest_key = array_keys($manifest);
       $key = array_search('main.js', $manifest_key);
 
       if ($key !== false) {
 
-        // enqueue CSS files
         foreach (@$manifest[$manifest_key[$key]]['css'] as $css_file) {
           wp_enqueue_style('main', DIST_URI . '/' . $css_file);
         }
 
-        // enqueue main JS file
         $js_file = @$manifest[$manifest_key[$key]]['file'];
         if (!empty($js_file)) {
           wp_enqueue_script('main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER);
@@ -75,25 +74,23 @@ add_action('wp_enqueue_scripts', 'enqueue_vite_scripts');
 
 add_action('enqueue_block_editor_assets', function () {
 
+  $manifest_path = DIST_PATH . '/manifest.json';
+  if (!is_file($manifest_path)) {
+    return;
+  }
+  $manifest = json_decode(file_get_contents($manifest_path), true);
 
-  $manifest = json_decode(file_get_contents(DIST_PATH . '/manifest.json'), true);
-
-  // is ok
   if (is_array($manifest)) {
 
-
-    // get first key, by default is 'main.js' but it can change
     $manifest_key = array_keys($manifest);
     $key = array_search('main.js', $manifest_key);
 
     if ($key !== false) {
 
-      // enqueue CSS files
       foreach (@$manifest[$manifest_key[$key]]['css'] as $css_file) {
         wp_enqueue_style('main', DIST_URI . '/' . $css_file);
       }
 
-      // enqueue main JS file
       $js_file = @$manifest[$manifest_key[$key]]['file'];
       if (!empty($js_file)) {
         wp_enqueue_script('main', DIST_URI . '/' . $js_file, JS_DEPENDENCY, '', JS_LOAD_IN_FOOTER);
