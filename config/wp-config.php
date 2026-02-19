@@ -133,19 +133,9 @@ require_once(ABSPATH . 'wp-settings.php');
  * More info at: https://docs.bitnami.com/general/apps/wordpress/troubleshooting/xmlrpc-and-pingback/
  */
 if (!defined('WP_CLI')) {
-  // remove x-pingback and add security headers
+  // remove x-pingback HTTP header (security headers are in wp-content/mu-plugins/)
   add_filter("wp_headers", function ($headers) {
     unset($headers["X-Pingback"]);
-
-    $headers["X-Content-Type-Options"]       = "nosniff";
-    $headers["X-XSS-Protection"]            = "1; mode=block";
-    $headers["Referrer-Policy"]              = "strict-origin-when-cross-origin";
-    $headers["Permissions-Policy"]          = "geolocation=(), microphone=(), camera=()";
-
-    if (function_exists("is_ssl") && is_ssl()) {
-      $headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains";
-    }
-
     return $headers;
   });
   // disable pingbacks
