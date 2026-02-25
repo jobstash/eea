@@ -13,6 +13,18 @@ _Nothing yet._
 
 ---
 
+## [1.1.0] - 2026-02-25
+
+### Added
+
+- **Security headers:** mu-plugin `eea-security-headers.php` (HSTS, X-Content-Type-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy). CI deploys `wp-content/mu-plugins/` to WP Engine together with the theme.
+
+### Changed
+
+- **SEO:** Theme meta/OG tags are skipped when Rank Math (or similar SEO plugin) is active to avoid duplicate meta and Open Graph output.
+
+---
+
 ## [1.0.0] - 2025-02-16
 
 First versioned release.

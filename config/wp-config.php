@@ -133,7 +133,7 @@ require_once(ABSPATH . 'wp-settings.php');
  * More info at: https://docs.bitnami.com/general/apps/wordpress/troubleshooting/xmlrpc-and-pingback/
  */
 if (!defined('WP_CLI')) {
-  // remove x-pingback HTTP header
+  // remove x-pingback HTTP header (security headers are in wp-content/mu-plugins/)
   add_filter("wp_headers", function ($headers) {
     unset($headers["X-Pingback"]);
     return $headers;

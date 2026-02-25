@@ -41,4 +41,13 @@ jobs:
           SRC_PATH: "wp-content/themes/wp-starter/"
           REMOTE_PATH: "wp-content/themes/wp-starter/"
           PHP_LINT: true
+          CACHE_CLEAR: false
+
+      - name: Deploy mu-plugins to WP Engine Production
+        uses: wpengine/github-action-wpe-site-deploy@v3
+        with:
+          WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
+          WPE_ENV: ${{ secrets.WPE_PRODUCTION_ENV }}
+          SRC_PATH: "wp-content/mu-plugins/"
+          REMOTE_PATH: "wp-content/mu-plugins/"
           CACHE_CLEAR: true

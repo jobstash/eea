@@ -140,5 +140,16 @@ function eea_output_seo_meta() {
     }
 }
 
-// Hook into wp_head
-add_action('wp_head', 'eea_output_seo_meta', 1);
+// Don't output duplicate meta/OG if an SEO plugin (e.g. Rank Math) is active
+function eea_should_output_seo_meta() {
+	if (class_exists('RankMath')) {
+		return false;
+	}
+	if (!function_exists('is_plugin_active')) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+	return !is_plugin_active('rank-math/rank-math.php');
+}
+if (eea_should_output_seo_meta()) {
+	add_action('wp_head', 'eea_output_seo_meta', 1);
+}

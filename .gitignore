@@ -60,6 +60,7 @@ wp-content/cache/supercache/*
 #include mu-plugins
 /wp-content/mu-plugins/*
 !/wp-content/mu-plugins/autoload.php
+!/wp-content/mu-plugins/eea-security-headers.php
 
 #include theme
 /wp-content/themes/*
