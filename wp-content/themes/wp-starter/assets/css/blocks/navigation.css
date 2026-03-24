@@ -90,10 +90,8 @@
 
 @media (min-width: 1024px) {
   .sub-menu {
-    @apply overflow-hidden max-h-0 absolute left-0 top-full mt-2 py-2 transition-all duration-300 whitespace-nowrap;
-  }
-  .sub-menu::after {
-    @apply content-[''] block absolute inset-0 -z-10 rounded-xl backdrop-blur-md bg-black/60;
+    @apply overflow-hidden max-h-0 absolute left-0 transition-all duration-300 whitespace-nowrap rounded-xl backdrop-blur-md bg-black/60;
+    top: calc(100% + 8px);
   }
 }
 
