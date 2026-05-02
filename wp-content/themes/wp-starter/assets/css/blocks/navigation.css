@@ -31,7 +31,7 @@
 
 @media (min-width: 1024px) {
   .main-menu {
-    @apply flex px-6 py-3 rounded-xl space-y-0 items-center pr-0 gap-x-2;
+    @apply flex px-6 py-3 rounded-xl space-y-0 items-center pr-0;
   }
   /* .main-menu::before {
     @apply content-[''] block absolute -z-10 left-0 right-0 bottom-0 top-0 backdrop-blur-md rounded-xl;
@@ -74,13 +74,13 @@
 @media (min-width: 1024px) {
   .menu-item.current-menu-item > div > a,
   .sub-menu .menu-item.current-menu-item > a {
-    @apply opacity-100 bg-[#171717] no-underline;
+    @apply opacity-100 bg-white/10 no-underline;
   }
 }
 
 @media (min-width: 1024px) {
-  .menu-item:hover a {
-    @apply bg-[#171717] opacity-100;
+  .menu-item:hover > div > a {
+    @apply bg-white/10 opacity-100;
   }
 }
 
@@ -90,7 +90,8 @@
 
 @media (min-width: 1024px) {
   .sub-menu {
-    @apply overflow-hidden max-h-0 absolute left-0 top-full pt-3  transition-all duration-300  whitespace-nowrap;
+    @apply overflow-hidden max-h-0 absolute left-0 transition-all duration-300 whitespace-nowrap rounded-xl backdrop-blur-md bg-black/60;
+    top: calc(100% + 8px);
   }
 }
 
@@ -109,7 +110,7 @@
 
 @media (min-width: 1024px) {
   .sub-menu .menu-item {
-    @apply p-0 mb-3;
+    @apply p-0 mb-0;
   }
 }
 @media (min-width: 1024px) {
@@ -124,7 +125,7 @@
 
 @media (min-width: 1024px) {
   .sub-menu .menu-item a {
-    @apply text-base text-[14px] p-0 bg-[#171717] px-5 py-2.5 w-full no-underline;
+    @apply text-base text-[14px] p-0 bg-transparent px-5 py-1.5 w-full no-underline;
   }
   .sub-menu .menu-item a:hover,
   .sub-menu .current-menu-item a {
@@ -133,8 +134,11 @@
 }
 
 @media (min-width: 1024px) {
+  .sub-menu .menu-item:first-child a {
+    @apply pt-2;
+  }
   .sub-menu .menu-item:last-child a {
-    @apply mb-1.5;
+    @apply pb-2;
   }
 }
 
@@ -168,7 +172,8 @@
 }
 
 .menu-btn-gray,
-.menu-btn-black {
+.menu-btn-black,
+.menu-btn-white {
   @apply border-0 pb-0 ml-4;
 }
 
@@ -178,6 +183,21 @@
 
 .menu-btn-black a {
   @apply rounded-full inline-block bg-black border   py-2 px-5 border-white whitespace-nowrap !py-2 no-underline;
+}
+
+.menu-btn-white a {
+  @apply rounded-full inline-block bg-white text-black border border-white py-2 px-5 whitespace-nowrap !py-2 font-semibold no-underline transition-all;
+}
+
+.menu-btn-white a:hover {
+  @apply bg-white/80 border-white/80;
+}
+
+@media (min-width: 1024px) {
+  .menu-btn-white:hover > div > a,
+  .menu-btn-white:hover a {
+    @apply bg-white/80 !important;
+  }
 }
 @media (min-width: 1024px) {
   .menu-btn-gray a,
