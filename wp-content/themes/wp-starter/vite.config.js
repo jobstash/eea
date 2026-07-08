@@ -30,8 +30,11 @@ export default defineConfig({
     outDir: resolve(__dirname, './dist'),
     emptyOutDir: true,
 
-    // emit manifest so PHP can find the hashed files
-    manifest: true,
+    // emit manifest so PHP can find the hashed files.
+    // Use a non-dotted filename (dist/manifest.json) instead of vite's
+    // default dist/.vite/manifest.json — the WP Engine deploy excludes
+    // dot-dirs, which would drop the manifest and break asset loading.
+    manifest: 'manifest.json',
 
     // esbuild target
     target: 'es2018',
