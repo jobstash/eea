@@ -1,6 +1,6 @@
 @layer components {
 	.btn-primary {
-		@apply bg-white inline-flex whitespace-nowrap text-black rounded-[8px] px-[35px] py-[18px] antialiased text-base leading-[120%] font-bold text-center transition-all no-underline;
+		@apply bg-white inline-flex whitespace-nowrap text-black rounded-[8px] px-[28px] py-[18px] antialiased text-base leading-[120%] font-bold text-center transition-all no-underline;
 	}
 	
 	.btn-secondary {
