@@ -1,0 +1,25 @@
+{% set heading = fields.heading ?? 'What it means to be a part of The EEA' %}
+{% set cards = fields.cards ?? [
+	{ title: 'Shape standards', text: 'Help define the open specifications that make enterprise Ethereum interoperable — and get your requirements into the standards before they ship.', proof: 'Contributor to EthTrust Security Levels & DLT Interoperability specs' },
+	{ title: 'Access enterprise Ethereum leaders', text: 'Join antitrust-safe working groups alongside Fortune 500 enterprises, startups and technology vendors building on Ethereum.', proof: '200+ member organizations across the ecosystem' },
+	{ title: 'Turn market signals into implementation guidance', text: 'Translate emerging trends into practical guidance your teams can act on, backed by the collective expertise of the alliance.', proof: 'Business readiness reports & implementation case studies' }
+] %}
+
+<div class="pb-10 lg:pb-16">
+	{% if heading %}
+		<h2 class="mb-8 text-white heading-panel lg:mb-12">{{ heading }}</h2>
+	{% endif %}
+	<div class="grid gap-6 md:grid-cols-3">
+		{% for card in cards %}
+			<div class="flex flex-col h-full gap-4 px-6 py-8 border lg:p-8 border-nav-border bg-[#111111] rounded-2xl">
+				<h3 class="text-white h4">{{ card.title }}</h3>
+				{% if card.text %}
+					<div class="text-[#7E7E81] body-2">{{ card.text | raw }}</div>
+				{% endif %}
+				{% if card.proof %}
+					<p class="mt-auto pt-2 text-white text-[15px] font-semibold">{{ card.proof }}</p>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

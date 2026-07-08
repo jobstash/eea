@@ -9,6 +9,12 @@ $acf_blocks = array(
     'keywords'      => array('hero', 'home')
   ),
   array(
+    'name'   => 'value-cards',
+    'title'  => __('Value Cards'),
+    'description'    => __('3-card section highlighting member value props.'),
+    'keywords'      => array('value', 'cards', 'benefits')
+  ),
+  array(
     'name'   => 'solution-catalog',
     'title'  => __('Solution Catalog Panel'),
     'description'    => __('A panel below the hero explaining the Solution Catalog with a CTA.'),

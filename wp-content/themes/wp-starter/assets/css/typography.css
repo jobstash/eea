@@ -26,12 +26,12 @@ h2.wp-block-heading  {
 }
 
 .heading-panel {
-  @apply text-2xl leading-[130%] font-light antialiased font-heading uppercase;
+  @apply text-[28px] leading-[130%] font-light antialiased font-heading uppercase;
 }
 
 @media (min-width: 1024px) {
   .heading-panel {
-    @apply text-[32px];
+    @apply text-[38px];
   }
 }
 
