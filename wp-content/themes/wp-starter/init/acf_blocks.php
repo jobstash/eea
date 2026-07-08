@@ -9,6 +9,12 @@ $acf_blocks = array(
     'keywords'      => array('hero', 'home')
   ),
   array(
+    'name'   => 'activity-strip',
+    'title'  => __('Activity Strip'),
+    'description'    => __('Compact horizontal strip of activity links near the top.'),
+    'keywords'      => array('activity', 'strip', 'links')
+  ),
+  array(
     'name'   => 'value-cards',
     'title'  => __('Value Cards'),
     'description'    => __('3-card section highlighting member value props.'),
