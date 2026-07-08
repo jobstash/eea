@@ -9,6 +9,12 @@ $acf_blocks = array(
     'keywords'      => array('hero', 'home')
   ),
   array(
+    'name'   => 'solution-catalog',
+    'title'  => __('Solution Catalog Panel'),
+    'description'    => __('A panel below the hero explaining the Solution Catalog with a CTA.'),
+    'keywords'      => array('solution', 'catalog', 'panel')
+  ),
+  array(
     'name'   => 'divider',
     'title'  => __('Divider'),
     'description'    => __('Divider'),
