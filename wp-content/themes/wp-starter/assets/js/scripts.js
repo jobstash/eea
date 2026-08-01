@@ -322,9 +322,14 @@ const swiperConfigs = {
     },
   },
   quotes: {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
     slidesPerView: 1.2,
     spaceBetween: 24,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: '.js-quotes-carousel-pagination',
       clickable: true,

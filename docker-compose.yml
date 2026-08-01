@@ -62,6 +62,7 @@ services:
       WORDPRESS_DATABASE_USER: ${DB_USER}
       WORDPRESS_DATABASE_NAME: ${DB_DATABASE}
       WORDPRESS_DATABASE_PASSWORD: ${DB_PASSWORD}
+      WP_CONFIG_PATH: /var/www/wp-config.php
     volumes:
       - ./wp-content:/var/www/wp-content
       - ./.env:/var/www/.env

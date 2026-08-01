@@ -43,7 +43,11 @@ function enqueue_vite_scripts()
   } else {
 
     // production version, 'npm run build' must be executed in order to generate assets
-    $manifest_path = DIST_PATH . '/manifest.json';
+    // Vite 5+ writes the manifest to dist/.vite/manifest.json; fall back to the legacy path.
+    $manifest_path = DIST_PATH . '/.vite/manifest.json';
+    if (!is_file($manifest_path)) {
+      $manifest_path = DIST_PATH . '/manifest.json';
+    }
     if (!is_file($manifest_path)) {
       return;
     }
@@ -74,7 +78,10 @@ add_action('wp_enqueue_scripts', 'enqueue_vite_scripts');
 
 add_action('enqueue_block_editor_assets', function () {
 
-  $manifest_path = DIST_PATH . '/manifest.json';
+  $manifest_path = DIST_PATH . '/.vite/manifest.json';
+  if (!is_file($manifest_path)) {
+    $manifest_path = DIST_PATH . '/manifest.json';
+  }
   if (!is_file($manifest_path)) {
     return;
   }

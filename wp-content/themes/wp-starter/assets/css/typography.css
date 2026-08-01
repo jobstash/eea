@@ -25,6 +25,16 @@ h2.wp-block-heading  {
   }
 }
 
+.heading-panel {
+  @apply text-[28px] leading-[130%] font-light antialiased font-heading uppercase;
+}
+
+@media (min-width: 1024px) {
+  .heading-panel {
+    @apply text-[38px];
+  }
+}
+
 .h2,
 .wysiwyg h2,
 .editor-styles-wrapper h2 {

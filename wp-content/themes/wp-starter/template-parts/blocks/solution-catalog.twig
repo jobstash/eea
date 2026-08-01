@@ -1,0 +1,17 @@
+{% set title = fields.title ?? 'Explore the Solution Catalog' %}
+{% set text = fields.text ?? '' %}
+{% set cta = fields.cta ?? false %}
+
+<div>
+	<div class="flex flex-col gap-8 px-6 py-8 border lg:px-12 lg:py-8 border-nav-border bg-[#111111] rounded-2xl lg:flex-row lg:items-center lg:justify-between">
+		<div class="space-y-4 lg:max-w-2xl">
+			<h2 class="text-white heading-panel">{{ title }}</h2>
+			{% if text %}
+				<div class="body-1 text-[#7E7E81]">{{ text | raw }}</div>
+			{% endif %}
+		</div>
+		<div class="shrink-0">
+			<a href="{{ cta.url ?? 'https://entethalliance.github.io/solutioncat/' }}" target="{{ cta.target ?: '_blank' }}" class="btn-primary">{{ cta.title ?? 'View Solution Catalog' }}</a>
+		</div>
+	</div>
+</div>
