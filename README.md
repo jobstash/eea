@@ -24,10 +24,9 @@ There are **two remote environments**, both on WP Engine:
 - **Deploy to Staging:** push (or merge) to `develop` → GitHub Actions builds the theme (including frontend assets) and deploys to staging.
 - **Deploy to Production:** merge `develop` into `main` and push → GitHub Actions builds and deploys to production.
 
-Staging is behind HTTP Basic Auth. Credentials:
-
-- **User:** `eeastage`
-- **Password:** `ethereum84874`
+Staging is behind HTTP Basic Auth. Credentials are **not** stored in this
+repository — ask a maintainer, or retrieve them from the WP Engine
+dashboard / the team's secret store.
 
 ---
 
